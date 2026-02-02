@@ -3,172 +3,365 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+
+const projectImages = [
+  { src: '/images/projects/image00004.jpeg', alt: 'Modern custom home exterior', category: 'Custom Home' },
+  { src: '/images/projects/image00005.jpeg', alt: 'Luxury backyard with pool', category: 'Custom Home' },
+  { src: '/images/projects/image00001.jpeg', alt: 'Luxury interior living space', category: 'Interior' },
+  { src: '/images/projects/image00006.jpeg', alt: 'Open concept cottage kitchen', category: 'Cottage' },
+  { src: '/images/projects/image00010.jpeg', alt: 'Timber frame entrance', category: 'Renovation' },
+  { src: '/images/projects/image00011.jpeg', alt: 'Modern farmhouse with pool', category: 'Custom Home' },
+];
 ---
 
 <BaseLayout title="Home">
   <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-      <div class="text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6">
-          Building Dreams Throughout Ontario
-        </h1>
-        <p class="text-xl md:text-2xl mb-8 text-blue-100">
-          Custom Homes, Cottages, and Renovations in Muskoka, Kawartha, Durham, York & GTA
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-            Get a Free Quote
-          </a>
-          <a href="/services" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors">
-            Our Services
-          </a>
+  <section data-hero="dark" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img
+        src="/images/projects/image00005.jpeg"
+        alt="PCM Homes luxury custom build"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/70"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 text-center text-white pt-24">
+      <div class="animate-on-load animate-fade-in-up">
+        <p class="section-label text-white/80 mb-6">Custom Home Builders</p>
+      </div>
+
+      <h1 class="animate-on-load animate-fade-in-up delay-100 text-5xl md:text-7xl lg:text-8xl font-display font-medium mb-8 leading-[1.1]">
+        Crafting Exceptional<br />
+        <span class="italic text-[var(--color-timber-light)]">Homes</span> in Ontario
+      </h1>
+
+      <p class="animate-on-load animate-fade-in-up delay-200 text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-12 leading-relaxed">
+        From cottage country to the GTA, we build custom homes, cottages, and renovations with unmatched communication and craftsmanship.
+      </p>
+
+      <div class="animate-on-load animate-fade-in-up delay-300 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary">
+          <span>Start Your Project</span>
+        </a>
+        <a href="/services" class="btn-secondary border-white text-white hover:bg-white hover:text-[var(--color-charcoal)]">
+          Explore Services
+        </a>
+      </div>
+
+      <!-- Trust Indicators -->
+      <div class="animate-on-load animate-fade-in delay-500 mt-20 flex flex-wrap justify-center gap-8 md:gap-16 text-white/60">
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-display font-medium text-white mb-1">9+</div>
+          <div class="text-xs uppercase tracking-widest">Years Experience</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-display font-medium text-white mb-1">100%</div>
+          <div class="text-xs uppercase tracking-widest">Fully Insured</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-display font-medium text-white mb-1">2yr</div>
+          <div class="text-xs uppercase tracking-widest">Warranty</div>
         </div>
       </div>
     </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-10 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 40">
+        <rect x="1" y="1" width="22" height="38" rx="11" stroke-width="2" />
+        <circle cx="12" cy="12" r="3" fill="currentColor" class="animate-pulse" />
+      </svg>
+    </div>
   </section>
 
-  <!-- Why Choose PCM Section -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Why Choose PCM Homes?
-        </h2>
-        <p class="text-xl text-gray-600">
-          9 years of exceptional craftsmanship and customer service
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Communication -->
-        <div class="text-center p-6">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+  <!-- Introduction Section -->
+  <section class="py-24 md:py-32 bg-[var(--color-cream)] grain-overlay">
+    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Text Content -->
+        <div>
+          <p class="section-label mb-4">About PCM Homes</p>
+          <h2 class="text-4xl md:text-5xl font-display mb-8 text-[var(--color-charcoal)]">
+            Communication is<br />
+            <span class="italic">Our Foundation</span>
+          </h2>
+          <div class="divider mb-8"></div>
+          <p class="text-[var(--color-slate)] text-lg leading-relaxed mb-6">
+            What sets PCM Homes apart? It's simple: we actually talk to you. While other contractors leave you wondering about your project, we provide regular updates, listen to your concerns, and solve problems together.
+          </p>
+          <p class="text-[var(--color-slate)] leading-relaxed mb-8">
+            Founded by Dan Edralin, our team handles both concrete (ICF) and wood structures in-house. This means better quality control, faster timelines, and the attention to detail that makes a house feel like home.
+          </p>
+          <a href="/about" class="inline-flex items-center gap-3 text-[var(--color-charcoal)] font-medium tracking-wide uppercase text-sm group">
+            Learn Our Story
+            <svg class="w-5 h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
             </svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">Clear Communication</h3>
-          <p class="text-gray-600">Regular updates and transparent project management throughout your build</p>
+          </a>
         </div>
 
-        <!-- Expertise -->
-        <div class="text-center p-6">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
+        <!-- Image -->
+        <div class="relative">
+          <div class="img-zoom">
+            <img
+              src="/images/projects/image00003.jpeg"
+              alt="Piano room in PCM Homes custom build"
+              class="w-full aspect-[4/5] object-cover"
+            />
           </div>
-          <h3 class="text-xl font-semibold mb-2">Full-Service Expertise</h3>
-          <p class="text-gray-600">From design to finish, we handle concrete and wood structures in-house</p>
-        </div>
-
-        <!-- Quality -->
-        <div class="text-center p-6">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-            </svg>
+          <!-- Floating Stats Card -->
+          <div class="absolute -bottom-8 -left-8 bg-white p-8 shadow-xl">
+            <div class="flex items-baseline gap-2 mb-2">
+              <span class="text-5xl font-display font-medium text-[var(--color-charcoal)]">9</span>
+              <span class="text-[var(--color-timber)] uppercase tracking-widest text-sm">Years</span>
+            </div>
+            <p class="text-[var(--color-stone)] text-sm">Building trust through<br />transparent communication</p>
           </div>
-          <h3 class="text-xl font-semibold mb-2">Attention to Detail</h3>
-          <p class="text-gray-600">Owner-led projects with focus on craftsmanship from structure to finish</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Services Section -->
-  <section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <!-- Section Header -->
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Our Services
+        <p class="section-label mb-4">What We Build</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Our <span class="italic">Services</span>
         </h2>
-        <p class="text-xl text-gray-600">
-          Comprehensive construction solutions for your needs
-        </p>
+        <div class="divider divider-center"></div>
       </div>
 
+      <!-- Services Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {services.map((service) => (
-          <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">{service.data.title}</h3>
-            <p class="text-gray-600 mb-4">{service.data.description}</p>
-            <a href={`/services#${service.slug}`} class="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center">
-              Learn More
-              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        {services.map((service, index) => (
+          <a
+            href={`/services#${service.slug}`}
+            class="group card p-8 hover-lift"
+          >
+            <div class="flex items-start justify-between mb-6">
+              <span class="text-6xl font-display text-[var(--color-timber-light)]">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <svg class="w-6 h-6 text-[var(--color-timber)] opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0 duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
               </svg>
-            </a>
+            </div>
+            <h3 class="text-2xl font-display text-[var(--color-charcoal)] mb-3 group-hover:text-[var(--color-timber)] transition-colors">
+              {service.data.title}
+            </h3>
+            <p class="text-[var(--color-slate)] leading-relaxed">
+              {service.data.description}
+            </p>
+          </a>
+        ))}
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-16">
+        <a href="/services" class="btn-secondary">
+          View All Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Gallery -->
+  <section class="py-24 md:py-32 bg-[var(--color-charcoal)]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <p class="section-label text-[var(--color-timber)] mb-4">Portfolio</p>
+        <h2 class="text-4xl md:text-5xl font-display text-white mb-6">
+          Featured <span class="italic">Projects</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {projectImages.map((image, index) => (
+          <div class={`img-zoom relative group ${index === 0 ? 'md:col-span-2 md:row-span-2' : ''}`}>
+            <img
+              src={image.src}
+              alt={image.alt}
+              class={`w-full object-cover ${index === 0 ? 'aspect-square md:aspect-auto md:h-full' : 'aspect-[4/3]'}`}
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="absolute bottom-0 left-0 right-0 p-6">
+                <span class="text-[var(--color-timber)] text-xs uppercase tracking-widest">{image.category}</span>
+                <p class="text-white font-display text-lg mt-1">{image.alt}</p>
+              </div>
+            </div>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Service Areas Section -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Service Areas -->
+  <section class="py-24 md:py-32 bg-[var(--color-cream)] grain-overlay">
+    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Map/Visual Side -->
+        <div class="relative order-2 lg:order-1">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-4">
+              <div class="img-zoom">
+                <img src="/images/projects/image00006.jpeg" alt="Cottage interior" class="w-full aspect-square object-cover" />
+              </div>
+              <div class="img-zoom">
+                <img src="/images/projects/image00009.jpeg" alt="Open concept living" class="w-full aspect-[3/4] object-cover" />
+              </div>
+            </div>
+            <div class="space-y-4 pt-12">
+              <div class="img-zoom">
+                <img src="/images/projects/image00007.jpeg" alt="Kitchen with timber beams" class="w-full aspect-[3/4] object-cover" />
+              </div>
+              <div class="img-zoom">
+                <img src="/images/projects/image00008.jpeg" alt="Living room detail" class="w-full aspect-square object-cover" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Side -->
+        <div class="order-1 lg:order-2">
+          <p class="section-label mb-4">Where We Build</p>
+          <h2 class="text-4xl md:text-5xl font-display mb-8 text-[var(--color-charcoal)]">
+            Serving All of<br />
+            <span class="italic">Ontario</span>
+          </h2>
+          <div class="divider mb-8"></div>
+
+          <p class="text-[var(--color-slate)] text-lg leading-relaxed mb-8">
+            From the serene lakes of Muskoka to the bustling GTA, we bring the same dedication and craftsmanship to every project.
+          </p>
+
+          <!-- Location List -->
+          <div class="grid grid-cols-2 gap-x-8 gap-y-4 mb-10">
+            {['Muskoka Lakes', 'Kawartha Lakes', 'Durham Region', 'York Region', 'Greater Toronto Area', 'All Cottage Country'].map((location) => (
+              <div class="flex items-center gap-3">
+                <div class="w-2 h-2 bg-[var(--color-timber)]"></div>
+                <span class="text-[var(--color-charcoal)]">{location}</span>
+              </div>
+            ))}
+          </div>
+
+          <p class="text-[var(--color-stone)] text-sm mb-8">
+            How far north do we travel? As far as necessary to bring your vision to life.
+          </p>
+
+          <a href="/locations" class="btn-primary">
+            <span>View Service Areas</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <!-- Section Header -->
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Where We Build
+        <p class="section-label mb-4">The PCM Difference</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Why Choose <span class="italic">Us</span>
         </h2>
-        <p class="text-xl text-gray-600">
-          Proudly serving communities throughout Ontario
-        </p>
+        <div class="divider divider-center"></div>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
-        <div class="p-4">
-          <div class="text-3xl mb-2">🏞️</div>
-          <h3 class="font-semibold">Muskoka Lakes</h3>
+      <!-- Features Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="text-center p-8">
+          <div class="w-20 h-20 mx-auto mb-6 border border-[var(--color-timber)] flex items-center justify-center">
+            <svg class="w-8 h-8 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-4">Clear Communication</h3>
+          <p class="text-[var(--color-slate)] leading-relaxed">
+            Regular updates via email, text, and calls with photos. You'll always know exactly where your project stands.
+          </p>
         </div>
-        <div class="p-4">
-          <div class="text-3xl mb-2">🌲</div>
-          <h3 class="font-semibold">Kawartha Lakes</h3>
-        </div>
-        <div class="p-4">
-          <div class="text-3xl mb-2">🏘️</div>
-          <h3 class="font-semibold">Durham Region</h3>
-        </div>
-        <div class="p-4">
-          <div class="text-3xl mb-2">🏡</div>
-          <h3 class="font-semibold">York Region</h3>
-        </div>
-        <div class="p-4">
-          <div class="text-3xl mb-2">🏙️</div>
-          <h3 class="font-semibold">GTA</h3>
-        </div>
-      </div>
 
-      <div class="text-center mt-12">
-        <a href="/locations" class="text-blue-600 hover:text-blue-800 font-semibold text-lg inline-flex items-center">
-          View All Service Areas
-          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </a>
+        <!-- Feature 2 -->
+        <div class="text-center p-8">
+          <div class="w-20 h-20 mx-auto mb-6 border border-[var(--color-timber)] flex items-center justify-center">
+            <svg class="w-8 h-8 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-4">In-House Expertise</h3>
+          <p class="text-[var(--color-slate)] leading-relaxed">
+            We handle both concrete (ICF) and wood structures in-house, giving us complete control over quality and timelines.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="text-center p-8">
+          <div class="w-20 h-20 mx-auto mb-6 border border-[var(--color-timber)] flex items-center justify-center">
+            <svg class="w-8 h-8 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-4">Owner-Led Detail</h3>
+          <p class="text-[var(--color-slate)] leading-relaxed">
+            Dan personally oversees every project, from structure to finish, ensuring nothing falls through the cracks.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="py-20 bg-blue-600 text-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">
-        Ready to Start Your Project?
+  <section class="relative py-32 overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img
+        src="/images/projects/image00002.jpeg"
+        alt="Luxury interior"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-[var(--color-charcoal)]/80"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white">
+      <p class="section-label text-[var(--color-timber)] mb-4">Start Your Journey</p>
+      <h2 class="text-4xl md:text-6xl font-display mb-8">
+        Ready to Build Your<br />
+        <span class="italic">Dream Home?</span>
       </h2>
-      <p class="text-xl mb-8 text-blue-100">
-        Get a free quote and discover why homeowners, designers, and architects choose PCM Homes
+      <p class="text-xl text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed">
+        Get a free consultation and discover why homeowners, designers, and architects trust PCM Homes with their most important projects.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-          Get Started Today
+        <a href="/contact" class="btn-primary bg-[var(--color-timber)] hover:bg-[var(--color-timber-dark)]">
+          <span>Get Your Free Quote</span>
         </a>
-        <a href="tel:9057161939" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors">
+        <a href="tel:9057161939" class="btn-secondary border-white text-white hover:bg-white hover:text-[var(--color-charcoal)]">
           Call (905) 716-1939
         </a>
       </div>
     </div>
   </section>
+
+  <script>
+    // Animate elements on load
+    document.addEventListener('DOMContentLoaded', () => {
+      const animatedElements = document.querySelectorAll('.animate-on-load');
+      animatedElements.forEach(el => {
+        el.classList.remove('animate-on-load');
+      });
+    });
+  </script>
 </BaseLayout>

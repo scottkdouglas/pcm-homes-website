@@ -1,244 +1,321 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const serviceAreas = [
+  {
+    name: 'Muskoka Lakes',
+    tagline: 'Premier Cottage Country',
+    description: 'Custom cottages and year-round homes in Ontario\'s most sought-after destination. Waterfront builds, A-frames, and luxury retreats.',
+    services: ['Custom cottages & A-frames', 'Year-round builds', 'Waterfront expertise'],
+    image: '/images/projects/image00011.jpeg',
+  },
+  {
+    name: 'Kawartha Lakes',
+    tagline: 'Natural Beauty Meets Craft',
+    description: 'Beautiful homes and cottages in the heart of the Kawarthas, where natural beauty meets quality craftsmanship.',
+    services: ['Cottage construction', 'Custom home builds', 'Renovations & additions'],
+    image: '/images/projects/image00009.jpeg',
+  },
+  {
+    name: 'Durham Region',
+    tagline: 'Residential Excellence',
+    description: 'Comprehensive residential construction throughout Durham. From ICF foundations to complete custom homes.',
+    services: ['Custom residential builds', 'ICF construction', 'Home additions'],
+    image: '/images/projects/image00004.jpeg',
+  },
+  {
+    name: 'York Region',
+    tagline: 'Luxury & Precision',
+    description: 'Expert construction for discerning homeowners seeking exceptional quality and design-forward thinking.',
+    services: ['Luxury custom homes', 'High-end renovations', 'Design-build services'],
+    image: '/images/projects/image00001.jpeg',
+  },
+  {
+    name: 'Greater Toronto Area',
+    tagline: 'Urban Craftsmanship',
+    description: 'Bringing quality construction to the GTA with a focus on precision, communication, and working respectfully in occupied homes.',
+    services: ['Urban renovations', 'Custom builds', 'Occupied home work'],
+    image: '/images/projects/image00006.jpeg',
+  },
+];
 ---
 
 <BaseLayout title="Service Areas" description="PCM Homes serves Muskoka Lakes, Kawartha Lakes, Durham Region, York Region, and the Greater Toronto Area (GTA).">
   <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">
-          Where We Build
-        </h1>
-        <p class="text-xl text-blue-100">
-          Serving communities throughout Ontario with quality construction services
-        </p>
-      </div>
+  <section data-hero="dark" class="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/projects/image00011.jpeg"
+        alt="PCM Homes cottage build in Muskoka"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white pt-24">
+      <p class="section-label text-white/80 mb-4">Where We Build</p>
+      <h1 class="text-5xl md:text-7xl font-display font-medium mb-6">
+        Our <span class="italic">Service Areas</span>
+      </h1>
+      <p class="text-xl text-white/80 max-w-2xl mx-auto">
+        Serving communities throughout Ontario with quality construction and exceptional communication.
+      </p>
     </div>
   </section>
 
   <!-- Service Areas Grid -->
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-24 md:py-32 bg-[var(--color-cream)]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-20">
+        <p class="section-label mb-4">Our Regions</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          From Cottage Country<br />
+          <span class="italic">to the City</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <!-- Areas Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Muskoka Lakes -->
-        <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-          <div class="text-5xl mb-4">🏞️</div>
-          <h2 class="text-2xl font-bold text-gray-900 mb-3">Muskoka Lakes</h2>
-          <p class="text-gray-600 mb-4">
-            Specializing in custom cottages and year-round homes in Ontario's premier cottage country destination.
-          </p>
-          <ul class="space-y-2 text-gray-700">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-blue-600 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-              Custom cottages & A-frames
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-blue-600 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-              Year-round builds
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-blue-600 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-              Waterfront expertise
-            </li>
-          </ul>
-        </div>
+        {serviceAreas.map((area, index) => (
+          <div class="group card overflow-hidden hover-lift">
+            <div class="relative h-56 overflow-hidden">
+              <img
+                src={area.image}
+                alt={`PCM Homes project in ${area.name}`}
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div class="absolute bottom-4 left-4">
+                <span class="text-white/70 text-sm">{area.tagline}</span>
+              </div>
+            </div>
+            <div class="p-8">
+              <h3 class="text-2xl font-display text-[var(--color-charcoal)] mb-3">{area.name}</h3>
+              <p class="text-[var(--color-slate)] mb-6 leading-relaxed">{area.description}</p>
+              <ul class="space-y-3">
+                {area.services.map((service) => (
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-[var(--color-timber)] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span class="text-[var(--color-charcoal)]">{service}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
 
-        <!-- Kawartha Lakes -->
-        <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-          <div class="text-5xl mb-4">🌲</div>
-          <h2 class="text-2xl font-bold text-gray-900 mb-3">Kawartha Lakes</h2>
-          <p class="text-gray-600 mb-4">
-            Building beautiful homes and cottages in the heart of the Kawarthas, blending natural beauty with quality craftsmanship.
-          </p>
-          <ul class="space-y-2 text-gray-700">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-blue-600 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-              Cottage construction
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-blue-600 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-              Custom home builds
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-blue-600 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-              Renovations & additions
-            </li>
-          </ul>
-        </div>
-
-        <!-- Durham Region -->
-        <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-          <div class="text-5xl mb-4">🏘️</div>
-          <h2 class="text-2xl font-bold text-gray-900 mb-3">Durham Region</h2>
-          <p class="text-gray-600 mb-4">
-            Comprehensive residential construction services throughout Durham, from custom homes to complete renovations.
-          </p>
-          <ul class="space-y-2 text-gray-700">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-blue-600 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-              Custom residential builds
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-blue-600 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-              ICF construction
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-blue-600 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-              Home additions
-            </li>
-          </ul>
-        </div>
-
-        <!-- York Region -->
-        <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-          <div class="text-5xl mb-4">🏡</div>
-          <h2 class="text-2xl font-bold text-gray-900 mb-3">York Region</h2>
-          <p class="text-gray-600 mb-4">
-            Expert construction services in York Region, delivering exceptional quality for discerning homeowners.
-          </p>
-          <ul class="space-y-2 text-gray-700">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-blue-600 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-              Luxury custom homes
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-blue-600 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-              High-end renovations
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-blue-600 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-              Design-build services
-            </li>
-          </ul>
-        </div>
-
-        <!-- GTA -->
-        <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-          <div class="text-5xl mb-4">🏙️</div>
-          <h2 class="text-2xl font-bold text-gray-900 mb-3">Greater Toronto Area</h2>
-          <p class="text-gray-600 mb-4">
-            Bringing quality construction to the GTA with a focus on precision, communication, and client satisfaction.
-          </p>
-          <ul class="space-y-2 text-gray-700">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-blue-600 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-              Urban renovations
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-blue-600 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-              Custom builds
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-blue-600 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-              Occupied home work
-            </li>
-          </ul>
-        </div>
-
-        <!-- All Cottage Country -->
-        <div class="bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-          <div class="text-5xl mb-4">🌳</div>
-          <h2 class="text-2xl font-bold mb-3">All Cottage Country</h2>
-          <p class="text-blue-100 mb-4">
-            We're expanding our services throughout Ontario's cottage country regions.
-          </p>
-          <ul class="space-y-2 text-blue-50">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-white mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-              Seasonal & year-round
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-white mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-              Flexible travel range
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-white mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-              As far north as needed
-            </li>
-          </ul>
+        <!-- Cottage Country Card -->
+        <div class="card overflow-hidden bg-[var(--color-charcoal)] text-white hover-lift">
+          <div class="p-8 h-full flex flex-col">
+            <div class="mb-6">
+              <div class="w-16 h-16 border border-[var(--color-timber)] flex items-center justify-center mb-6">
+                <svg class="w-8 h-8 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+              <span class="text-[var(--color-timber)] text-sm mb-2 block">Expanding Territory</span>
+              <h3 class="text-2xl font-display mb-3">All Cottage Country</h3>
+            </div>
+            <p class="text-white/70 mb-6 leading-relaxed flex-grow">
+              We're expanding throughout Ontario's cottage country regions. Seasonal or year-round, we'll travel as far as your project needs.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[var(--color-timber)] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-white/90">Seasonal & year-round</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[var(--color-timber)] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-white/90">Flexible travel range</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[var(--color-timber)] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-white/90">As far north as needed</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Coverage Info -->
-  <section class="py-20 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-white rounded-lg shadow-md p-8">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Coverage</h2>
-        <div class="prose prose-lg max-w-none text-gray-700">
-          <p class="mb-4">
-            PCM Homes proudly serves homeowners, designers, and architects throughout Ontario. Our service area includes:
-          </p>
-          <ul class="space-y-2 mb-6">
-            <li><strong>Muskoka Lakes</strong> - Custom cottages and year-round homes</li>
-            <li><strong>Kawartha Lakes</strong> - Residential and cottage construction</li>
-            <li><strong>Durham Region</strong> - Custom homes and renovations</li>
-            <li><strong>York Region</strong> - Luxury builds and high-end renovations</li>
-            <li><strong>Greater Toronto Area (GTA)</strong> - Urban construction services</li>
-          </ul>
-          <p class="mb-4">
-            <strong>How far north do we travel?</strong> As far as necessary to serve your project needs. We specialize in cottage country and are expanding throughout Ontario.
-          </p>
-          <p>
-            <strong>Response time:</strong> We provide quotes in 2-3 days for small renovations, and 1-2 weeks for large renovations, custom builds, and additions.
-          </p>
+  <!-- Coverage Details -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Content -->
+        <div>
+          <p class="section-label mb-4">Our Reach</p>
+          <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+            How Far Do <span class="italic">We Travel?</span>
+          </h2>
+          <div class="divider mb-8"></div>
+
+          <div class="prose-pcm space-y-6">
+            <p>
+              PCM Homes proudly serves homeowners, designers, and architects throughout Ontario. Whether you're building a lakefront cottage in Muskoka or renovating a century home in the GTA, we bring the same commitment to quality and communication.
+            </p>
+            <p>
+              <strong>The short answer?</strong> As far as necessary. We specialize in cottage country and are expanding throughout Ontario to meet the needs of our clients.
+            </p>
+          </div>
+
+          <div class="mt-10 grid grid-cols-2 gap-6">
+            <div class="bg-[var(--color-cream)] p-6">
+              <p class="text-3xl font-display text-[var(--color-charcoal)] mb-2">2-3 Days</p>
+              <p class="text-[var(--color-slate)] text-sm">Quote turnaround for small renovations</p>
+            </div>
+            <div class="bg-[var(--color-cream)] p-6">
+              <p class="text-3xl font-display text-[var(--color-charcoal)] mb-2">1-2 Weeks</p>
+              <p class="text-[var(--color-slate)] text-sm">Quote turnaround for custom builds</p>
+            </div>
+          </div>
         </div>
+
+        <!-- Image Grid -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <div class="img-zoom">
+              <img
+                src="/images/projects/image00003.jpeg"
+                alt="PCM Homes interior craftsmanship"
+                class="w-full aspect-[3/4] object-cover"
+              />
+            </div>
+            <div class="img-zoom">
+              <img
+                src="/images/projects/image00008.jpeg"
+                alt="PCM Homes pool and outdoor living"
+                class="w-full aspect-square object-cover"
+              />
+            </div>
+          </div>
+          <div class="pt-8">
+            <div class="img-zoom">
+              <img
+                src="/images/projects/image00002.jpeg"
+                alt="PCM Homes luxury interior"
+                class="w-full aspect-[3/5] object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Summary -->
+  <section class="py-24 md:py-32 bg-[var(--color-cream)]">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">What We Offer</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Services by <span class="italic">Region</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="border-b-2 border-[var(--color-charcoal)]">
+              <th class="py-4 px-6 text-left font-display text-lg text-[var(--color-charcoal)]">Region</th>
+              <th class="py-4 px-6 text-center font-display text-lg text-[var(--color-charcoal)]">Custom Homes</th>
+              <th class="py-4 px-6 text-center font-display text-lg text-[var(--color-charcoal)]">Cottages</th>
+              <th class="py-4 px-6 text-center font-display text-lg text-[var(--color-charcoal)]">ICF</th>
+              <th class="py-4 px-6 text-center font-display text-lg text-[var(--color-charcoal)]">Renovations</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--color-stone)]/30">
+            {[
+              { region: 'Muskoka Lakes', homes: true, cottages: true, icf: true, renovations: true },
+              { region: 'Kawartha Lakes', homes: true, cottages: true, icf: true, renovations: true },
+              { region: 'Durham Region', homes: true, cottages: false, icf: true, renovations: true },
+              { region: 'York Region', homes: true, cottages: false, icf: true, renovations: true },
+              { region: 'GTA', homes: true, cottages: false, icf: true, renovations: true },
+            ].map((row) => (
+              <tr class="hover:bg-white/50 transition-colors">
+                <td class="py-4 px-6 font-medium text-[var(--color-charcoal)]">{row.region}</td>
+                <td class="py-4 px-6 text-center">
+                  {row.homes ? (
+                    <svg class="w-6 h-6 text-[var(--color-timber)] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  ) : (
+                    <span class="text-[var(--color-stone)]">—</span>
+                  )}
+                </td>
+                <td class="py-4 px-6 text-center">
+                  {row.cottages ? (
+                    <svg class="w-6 h-6 text-[var(--color-timber)] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  ) : (
+                    <span class="text-[var(--color-stone)]">—</span>
+                  )}
+                </td>
+                <td class="py-4 px-6 text-center">
+                  {row.icf ? (
+                    <svg class="w-6 h-6 text-[var(--color-timber)] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  ) : (
+                    <span class="text-[var(--color-stone)]">—</span>
+                  )}
+                </td>
+                <td class="py-4 px-6 text-center">
+                  {row.renovations ? (
+                    <svg class="w-6 h-6 text-[var(--color-timber)] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  ) : (
+                    <span class="text-[var(--color-stone)]">—</span>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">
-        Is Your Location Covered?
+  <section data-hero="dark" class="relative py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/projects/image00007.jpeg"
+        alt="PCM Homes timber frame"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/70"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white">
+      <p class="section-label text-[var(--color-timber)] mb-4">Get Started</p>
+      <h2 class="text-4xl md:text-5xl font-display mb-8">
+        Is Your Location<br />
+        <span class="italic">Covered?</span>
       </h2>
-      <p class="text-xl mb-8 text-blue-100">
-        Contact us to discuss your project location and get a free consultation
+      <p class="text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed">
+        Contact us to discuss your project location and receive a free consultation. We respond to all inquiries within 24 hours.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-          Get in Touch
+        <a href="/contact" class="btn-primary">
+          <span>Request a Quote</span>
         </a>
-        <a href="tel:9057161939" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors">
+        <a href="tel:9057161939" class="btn-secondary border-white text-white hover:bg-white hover:text-[var(--color-charcoal)]">
           Call (905) 716-1939
         </a>
       </div>

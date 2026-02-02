@@ -3,35 +3,79 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+
+const serviceImages: Record<string, string> = {
+  'custom-homes': '/images/projects/image00004.jpeg',
+  'cottages': '/images/projects/image00011.jpeg',
+  'icf-framing': '/images/projects/image00010.jpeg',
+  'renovations': '/images/projects/image00001.jpeg',
+};
 ---
 
 <BaseLayout title="Our Services" description="Comprehensive construction services including custom homes, cottages, ICF construction, and renovations throughout Ontario.">
   <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">
-          Our Services
-        </h1>
-        <p class="text-xl text-blue-100">
-          Comprehensive construction solutions for your home building needs
-        </p>
-      </div>
+  <section data-hero="dark" class="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/projects/image00004.jpeg"
+        alt="PCM Homes custom build"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white pt-24">
+      <p class="section-label text-white/80 mb-4">What We Build</p>
+      <h1 class="text-5xl md:text-7xl font-display font-medium mb-6">
+        Our <span class="italic">Services</span>
+      </h1>
+      <p class="text-xl text-white/80 max-w-2xl mx-auto">
+        Comprehensive construction solutions from concept to completion, delivered with exceptional communication.
+      </p>
     </div>
   </section>
 
   <!-- Services Content -->
-  <section class="py-20">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-24 md:py-32 bg-[var(--color-cream)]">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
       {await Promise.all(services.map(async (service, index) => {
         const { Content } = await service.render();
         const isEven = index % 2 === 0;
+        const imageUrl = serviceImages[service.slug] || '/images/projects/image00001.jpeg';
 
         return (
-          <div id={service.slug} class={`mb-16 scroll-mt-20 ${isEven ? 'bg-white' : 'bg-gray-50'} rounded-lg p-8 shadow-md`}>
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">{service.data.title}</h2>
-            <div class="prose prose-lg max-w-none text-gray-700">
-              <Content />
+          <div id={service.slug} class="scroll-mt-32 mb-32 last:mb-0">
+            <div class={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${!isEven ? 'lg:grid-flow-dense' : ''}`}>
+              <!-- Image -->
+              <div class={`relative ${!isEven ? 'lg:col-start-2' : ''}`}>
+                <div class="img-zoom">
+                  <img
+                    src={imageUrl}
+                    alt={service.data.title}
+                    class="w-full aspect-[4/3] object-cover"
+                  />
+                </div>
+                <div class="absolute -bottom-6 -right-6 bg-[var(--color-charcoal)] text-white p-6">
+                  <span class="text-5xl font-display">{String(index + 1).padStart(2, '0')}</span>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class={!isEven ? 'lg:col-start-1 lg:row-start-1' : ''}>
+                <p class="section-label mb-4">Service {String(index + 1).padStart(2, '0')}</p>
+                <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+                  {service.data.title}
+                </h2>
+                <div class="divider mb-8"></div>
+                <div class="prose-pcm">
+                  <Content />
+                </div>
+                <div class="mt-8">
+                  <a href="/contact" class="btn-primary">
+                    <span>Discuss Your Project</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         );
@@ -40,101 +84,106 @@ const services = (await getCollection('services')).sort((a, b) => a.data.order -
   </section>
 
   <!-- Process Section -->
-  <section class="py-20 bg-blue-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Our Working Process
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-20">
+        <p class="section-label mb-4">How We Work</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Our <span class="italic">Process</span>
         </h2>
-        <p class="text-xl text-gray-600">
-          A streamlined approach to bring your vision to life
-        </p>
+        <div class="divider divider-center"></div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
-        <div class="text-center">
-          <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-            1
-          </div>
-          <h3 class="font-semibold text-lg mb-2">Design Consultation</h3>
-          <p class="text-gray-600">Work with our team to define your vision</p>
-        </div>
+      <!-- Process Steps -->
+      <div class="relative">
+        <!-- Connecting Line -->
+        <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-px bg-[var(--color-timber-light)]"></div>
 
-        <div class="text-center">
-          <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-            2
-          </div>
-          <h3 class="font-semibold text-lg mb-2">Budgeting</h3>
-          <p class="text-gray-600">Transparent pricing and cost planning</p>
-        </div>
-
-        <div class="text-center">
-          <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-            3
-          </div>
-          <h3 class="font-semibold text-lg mb-2">Planning & PM</h3>
-          <p class="text-gray-600">Expert project management coordination</p>
-        </div>
-
-        <div class="text-center">
-          <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-            4
-          </div>
-          <h3 class="font-semibold text-lg mb-2">Build</h3>
-          <p class="text-gray-600">Quality craftsmanship at every stage</p>
-        </div>
-
-        <div class="text-center">
-          <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-            5
-          </div>
-          <h3 class="font-semibold text-lg mb-2">Handover</h3>
-          <p class="text-gray-600">Your completed project, ready to enjoy</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+          {[
+            { num: '01', title: 'Design Consultation', desc: 'We listen to your vision and discuss possibilities' },
+            { num: '02', title: 'Budgeting', desc: 'Transparent pricing with no hidden surprises' },
+            { num: '03', title: 'Planning & PM', desc: 'Expert coordination and permit handling' },
+            { num: '04', title: 'Build', desc: 'Quality craftsmanship at every stage' },
+            { num: '05', title: 'Handover', desc: 'Your completed project, ready to enjoy' },
+          ].map((step) => (
+            <div class="relative text-center">
+              <div class="relative z-10 w-20 h-20 mx-auto mb-6 bg-white border-2 border-[var(--color-timber)] flex items-center justify-center">
+                <span class="text-2xl font-display text-[var(--color-charcoal)]">{step.num}</span>
+              </div>
+              <h3 class="text-lg font-display text-[var(--color-charcoal)] mb-2">{step.title}</h3>
+              <p class="text-[var(--color-slate)] text-sm leading-relaxed">{step.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   </section>
 
   <!-- Credentials Section -->
-  <section class="py-20 bg-white">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold text-gray-900 mb-8">
-        Trusted & Qualified
-      </h2>
+  <section class="py-24 md:py-32 bg-[var(--color-charcoal)]">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <p class="section-label text-[var(--color-timber)] mb-4">Peace of Mind</p>
+        <h2 class="text-4xl md:text-5xl font-display text-white mb-6">
+          Trusted & <span class="italic">Qualified</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <!-- Credentials Grid -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="p-6">
-          <div class="text-4xl mb-3">✓</div>
-          <h3 class="font-semibold text-lg mb-2">Fully Insured</h3>
-          <p class="text-gray-600">Complete coverage for your peace of mind</p>
+        <div class="text-center p-8 border border-white/10">
+          <div class="w-16 h-16 mx-auto mb-6 border border-[var(--color-timber)] flex items-center justify-center">
+            <svg class="w-8 h-8 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-display text-white mb-3">Fully Insured</h3>
+          <p class="text-white/60 leading-relaxed">Complete insurance coverage protecting your investment throughout the build process.</p>
         </div>
-        <div class="p-6">
-          <div class="text-4xl mb-3">⏱️</div>
-          <h3 class="font-semibold text-lg mb-2">9 Years Experience</h3>
-          <p class="text-gray-600">Proven track record of excellence</p>
+
+        <div class="text-center p-8 border border-white/10">
+          <div class="w-16 h-16 mx-auto mb-6 border border-[var(--color-timber)] flex items-center justify-center">
+            <svg class="w-8 h-8 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-display text-white mb-3">9 Years Experience</h3>
+          <p class="text-white/60 leading-relaxed">Nearly a decade of proven excellence in custom home building and renovations.</p>
         </div>
-        <div class="p-6">
-          <div class="text-4xl mb-3">🛡️</div>
-          <h3 class="font-semibold text-lg mb-2">2-Year Warranty</h3>
-          <p class="text-gray-600">Workmanship guarantee on all builds</p>
+
+        <div class="text-center p-8 border border-white/10">
+          <div class="w-16 h-16 mx-auto mb-6 border border-[var(--color-timber)] flex items-center justify-center">
+            <svg class="w-8 h-8 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-display text-white mb-3">2-Year Warranty</h3>
+          <p class="text-white/60 leading-relaxed">Workmanship guarantee on all builds, giving you confidence in our quality.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">
-        Ready to Discuss Your Project?
+  <section class="py-24 md:py-32 bg-[var(--color-cream)] grain-overlay">
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      <p class="section-label mb-4">Get Started</p>
+      <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-8">
+        Ready to Discuss<br />
+        <span class="italic">Your Project?</span>
       </h2>
-      <p class="text-xl mb-8 text-blue-100">
-        Get a free quote and timeline for your construction project
+      <p class="text-xl text-[var(--color-slate)] mb-12 max-w-2xl mx-auto leading-relaxed">
+        Get a free consultation and transparent quote. We respond to small renovation inquiries in 2-3 days, and custom builds in 1-2 weeks.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-          Request a Quote
+        <a href="/contact" class="btn-primary">
+          <span>Request a Quote</span>
         </a>
-        <a href="tel:9057161939" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors">
+        <a href="tel:9057161939" class="btn-secondary">
           Call (905) 716-1939
         </a>
       </div>
