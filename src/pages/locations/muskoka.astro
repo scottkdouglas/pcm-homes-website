@@ -32,65 +32,73 @@ const muskokaAreas = [
 const services = [
   {
     title: "Custom Cottages",
-    description: "From weekend getaways to luxury waterfront retreats. We build cottages designed for how you actually use them.",
+    description: "From weekend getaways to luxury waterfront retreats. We build cottages designed for how you actually use them—not generic plans.",
     icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
   },
   {
     title: "Year-Round Homes",
-    description: "Full-time Muskoka living requires serious building. Proper insulation, reliable heating, municipal or well water systems done right.",
+    description: "Full-time Muskoka living requires serious building. Proper R-40+ insulation, reliable heating, and systems built for -30°C winters.",
     icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
   },
   {
     title: "Cottage Renovations",
-    description: "Bring grandpa's cabin into the 21st century. Structural upgrades, modern kitchens, winterization for year-round use.",
+    description: "Bring grandma's cabin into the 21st century. Structural upgrades, modern kitchens, winterization for year-round use.",
     icon: "M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"
   },
   {
-    title: "Boathouses & Docks",
-    description: "Muskoka living means lake access. We build boathouses that last and docks that handle whatever you throw at them.",
-    icon: "M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"
+    title: "ICF Basements & Foundations",
+    description: "Muskoka's rocky terrain requires solid foundations. We build ICF basements that give you dry, energy-efficient space—even on challenging Shield lots.",
+    icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5"
   }
 ];
 
 const faqs = [
   {
     question: "How much does it cost to build a cottage in Muskoka?",
-    answer: "Expect $350-$600 per square foot for a custom cottage in Muskoka, depending on access, finishes, and lot conditions. A modest 1,200 sq ft cottage runs $420,000-$720,000. Larger waterfront homes with premium finishes can exceed $1M. Water-access-only properties typically add 15-25% due to barge costs and logistics. We provide detailed quotes after seeing your specific lot."
+    answer: "Expect $275-$650 per square foot in Muskoka, depending on quality level. Standard grade runs $275+/sq ft. Mid-range is $410+/sq ft. High-end custom is $645+/sq ft. A 1,500 sq ft cottage typically costs $400,000-$975,000. Water-access-only properties add 15-25% due to barge logistics. Budget an additional 10% for landscaping and custom fixtures. We provide detailed quotes after seeing your specific lot."
   },
   {
-    question: "How long does it take to build in Muskoka?",
-    answer: "Most custom cottages take 8-14 months from permit to move-in. Permits alone can take 3-6 months depending on the township and whether you need variances. The optimal building season runs April through November. We can work through winter, but it adds complexity and cost. Starting permit applications in fall for a spring build is ideal timing."
+    question: "How long does it take to build a cottage in Muskoka?",
+    answer: "Most custom cottages take 8-14 months from permit to move-in. Permits alone take 3-6 months depending on the township and whether you need variances. The optimal building season runs April through November. Pro tip: start in fall instead of summer—trades are more available, and winter work keeps crews busy. Just make sure the cottage is weathertight before snow flies."
   },
   {
     question: "Do you build on water-access-only properties?",
-    answer: "Yes, we've completed several water-access builds. These projects require barge transport for materials, which affects scheduling and costs. We coordinate with local marine services for material delivery. The logistics are more complex, but the results are often worth it for the privacy and pristine locations these properties offer."
+    answer: "Yes, we've completed several water-access builds. These require barge transport for all materials, which affects scheduling and costs. We coordinate with local marine services for delivery. The logistics are more complex, but the privacy and pristine locations often make it worth it. Expect to add 15-25% to your budget for water-access projects."
   },
   {
     question: "What permits do I need to build in Muskoka?",
-    answer: "You'll need a building permit from your local township (Huntsville, Bracebridge, Gravenhurst, Lake of Bays, or Muskoka Lakes). Most waterfront properties also require shoreline development approval from the District of Muskoka. Septic system approval from the Health Unit is required for any new build. We handle all permit applications and know what each township requires."
+    answer: "You'll need: 1) Building permit from your local township (Huntsville, Bracebridge, Gravenhurst, Lake of Bays, or Muskoka Lakes), 2) Shoreline development approval from the District of Muskoka for waterfront properties, 3) Septic system approval from the Health Unit, 4) Conservation authority approval if applicable. Each township has different bylaws—even the three big lakes (Muskoka, Rosseau, Joseph) have different rules. We handle all permit applications."
+  },
+  {
+    question: "What are the shoreline setback requirements in Muskoka?",
+    answer: "Setbacks typically range from 20-30 metres (66-100 feet) from the water's edge, varying by lake and township. Vegetation removal within this zone requires a Development Permit. Shoreline modification is limited to 25% of your frontage or 76 feet, whichever is less. New enclosed boathouses over water are no longer permitted in many areas—existing ones may be grandfathered. Each lake has specific rules, so verify with your township before buying."
   },
   {
     question: "Can you convert a seasonal cottage to year-round?",
-    answer: "Yes, and we do it regularly. Winterizing typically involves upgrading insulation (walls, attic, and foundation), installing a proper heating system, upgrading electrical and plumbing for freeze protection, and sometimes foundation work. The cost depends on the existing structure, but budget $100,000-$250,000 for a full conversion. Sometimes it makes more sense to rebuild entirely."
+    answer: "Yes, and we do it regularly. Winterizing typically involves: upgrading insulation to R-40+ (walls, attic, foundation), installing proper heating systems, upgrading electrical and plumbing for freeze protection, and sometimes foundation work. Budget $100,000-$250,000 for a full conversion. Sometimes demolishing and rebuilding makes more financial sense—we'll give you an honest assessment."
   },
   {
     question: "What's different about building in Muskoka vs the GTA?",
-    answer: "Muskoka builds deal with Canadian Shield bedrock (often requires blasting), tighter shoreline setbacks (typically 30m), well and septic instead of municipal services, seasonal road access, and longer distances for materials and trades. Township permit processes can be slower. We know these nuances from 9 years of building here."
+    answer: "Muskoka builds deal with: Canadian Shield bedrock (often requires blasting, adding $20,000-$50,000+), strict shoreline setbacks (typically 30m), well and septic instead of municipal services ($50,000-$70,000), seasonal road restrictions, and longer distances for materials. Costs run 20-40% higher than rural Ontario. Township permits can be slower. We've been handling these challenges for 9 years."
+  },
+  {
+    question: "How much do septic and well systems cost in Muskoka?",
+    answer: "Septic systems start around $25,000 for a modest 3-bedroom cottage but rise significantly for larger builds or if pump systems are required—budget $25,000-$40,000. Drilled wells typically run $25,000-$30,000. Lake water systems cost about 25% less than wells. Ensure your lot has septic approval before purchasing—some older lots can't meet current requirements."
   },
   {
     question: "Do you work with architects and designers?",
-    answer: "Absolutely. Many clients come with plans from their architect, and we work with several local designers we trust. If you don't have an architect, we can recommend people who understand Muskoka building requirements. We're also happy to work from stock plans or help you develop a design from scratch."
+    answer: "Absolutely. Many clients come with plans from their architect, and we work with several local designers who understand Muskoka building requirements. If you don't have an architect, we can recommend people who know the unique challenges here. We're also happy to work from stock plans or help you develop a design from scratch."
   }
 ];
 ---
 
-<BaseLayout title="Muskoka Cottage Builder | Custom Homes in Huntsville, Bracebridge & Gravenhurst | PCM Homes" description="Custom cottage builder in Muskoka. We build cottages and year-round homes in Huntsville, Bracebridge, Gravenhurst, Port Carling, and Lake of Bays. 9 years experience.">
+<BaseLayout title="Muskoka Cottage Builder | Custom Homes Huntsville, Bracebridge, Gravenhurst" description="Custom cottage builder in Muskoka. Build costs $275-$650/sq ft. Huntsville, Bracebridge, Gravenhurst, Port Carling, Lake of Bays. 9 years experience. Free quotes.">
   <!-- Hero Section -->
   <section data-hero="dark" class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0">
       <img
         src="/images/projects/image00011.jpeg"
-        alt="Custom cottage on Muskoka lake"
+        alt="Custom cottage on Muskoka lake with waterfront view"
         class="w-full h-full object-cover"
       />
       <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
@@ -102,7 +110,7 @@ const faqs = [
         Muskoka <span class="italic">Cottage Builder</span>
       </h1>
       <p class="text-xl text-white/80 max-w-2xl mx-auto mb-10">
-        Building custom cottages and year-round homes across Huntsville, Bracebridge, Gravenhurst, Port Carling, and Lake of Bays.
+        Custom cottages and year-round homes across Huntsville, Bracebridge, Gravenhurst, Port Carling, and Lake of Bays. From $275/sq ft.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/contact" class="btn-primary">
@@ -115,41 +123,131 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Why Muskoka Section -->
+  <!-- Featured Snippet Target: Building in Muskoka -->
   <section class="py-24 md:py-32 bg-[var(--color-cream)]">
-    <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <p class="section-label mb-4">Why Build in Muskoka</p>
-          <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
-            Your Place on <span class="italic">the Lake</span>
-          </h2>
-          <div class="divider mb-8"></div>
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <p class="section-label mb-4">The Basics</p>
+      <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+        Building a Cottage <span class="italic">in Muskoka</span>
+      </h2>
+      <div class="divider mb-10"></div>
 
-          <div class="prose-pcm">
-            <p class="text-lg mb-6">
-              Muskoka has been Ontario's cottage country for over a century. Three major lakes—Muskoka, Rosseau, and Joseph—plus dozens of smaller ones. Rocky shores, old-growth forests, and water clean enough to drink (though we don't recommend it).
-            </p>
-            <p class="mb-6">
-              Building here isn't like building in the suburbs. The Canadian Shield means bedrock close to the surface. Shoreline regulations are strict. Some properties are water-access only. Winter temperatures drop well below -20C.
-            </p>
-            <p>
-              We've been building in Muskoka for 9 years. We know which townships move quickly on permits and which ones don't. We know the reliable suppliers and the trades who show up when they say they will. We know how to build for this climate.
-            </p>
+      <!-- Featured Snippet Box -->
+      <div class="bg-white border-l-4 border-[var(--color-timber)] p-6 md:p-8 mb-10">
+        <p class="text-lg md:text-xl text-[var(--color-charcoal)] leading-relaxed">
+          <strong>Building a cottage in Muskoka costs $275 to $650 per square foot</strong>, depending on quality level—20-40% higher than typical Ontario construction. The premium covers Canadian Shield bedrock (often requiring blasting), strict shoreline setbacks (typically 30 metres), well and septic systems ($50,000-$70,000), and remote material transport. Most builds take 8-14 months from permit to move-in.
+        </p>
+      </div>
+
+      <div class="prose-pcm text-lg">
+        <p class="mb-6">
+          Muskoka has been Ontario's cottage country for over a century. Three major lakes—Muskoka, Rosseau, and Joseph—plus dozens of smaller ones. Rocky shores, old-growth forests, and water clean enough to drink (though we don't recommend it).
+        </p>
+        <p class="mb-6">
+          Building here isn't like building in the suburbs. Bedrock sits close to the surface throughout the Canadian Shield. Shoreline regulations are strict and vary by lake. Some properties are water-access only. Winter temperatures drop below -30°C.
+        </p>
+        <p>
+          We've been building in Muskoka for 9 years. We know which townships move quickly on permits and which ones don't. We know the reliable suppliers and the trades who show up when they say they will. We know how to build for this climate.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost Section with Real Numbers -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">Real Numbers</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Muskoka Building <span class="italic">Costs</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div>
+          <h3 class="font-display text-2xl text-[var(--color-charcoal)] mb-6">Cost Per Square Foot</h3>
+
+          <div class="space-y-6 mb-8">
+            <div class="bg-[var(--color-cream)] p-6">
+              <div class="flex justify-between items-center mb-2">
+                <span class="font-display text-lg text-[var(--color-charcoal)]">Standard Grade</span>
+                <span class="text-[var(--color-timber)] font-display text-xl">$275+/sq ft</span>
+              </div>
+              <p class="text-[var(--color-slate)] text-sm">Quality construction with standard finishes. Good bones, functional design.</p>
+            </div>
+
+            <div class="bg-[var(--color-cream)] p-6">
+              <div class="flex justify-between items-center mb-2">
+                <span class="font-display text-lg text-[var(--color-charcoal)]">Mid-Range</span>
+                <span class="text-[var(--color-timber)] font-display text-xl">$410+/sq ft</span>
+              </div>
+              <p class="text-[var(--color-slate)] text-sm">Upgraded finishes, custom details, quality fixtures. What most clients choose.</p>
+            </div>
+
+            <div class="bg-[var(--color-cream)] p-6">
+              <div class="flex justify-between items-center mb-2">
+                <span class="font-display text-lg text-[var(--color-charcoal)]">High-End Custom</span>
+                <span class="text-[var(--color-timber)] font-display text-xl">$645+/sq ft</span>
+              </div>
+              <p class="text-[var(--color-slate)] text-sm">Premium everything. Custom millwork, designer fixtures, architectural features.</p>
+            </div>
           </div>
+
+          <p class="text-[var(--color-slate)] text-sm">
+            * Architectural design adds 5-20% of project cost. Custom lighting, appliances, and landscaping are typically not included in base estimates. Budget at least 10% for landscaping.
+          </p>
         </div>
 
-        <div class="relative">
-          <div class="img-zoom">
-            <img
-              src="/images/projects/image00005.jpeg"
-              alt="Luxury Muskoka cottage exterior"
-              class="w-full aspect-[4/5] object-cover"
-            />
+        <div>
+          <h3 class="font-display text-2xl text-[var(--color-charcoal)] mb-6">Additional Costs to Budget</h3>
+
+          <div class="space-y-4">
+            <div class="flex justify-between items-center py-4 border-b border-[var(--color-stone)]/20">
+              <span class="text-[var(--color-charcoal)]">Septic System</span>
+              <span class="text-[var(--color-slate)]">$25,000 - $40,000</span>
+            </div>
+            <div class="flex justify-between items-center py-4 border-b border-[var(--color-stone)]/20">
+              <span class="text-[var(--color-charcoal)]">Drilled Well</span>
+              <span class="text-[var(--color-slate)]">$25,000 - $30,000</span>
+            </div>
+            <div class="flex justify-between items-center py-4 border-b border-[var(--color-stone)]/20">
+              <span class="text-[var(--color-charcoal)]">Lake Water System</span>
+              <span class="text-[var(--color-slate)]">$18,000 - $25,000</span>
+            </div>
+            <div class="flex justify-between items-center py-4 border-b border-[var(--color-stone)]/20">
+              <span class="text-[var(--color-charcoal)]">Bedrock Blasting</span>
+              <span class="text-[var(--color-slate)]">$20,000 - $50,000+</span>
+            </div>
+            <div class="flex justify-between items-center py-4 border-b border-[var(--color-stone)]/20">
+              <span class="text-[var(--color-charcoal)]">Water-Access Premium</span>
+              <span class="text-[var(--color-slate)]">+15-25% of total</span>
+            </div>
+            <div class="flex justify-between items-center py-4 border-b border-[var(--color-stone)]/20">
+              <span class="text-[var(--color-charcoal)]">Driveway Entrance Permit</span>
+              <span class="text-[var(--color-slate)]">$500 - $2,000</span>
+            </div>
           </div>
-          <div class="absolute -bottom-6 -left-6 bg-[var(--color-timber)] p-8 text-[var(--color-charcoal)]">
-            <p class="text-4xl font-display mb-1">9+</p>
-            <p class="text-sm font-medium">Years Building<br />in Muskoka</p>
+        </div>
+      </div>
+
+      <div class="mt-16 bg-[var(--color-cream)] p-8 md:p-10">
+        <h3 class="font-display text-2xl text-[var(--color-charcoal)] mb-6">Sample Project Budgets</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <p class="text-[var(--color-timber)] font-display text-4xl mb-2">$400K - $550K</p>
+            <p class="font-display text-lg text-[var(--color-charcoal)] mb-2">1,200 sq ft Seasonal Cottage</p>
+            <p class="text-[var(--color-slate)] text-sm">Standard finishes, accessible lot, 3-season use</p>
+          </div>
+          <div class="text-center">
+            <p class="text-[var(--color-timber)] font-display text-4xl mb-2">$700K - $1M</p>
+            <p class="font-display text-lg text-[var(--color-charcoal)] mb-2">1,800 sq ft Year-Round</p>
+            <p class="text-[var(--color-slate)] text-sm">Mid-range finishes, full winterization, accessible lot</p>
+          </div>
+          <div class="text-center">
+            <p class="text-[var(--color-timber)] font-display text-4xl mb-2">$1.2M+</p>
+            <p class="font-display text-lg text-[var(--color-charcoal)] mb-2">2,500+ sq ft Custom</p>
+            <p class="text-[var(--color-slate)] text-sm">Premium finishes, waterfront, custom design</p>
           </div>
         </div>
       </div>
@@ -157,7 +255,7 @@ const faqs = [
   </section>
 
   <!-- Services in Muskoka -->
-  <section class="py-24 md:py-32 bg-white">
+  <section class="py-24 md:py-32 bg-[var(--color-cream)]">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16">
         <p class="section-label mb-4">What We Build</p>
@@ -183,6 +281,12 @@ const faqs = [
             </p>
           </div>
         ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="/services/icf-construction" class="text-[var(--color-timber)] font-medium hover:underline">
+          Learn more about ICF construction for Muskoka basements →
+        </a>
       </div>
     </div>
   </section>
@@ -245,8 +349,123 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Why Choose PCM -->
+  <!-- Waterfront Regulations Section -->
   <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">What You Need to Know</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Muskoka Waterfront <span class="italic">Regulations</span>
+        </h2>
+        <div class="divider divider-center mb-8"></div>
+        <p class="text-xl text-[var(--color-slate)] max-w-3xl mx-auto">
+          Muskoka's shorelines are heavily regulated to protect water quality and natural landscapes. Here's what you need to know before buying or building.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-[var(--color-cream)] p-8">
+          <h3 class="font-display text-xl text-[var(--color-charcoal)] mb-4">Setback Requirements</h3>
+          <ul class="space-y-3 text-[var(--color-slate)]">
+            <li class="flex items-start gap-3">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Structural setbacks: 20-30 metres (66-100 feet) from water's edge, depending on lake</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Vegetation removal within setback zone requires Development Permit</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Shoreline modification limited to 25% of frontage or 76 feet (whichever is less)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>First 20 metres from water is critical for erosion prevention and fish habitat</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-[var(--color-cream)] p-8">
+          <h3 class="font-display text-xl text-[var(--color-charcoal)] mb-4">Boathouse & Dock Rules</h3>
+          <ul class="space-y-3 text-[var(--color-slate)]">
+            <li class="flex items-start gap-3">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>New enclosed boathouses over water no longer permitted in many areas</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Existing boathouses may be grandfathered—verify before purchasing</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Typically need 300 feet of shoreline frontage for boathouse permit</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>May require MNRF (Ministry of Natural Resources and Forestry) approval</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-[var(--color-cream)] p-8">
+          <h3 class="font-display text-xl text-[var(--color-charcoal)] mb-4">Permits Required</h3>
+          <ul class="space-y-3 text-[var(--color-slate)]">
+            <li class="flex items-start gap-3">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Building permit from local township</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Shoreline development permit from District of Muskoka</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Septic system approval from Health Unit</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Conservation authority approval (if applicable)</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-[var(--color-cream)] p-8">
+          <h3 class="font-display text-xl text-[var(--color-charcoal)] mb-4">Important Warnings</h3>
+          <ul class="space-y-3 text-[var(--color-slate)]">
+            <li class="flex items-start gap-3">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span><strong>Zoning is a minefield</strong>—large lots may still be unbuildable</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Verify septic approval before purchasing any lot</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Each lake has different bylaws—even connected lakes vary</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Check entrance permit requirements before buying</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 bg-[var(--color-charcoal)] p-8 text-center">
+        <p class="text-white text-lg mb-4">
+          <strong>Before you buy land, talk to us.</strong> We can assess buildability and flag potential issues before you sign.
+        </p>
+        <a href="/contact" class="inline-block btn-primary bg-[var(--color-timber)] hover:bg-[var(--color-timber-dark)]">
+          <span>Get a Free Lot Assessment</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose PCM -->
+  <section class="py-24 md:py-32 bg-[var(--color-cream)]">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="order-2 lg:order-1">
@@ -280,7 +499,7 @@ const faqs = [
 
           <div class="space-y-8">
             <div class="flex gap-4">
-              <div class="w-12 h-12 bg-[var(--color-cream)] flex items-center justify-center flex-shrink-0">
+              <div class="w-12 h-12 bg-white flex items-center justify-center flex-shrink-0">
                 <svg class="w-6 h-6 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
                 </svg>
@@ -292,7 +511,7 @@ const faqs = [
             </div>
 
             <div class="flex gap-4">
-              <div class="w-12 h-12 bg-[var(--color-cream)] flex items-center justify-center flex-shrink-0">
+              <div class="w-12 h-12 bg-white flex items-center justify-center flex-shrink-0">
                 <svg class="w-6 h-6 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -305,7 +524,7 @@ const faqs = [
             </div>
 
             <div class="flex gap-4">
-              <div class="w-12 h-12 bg-[var(--color-cream)] flex items-center justify-center flex-shrink-0">
+              <div class="w-12 h-12 bg-white flex items-center justify-center flex-shrink-0">
                 <svg class="w-6 h-6 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                 </svg>
@@ -321,103 +540,7 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Muskoka Building Considerations -->
-  <section class="py-24 md:py-32 bg-[var(--color-cream)] grain-overlay">
-    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <p class="section-label mb-4">What You Need to Know</p>
-        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
-          Building in <span class="italic">Muskoka</span>
-        </h2>
-        <div class="divider divider-center"></div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white p-8">
-          <div class="w-12 h-12 bg-[var(--color-cream)] flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-4">Permits & Approvals</h3>
-          <ul class="space-y-3 text-[var(--color-slate)]">
-            <li class="flex items-start gap-2">
-              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
-              <span>Building permits from local township</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
-              <span>District of Muskoka approvals</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
-              <span>Septic system certification</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
-              <span>Shoreline development permits</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="bg-white p-8">
-          <div class="w-12 h-12 bg-[var(--color-cream)] flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-4">Waterfront Regulations</h3>
-          <ul class="space-y-3 text-[var(--color-slate)]">
-            <li class="flex items-start gap-2">
-              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
-              <span>30m setback requirements typical</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
-              <span>Dock and boathouse restrictions</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
-              <span>Shoreline vegetation requirements</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
-              <span>Site alteration limits</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="bg-white p-8">
-          <div class="w-12 h-12 bg-[var(--color-cream)] flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-4">Seasonal Access</h3>
-          <ul class="space-y-3 text-[var(--color-slate)]">
-            <li class="flex items-start gap-2">
-              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
-              <span>Spring road restrictions (half-loads)</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
-              <span>Winter road maintenance varies</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
-              <span>Barge schedules for water-access</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
-              <span>Optimal build season: April-November</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Project Gallery Preview -->
+  <!-- Project Gallery -->
   <section class="py-24 md:py-32 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16">
@@ -432,7 +555,7 @@ const faqs = [
         <div class="img-zoom relative group lg:col-span-2 lg:row-span-2">
           <img
             src="/images/projects/image00011.jpeg"
-            alt="Custom Muskoka cottage with pool"
+            alt="Custom Muskoka waterfront cottage"
             class="w-full h-full object-cover aspect-square lg:aspect-auto"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -473,8 +596,8 @@ const faqs = [
   </section>
 
   <!-- FAQ Section -->
-  <section class="py-24 md:py-32 bg-[var(--color-cream)] grain-overlay">
-    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8">
+  <section class="py-24 md:py-32 bg-[var(--color-cream)]">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16">
         <p class="section-label mb-4">Common Questions</p>
         <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
@@ -484,7 +607,7 @@ const faqs = [
       </div>
 
       <div class="space-y-4">
-        {faqs.map((faq, index) => (
+        {faqs.map((faq) => (
           <details class="group bg-white border border-[var(--color-stone)]/20">
             <summary class="w-full px-8 py-6 text-left flex justify-between items-center gap-4 cursor-pointer list-none">
               <h3 class="text-lg font-display text-[var(--color-charcoal)] pr-4">{faq.question}</h3>
@@ -506,7 +629,7 @@ const faqs = [
     <div class="absolute inset-0">
       <img
         src="/images/projects/image00005.jpeg"
-        alt="Luxury Muskoka property"
+        alt="Luxury Muskoka waterfront property"
         class="w-full h-full object-cover"
       />
       <div class="absolute inset-0 bg-black/70"></div>
@@ -519,7 +642,7 @@ const faqs = [
         <span class="italic">the Lake?</span>
       </h2>
       <p class="text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed">
-        Get a free consultation and site assessment. We'll discuss your vision, review your property, and give you a realistic timeline and budget.
+        Free consultation and site assessment. We'll discuss your vision, review your property, and give you a realistic timeline and budget.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
         <a href="/contact" class="btn-primary bg-[var(--color-timber)] hover:bg-[var(--color-timber-dark)]">
@@ -560,8 +683,9 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Structured Data for SEO -->
-  <script type="application/ld+json" set:html={JSON.stringify({
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "PCM Homes - Muskoka Cottage Builder",
@@ -577,22 +701,90 @@ const faqs = [
       { "@type": "Place", "name": "Port Carling, Ontario" },
       { "@type": "Place", "name": "Lake of Bays, Ontario" }
     ],
-    "serviceType": ["Custom Cottage Building", "Year-Round Home Construction", "Cottage Renovation", "Boathouse Construction"],
+    "serviceType": ["Custom Cottage Building", "Year-Round Home Construction", "Cottage Renovation", "ICF Basement Construction"],
     "priceRange": "$$$$",
     "openingHours": "Mo-Fr 08:00-18:00"
-  })} />
+  }
+  </script>
 
-  <!-- FAQ Structured Data -->
-  <script type="application/ld+json" set:html={JSON.stringify({
+  <script type="application/ld+json">
+  {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does it cost to build a cottage in Muskoka?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Expect $275-$650 per square foot in Muskoka, depending on quality level. Standard grade runs $275+/sq ft. Mid-range is $410+/sq ft. High-end custom is $645+/sq ft. A 1,500 sq ft cottage typically costs $400,000-$975,000."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to build a cottage in Muskoka?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most custom cottages take 8-14 months from permit to move-in. Permits alone take 3-6 months depending on the township. The optimal building season runs April through November."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you build on water-access-only properties?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we've completed several water-access builds. These require barge transport for all materials, which adds 15-25% to your budget. We coordinate with local marine services for delivery."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What permits do I need to build in Muskoka?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You'll need: 1) Building permit from your local township, 2) Shoreline development approval from the District of Muskoka for waterfront properties, 3) Septic system approval from the Health Unit, 4) Conservation authority approval if applicable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the shoreline setback requirements in Muskoka?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Setbacks typically range from 20-30 metres (66-100 feet) from the water's edge, varying by lake and township. Shoreline modification is limited to 25% of your frontage or 76 feet, whichever is less."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you convert a seasonal cottage to year-round?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, and we do it regularly. Winterizing typically involves upgrading insulation to R-40+, installing proper heating systems, and upgrading electrical and plumbing for freeze protection. Budget $100,000-$250,000 for a full conversion."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's different about building in Muskoka vs the GTA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Muskoka builds deal with: Canadian Shield bedrock (often requires blasting, adding $20,000-$50,000+), strict shoreline setbacks (typically 30m), well and septic instead of municipal services ($50,000-$70,000), and seasonal road restrictions. Costs run 20-40% higher than rural Ontario."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much do septic and well systems cost in Muskoka?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Septic systems start around $25,000 for a modest 3-bedroom cottage but can rise to $40,000+ for larger builds. Drilled wells typically run $25,000-$30,000. Lake water systems cost about 25% less than wells."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you work with architects and designers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Many clients come with plans from their architect, and we work with several local designers who understand Muskoka building requirements. We can also recommend people who know the unique challenges here."
+        }
       }
-    }))
-  })} />
+    ]
+  }
+  </script>
 </BaseLayout>
