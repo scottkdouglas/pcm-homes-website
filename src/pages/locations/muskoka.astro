@@ -1,0 +1,598 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const muskokaAreas = [
+  {
+    name: "Huntsville",
+    highlight: "Northern Muskoka",
+    description: "Gateway to Algonquin. Lake of Bays and Peninsula Lake access. Growing year-round community with strong infrastructure."
+  },
+  {
+    name: "Bracebridge",
+    highlight: "Central Hub",
+    description: "Heart of Muskoka. Easy access to all three big lakes. Best balance of amenities and cottage country feel."
+  },
+  {
+    name: "Gravenhurst",
+    highlight: "Southern Gateway",
+    description: "Closest to Toronto. Lake Muskoka shoreline. Established cottage community with excellent services."
+  },
+  {
+    name: "Port Carling",
+    highlight: "The Hub",
+    description: "Where the big three lakes connect. Premium waterfront. Historic cottage country character."
+  },
+  {
+    name: "Lake of Bays",
+    highlight: "Northern Lakes",
+    description: "Quieter, less crowded. Pristine water quality. Ideal for those seeking privacy and natural beauty."
+  }
+];
+
+const services = [
+  {
+    title: "Custom Cottages",
+    description: "From weekend getaways to luxury waterfront retreats. We build cottages designed for how you actually use them.",
+    icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+  },
+  {
+    title: "Year-Round Homes",
+    description: "Full-time Muskoka living requires serious building. Proper insulation, reliable heating, municipal or well water systems done right.",
+    icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+  },
+  {
+    title: "Cottage Renovations",
+    description: "Bring grandpa's cabin into the 21st century. Structural upgrades, modern kitchens, winterization for year-round use.",
+    icon: "M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"
+  },
+  {
+    title: "Boathouses & Docks",
+    description: "Muskoka living means lake access. We build boathouses that last and docks that handle whatever you throw at them.",
+    icon: "M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"
+  }
+];
+
+const faqs = [
+  {
+    question: "How much does it cost to build a cottage in Muskoka?",
+    answer: "Expect $350-$600 per square foot for a custom cottage in Muskoka, depending on access, finishes, and lot conditions. A modest 1,200 sq ft cottage runs $420,000-$720,000. Larger waterfront homes with premium finishes can exceed $1M. Water-access-only properties typically add 15-25% due to barge costs and logistics. We provide detailed quotes after seeing your specific lot."
+  },
+  {
+    question: "How long does it take to build in Muskoka?",
+    answer: "Most custom cottages take 8-14 months from permit to move-in. Permits alone can take 3-6 months depending on the township and whether you need variances. The optimal building season runs April through November. We can work through winter, but it adds complexity and cost. Starting permit applications in fall for a spring build is ideal timing."
+  },
+  {
+    question: "Do you build on water-access-only properties?",
+    answer: "Yes, we've completed several water-access builds. These projects require barge transport for materials, which affects scheduling and costs. We coordinate with local marine services for material delivery. The logistics are more complex, but the results are often worth it for the privacy and pristine locations these properties offer."
+  },
+  {
+    question: "What permits do I need to build in Muskoka?",
+    answer: "You'll need a building permit from your local township (Huntsville, Bracebridge, Gravenhurst, Lake of Bays, or Muskoka Lakes). Most waterfront properties also require shoreline development approval from the District of Muskoka. Septic system approval from the Health Unit is required for any new build. We handle all permit applications and know what each township requires."
+  },
+  {
+    question: "Can you convert a seasonal cottage to year-round?",
+    answer: "Yes, and we do it regularly. Winterizing typically involves upgrading insulation (walls, attic, and foundation), installing a proper heating system, upgrading electrical and plumbing for freeze protection, and sometimes foundation work. The cost depends on the existing structure, but budget $100,000-$250,000 for a full conversion. Sometimes it makes more sense to rebuild entirely."
+  },
+  {
+    question: "What's different about building in Muskoka vs the GTA?",
+    answer: "Muskoka builds deal with Canadian Shield bedrock (often requires blasting), tighter shoreline setbacks (typically 30m), well and septic instead of municipal services, seasonal road access, and longer distances for materials and trades. Township permit processes can be slower. We know these nuances from 9 years of building here."
+  },
+  {
+    question: "Do you work with architects and designers?",
+    answer: "Absolutely. Many clients come with plans from their architect, and we work with several local designers we trust. If you don't have an architect, we can recommend people who understand Muskoka building requirements. We're also happy to work from stock plans or help you develop a design from scratch."
+  }
+];
+---
+
+<BaseLayout title="Muskoka Cottage Builder | Custom Homes in Huntsville, Bracebridge & Gravenhurst | PCM Homes" description="Custom cottage builder in Muskoka. We build cottages and year-round homes in Huntsville, Bracebridge, Gravenhurst, Port Carling, and Lake of Bays. 9 years experience.">
+  <!-- Hero Section -->
+  <section data-hero="dark" class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/projects/image00011.jpeg"
+        alt="Custom cottage on Muskoka lake"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white pt-24">
+      <p class="section-label text-white/80 mb-4">Cottage Country Experts</p>
+      <h1 class="text-5xl md:text-7xl font-display font-medium mb-6">
+        Muskoka <span class="italic">Cottage Builder</span>
+      </h1>
+      <p class="text-xl text-white/80 max-w-2xl mx-auto mb-10">
+        Building custom cottages and year-round homes across Huntsville, Bracebridge, Gravenhurst, Port Carling, and Lake of Bays.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary">
+          <span>Start Your Muskoka Project</span>
+        </a>
+        <a href="tel:9057161939" class="btn-secondary border-white text-white hover:bg-white hover:text-[var(--color-charcoal)]">
+          Call (905) 716-1939
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Muskoka Section -->
+  <section class="py-24 md:py-32 bg-[var(--color-cream)]">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="section-label mb-4">Why Build in Muskoka</p>
+          <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+            Your Place on <span class="italic">the Lake</span>
+          </h2>
+          <div class="divider mb-8"></div>
+
+          <div class="prose-pcm">
+            <p class="text-lg mb-6">
+              Muskoka has been Ontario's cottage country for over a century. Three major lakes—Muskoka, Rosseau, and Joseph—plus dozens of smaller ones. Rocky shores, old-growth forests, and water clean enough to drink (though we don't recommend it).
+            </p>
+            <p class="mb-6">
+              Building here isn't like building in the suburbs. The Canadian Shield means bedrock close to the surface. Shoreline regulations are strict. Some properties are water-access only. Winter temperatures drop well below -20C.
+            </p>
+            <p>
+              We've been building in Muskoka for 9 years. We know which townships move quickly on permits and which ones don't. We know the reliable suppliers and the trades who show up when they say they will. We know how to build for this climate.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="img-zoom">
+            <img
+              src="/images/projects/image00005.jpeg"
+              alt="Luxury Muskoka cottage exterior"
+              class="w-full aspect-[4/5] object-cover"
+            />
+          </div>
+          <div class="absolute -bottom-6 -left-6 bg-[var(--color-timber)] p-8 text-[var(--color-charcoal)]">
+            <p class="text-4xl font-display mb-1">9+</p>
+            <p class="text-sm font-medium">Years Building<br />in Muskoka</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services in Muskoka -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">What We Build</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Muskoka <span class="italic">Services</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {services.map((service) => (
+          <div class="card p-8 hover-lift group">
+            <div class="w-14 h-14 border border-[var(--color-timber)] flex items-center justify-center mb-6 group-hover:bg-[var(--color-timber)] transition-colors">
+              <svg class="w-7 h-7 text-[var(--color-timber)] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={service.icon}></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-display text-[var(--color-charcoal)] mb-3 group-hover:text-[var(--color-timber)] transition-colors">
+              {service.title}
+            </h3>
+            <p class="text-[var(--color-slate)] leading-relaxed">
+              {service.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas We Serve -->
+  <section class="py-24 md:py-32 bg-[var(--color-charcoal)]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label text-[var(--color-timber)] mb-4">Areas We Serve</p>
+        <h2 class="text-4xl md:text-5xl font-display text-white mb-6">
+          Throughout <span class="italic">Muskoka</span>
+        </h2>
+        <div class="divider divider-center"></div>
+        <p class="text-white/70 max-w-2xl mx-auto mt-6">
+          We build across the District of Muskoka—from the southern gateway towns to the northern reaches of Lake of Bays.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {muskokaAreas.map((area) => (
+          <div class="bg-white/5 border border-white/10 p-8 hover:border-[var(--color-timber)] transition-colors">
+            <span class="text-[var(--color-timber)] text-xs uppercase tracking-widest mb-3 block">{area.highlight}</span>
+            <h3 class="text-2xl font-display text-white mb-4">{area.name}</h3>
+            <p class="text-white/60 leading-relaxed">{area.description}</p>
+          </div>
+        ))}
+
+        <!-- Lakes Card -->
+        <div class="bg-[var(--color-timber)] p-8">
+          <span class="text-white/80 text-xs uppercase tracking-widest mb-3 block">Major Lakes</span>
+          <h3 class="text-2xl font-display text-white mb-4">The Big Three & Beyond</h3>
+          <ul class="space-y-2 text-white/90">
+            <li class="flex items-center gap-2">
+              <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+              Lake Muskoka
+            </li>
+            <li class="flex items-center gap-2">
+              <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+              Lake Rosseau
+            </li>
+            <li class="flex items-center gap-2">
+              <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+              Lake Joseph
+            </li>
+            <li class="flex items-center gap-2">
+              <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+              Lake of Bays
+            </li>
+            <li class="flex items-center gap-2">
+              <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+              Skeleton Lake
+            </li>
+            <li class="flex items-center gap-2">
+              <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+              Peninsula Lake
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose PCM -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="order-2 lg:order-1">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-4">
+              <div class="img-zoom">
+                <img src="/images/projects/image00003.jpeg" alt="PCM Homes interior craftsmanship" class="w-full aspect-square object-cover" />
+              </div>
+              <div class="img-zoom">
+                <img src="/images/projects/image00009.jpeg" alt="Open concept cottage living" class="w-full aspect-[3/4] object-cover" />
+              </div>
+            </div>
+            <div class="space-y-4 pt-12">
+              <div class="img-zoom">
+                <img src="/images/projects/image00007.jpeg" alt="Timber frame details" class="w-full aspect-[3/4] object-cover" />
+              </div>
+              <div class="img-zoom">
+                <img src="/images/projects/image00008.jpeg" alt="Waterfront property" class="w-full aspect-square object-cover" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-1 lg:order-2">
+          <p class="section-label mb-4">The PCM Difference</p>
+          <h2 class="text-4xl md:text-5xl font-display mb-8 text-[var(--color-charcoal)]">
+            Why Choose PCM<br />
+            <span class="italic">for Muskoka</span>
+          </h2>
+          <div class="divider mb-8"></div>
+
+          <div class="space-y-8">
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-[var(--color-cream)] flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-2">We Actually Communicate</h3>
+                <p class="text-[var(--color-slate)]">Weekly updates with photos. We answer our phone. When something changes, you know about it the same day—not three weeks later.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-[var(--color-cream)] flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-2">We Know Muskoka</h3>
+                <p class="text-[var(--color-slate)]">9 years building on these lakes. We know which townships move fast, which suppliers are reliable, and how to handle Canadian Shield terrain.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-[var(--color-cream)] flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-2">Fully Protected</h3>
+                <p class="text-[var(--color-slate)]">Fully insured, Tarion registered, with a 2-year warranty. Your investment is protected from first shovel to final walkthrough.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Muskoka Building Considerations -->
+  <section class="py-24 md:py-32 bg-[var(--color-cream)] grain-overlay">
+    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">What You Need to Know</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Building in <span class="italic">Muskoka</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8">
+          <div class="w-12 h-12 bg-[var(--color-cream)] flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-4">Permits & Approvals</h3>
+          <ul class="space-y-3 text-[var(--color-slate)]">
+            <li class="flex items-start gap-2">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Building permits from local township</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>District of Muskoka approvals</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Septic system certification</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Shoreline development permits</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-8">
+          <div class="w-12 h-12 bg-[var(--color-cream)] flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-4">Waterfront Regulations</h3>
+          <ul class="space-y-3 text-[var(--color-slate)]">
+            <li class="flex items-start gap-2">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>30m setback requirements typical</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Dock and boathouse restrictions</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Shoreline vegetation requirements</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Site alteration limits</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-8">
+          <div class="w-12 h-12 bg-[var(--color-cream)] flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-4">Seasonal Access</h3>
+          <ul class="space-y-3 text-[var(--color-slate)]">
+            <li class="flex items-start gap-2">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Spring road restrictions (half-loads)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Winter road maintenance varies</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Barge schedules for water-access</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <div class="w-1.5 h-1.5 bg-[var(--color-timber)] rounded-full mt-2 flex-shrink-0"></div>
+              <span>Optimal build season: April-November</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Gallery Preview -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">Our Work</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Muskoka <span class="italic">Projects</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="img-zoom relative group lg:col-span-2 lg:row-span-2">
+          <img
+            src="/images/projects/image00011.jpeg"
+            alt="Custom Muskoka cottage with pool"
+            class="w-full h-full object-cover aspect-square lg:aspect-auto"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <span class="text-[var(--color-timber)] text-xs uppercase tracking-widest">Custom Cottage</span>
+              <p class="text-white font-display text-lg mt-1">Waterfront Build</p>
+            </div>
+          </div>
+        </div>
+        <div class="img-zoom relative group">
+          <img
+            src="/images/projects/image00006.jpeg"
+            alt="Open concept cottage kitchen"
+            class="w-full h-full object-cover aspect-[4/3]"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <span class="text-[var(--color-timber)] text-xs uppercase tracking-widest">Interior</span>
+              <p class="text-white font-display text-lg mt-1">Cottage Kitchen</p>
+            </div>
+          </div>
+        </div>
+        <div class="img-zoom relative group">
+          <img
+            src="/images/projects/image00007.jpeg"
+            alt="Timber frame construction"
+            class="w-full h-full object-cover aspect-[4/3]"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <span class="text-[var(--color-timber)] text-xs uppercase tracking-widest">Timber Frame</span>
+              <p class="text-white font-display text-lg mt-1">Custom Details</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-24 md:py-32 bg-[var(--color-cream)] grain-overlay">
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">Common Questions</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Muskoka Building <span class="italic">FAQ</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq, index) => (
+          <details class="group bg-white border border-[var(--color-stone)]/20">
+            <summary class="w-full px-8 py-6 text-left flex justify-between items-center gap-4 cursor-pointer list-none">
+              <h3 class="text-lg font-display text-[var(--color-charcoal)] pr-4">{faq.question}</h3>
+              <svg class="w-6 h-6 text-[var(--color-timber)] flex-shrink-0 group-open:rotate-45 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+              </svg>
+            </summary>
+            <div class="px-8 pb-6">
+              <p class="text-[var(--color-slate)] leading-relaxed">{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section data-hero="dark" class="relative py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/projects/image00005.jpeg"
+        alt="Luxury Muskoka property"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/70"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white">
+      <p class="section-label text-[var(--color-timber)] mb-4">Start Your Muskoka Project</p>
+      <h2 class="text-4xl md:text-5xl font-display mb-8">
+        Ready to Build on<br />
+        <span class="italic">the Lake?</span>
+      </h2>
+      <p class="text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed">
+        Get a free consultation and site assessment. We'll discuss your vision, review your property, and give you a realistic timeline and budget.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <a href="/contact" class="btn-primary bg-[var(--color-timber)] hover:bg-[var(--color-timber-dark)]">
+          <span>Request Your Free Quote</span>
+        </a>
+        <a href="tel:9057161939" class="btn-secondary border-white text-white hover:bg-white hover:text-[var(--color-charcoal)]">
+          Call (905) 716-1939
+        </a>
+      </div>
+
+      <!-- Trust Signals -->
+      <div class="flex flex-wrap justify-center gap-8 md:gap-12 text-white/60 text-sm">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>Fully Insured</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>2-Year Warranty</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>Tarion Registered</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>9 Years Experience</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "PCM Homes - Muskoka Cottage Builder",
+    "description": "Custom cottage builder serving Muskoka including Huntsville, Bracebridge, Gravenhurst, Port Carling, and Lake of Bays. 9 years of experience building cottages and year-round homes.",
+    "url": "https://pcmhomes.ca/locations/muskoka",
+    "telephone": "+1-905-716-1939",
+    "email": "info.pcmhomes@gmail.com",
+    "areaServed": [
+      { "@type": "Place", "name": "Muskoka, Ontario" },
+      { "@type": "Place", "name": "Huntsville, Ontario" },
+      { "@type": "Place", "name": "Bracebridge, Ontario" },
+      { "@type": "Place", "name": "Gravenhurst, Ontario" },
+      { "@type": "Place", "name": "Port Carling, Ontario" },
+      { "@type": "Place", "name": "Lake of Bays, Ontario" }
+    ],
+    "serviceType": ["Custom Cottage Building", "Year-Round Home Construction", "Cottage Renovation", "Boathouse Construction"],
+    "priceRange": "$$$$",
+    "openingHours": "Mo-Fr 08:00-18:00"
+  })} />
+
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  })} />
+</BaseLayout>
