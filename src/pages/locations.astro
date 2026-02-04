@@ -8,6 +8,7 @@ const serviceAreas = [
     description: 'Custom cottages and year-round homes in Ontario\'s most sought-after destination. Waterfront builds, A-frames, and luxury retreats.',
     services: ['Custom cottages & A-frames', 'Year-round builds', 'Waterfront expertise'],
     image: '/images/projects/image00011.jpeg',
+    link: '/locations/muskoka',
   },
   {
     name: 'Kawartha Lakes',
@@ -15,6 +16,7 @@ const serviceAreas = [
     description: 'Beautiful homes and cottages in the heart of the Kawarthas, where natural beauty meets quality craftsmanship.',
     services: ['Cottage construction', 'Custom home builds', 'Renovations & additions'],
     image: '/images/projects/image00009.jpeg',
+    link: null,
   },
   {
     name: 'Durham Region',
@@ -22,6 +24,7 @@ const serviceAreas = [
     description: 'Comprehensive residential construction throughout Durham. From ICF foundations to complete custom homes.',
     services: ['Custom residential builds', 'ICF construction', 'Home additions'],
     image: '/images/projects/image00004.jpeg',
+    link: null,
   },
   {
     name: 'York Region',
@@ -29,6 +32,7 @@ const serviceAreas = [
     description: 'Expert construction for discerning homeowners seeking exceptional quality and design-forward thinking.',
     services: ['Luxury custom homes', 'High-end renovations', 'Design-build services'],
     image: '/images/projects/image00001.jpeg',
+    link: null,
   },
   {
     name: 'Greater Toronto Area',
@@ -36,6 +40,7 @@ const serviceAreas = [
     description: 'Bringing quality construction to the GTA with a focus on precision, communication, and working respectfully in occupied homes.',
     services: ['Urban renovations', 'Custom builds', 'Occupied home work'],
     image: '/images/projects/image00006.jpeg',
+    link: null,
   },
 ];
 ---
@@ -78,35 +83,51 @@ const serviceAreas = [
 
       <!-- Areas Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {serviceAreas.map((area, index) => (
-          <div class="group card overflow-hidden hover-lift">
-            <div class="relative h-56 overflow-hidden">
-              <img
-                src={area.image}
-                alt={`PCM Homes project in ${area.name}`}
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              <div class="absolute bottom-4 left-4">
-                <span class="text-white/70 text-sm">{area.tagline}</span>
+        {serviceAreas.map((area, index) => {
+          const CardWrapper = area.link ? 'a' : 'div';
+          const cardProps = area.link ? { href: area.link } : {};
+          return (
+            <CardWrapper {...cardProps} class="group card overflow-hidden hover-lift block">
+              <div class="relative h-56 overflow-hidden">
+                <img
+                  src={area.image}
+                  alt={`PCM Homes project in ${area.name}`}
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute bottom-4 left-4">
+                  <span class="text-white/70 text-sm">{area.tagline}</span>
+                </div>
               </div>
-            </div>
-            <div class="p-8">
-              <h3 class="text-2xl font-display text-[var(--color-charcoal)] mb-3">{area.name}</h3>
-              <p class="text-[var(--color-slate)] mb-6 leading-relaxed">{area.description}</p>
-              <ul class="space-y-3">
-                {area.services.map((service) => (
-                  <li class="flex items-start gap-3">
-                    <svg class="w-5 h-5 text-[var(--color-timber)] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              <div class="p-8">
+                <div class="flex items-center justify-between mb-3">
+                  <h3 class="text-2xl font-display text-[var(--color-charcoal)]">{area.name}</h3>
+                  {area.link && (
+                    <svg class="w-5 h-5 text-[var(--color-timber)] group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                     </svg>
-                    <span class="text-[var(--color-charcoal)]">{service}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        ))}
+                  )}
+                </div>
+                <p class="text-[var(--color-slate)] mb-6 leading-relaxed">{area.description}</p>
+                <ul class="space-y-3">
+                  {area.services.map((service) => (
+                    <li class="flex items-start gap-3">
+                      <svg class="w-5 h-5 text-[var(--color-timber)] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <span class="text-[var(--color-charcoal)]">{service}</span>
+                    </li>
+                  ))}
+                </ul>
+                {area.link && (
+                  <p class="mt-6 text-[var(--color-timber)] font-medium text-sm uppercase tracking-wide">
+                    View Full Guide →
+                  </p>
+                )}
+              </div>
+            </CardWrapper>
+          );
+        })}
 
         <!-- Cottage Country Card -->
         <div class="card overflow-hidden bg-[var(--color-charcoal)] text-white hover-lift">
