@@ -29,7 +29,7 @@ Yes, we work on occupied homes! We understand the importance of minimizing disru
 - **Attention to Detail** - From structure to finish, we focus on quality
 - **Project Management** - Coordinated scheduling and skilled craftsmanship
 
-### Quote Turnaround
+### Response Times
 
 - Small renovations: 2-3 days
 - Large renovations/additions: 1-2 weeks

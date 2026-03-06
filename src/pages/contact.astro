@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Contact Us" description="Get in touch with PCM Homes for a free quote. Call (905) 716-1939 or email info.pcmhomes@gmail.com.">
+<BaseLayout title="Contact Us" description="Tell us about your project. PCM Homes builds custom homes, cottages, and renovations across Ontario. Call (905) 716-1939 or fill out our form.">
   <!-- Hero Section -->
   <section class="pt-32 pb-16 bg-[var(--color-cream)]">
     <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
@@ -23,8 +23,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- Contact Form -->
         <div class="lg:col-span-3">
           <div class="bg-white p-8 md:p-12">
-            <h2 class="text-3xl font-display text-[var(--color-charcoal)] mb-2">Request a Free Quote</h2>
-            <p class="text-[var(--color-slate)] mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
+            <h2 class="text-3xl font-display text-[var(--color-charcoal)] mb-2">Tell Us About Your Project</h2>
+            <p class="text-[var(--color-slate)] mb-8">Fill out the form below and we'll get back to you within 24-48 hours.</p>
 
             <form id="contact-form" class="space-y-6">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -144,11 +144,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 type="submit"
                 class="w-full btn-primary py-4"
               >
-                <span>Send Quote Request</span>
+                <span>Send Project Details</span>
               </button>
 
               <p class="text-sm text-[var(--color-stone)] text-center">
-                * Required fields. We respond within 24 hours.
+                * Required fields. We respond within 24-48 hours.
               </p>
             </form>
 
@@ -185,7 +185,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <div>
                   <p class="text-white/60 text-sm mb-1">Email</p>
                   <p class="text-lg group-hover:text-[var(--color-timber)] transition-colors break-all">info.pcmhomes@gmail.com</p>
-                  <p class="text-white/40 text-sm mt-1">For estimates and quotes</p>
+                  <p class="text-white/40 text-sm mt-1">For project inquiries</p>
                 </div>
               </a>
 
@@ -207,7 +207,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
           <!-- Response Times -->
           <div class="bg-white p-8">
-            <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-6">Quote Response Times</h3>
+            <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-6">Response Times</h3>
             <div class="space-y-4">
               {[
                 { time: '2-3 days', project: 'Small Renovations' },
@@ -253,7 +253,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         {[
           { title: 'Call or Text', desc: 'Quick questions? Give us a call or send a text', action: '(905) 716-1939', href: 'tel:9057161939', icon: 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z' },
           { title: 'Email', desc: 'Send us detailed project information', action: 'info.pcmhomes@gmail.com', href: 'mailto:info.pcmhomes@gmail.com', icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' },
-          { title: 'Request Quote', desc: 'Fill out our form for a detailed response', action: 'Form Above', href: '#contact-form', icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
+          { title: 'Tell Us About Your Project', desc: 'Fill out our form for a detailed response', action: 'Form Above', href: '#contact-form', icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
         ].map((method) => (
           <a href={method.href} class="card p-8 text-center hover-lift group">
             <div class="w-16 h-16 mx-auto mb-6 border border-[var(--color-timber)] flex items-center justify-center group-hover:bg-[var(--color-timber)] transition-colors">
@@ -294,7 +294,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         if (response.ok) {
           formMessage.className = 'mt-6 p-6 bg-[var(--color-timber-light)]/30 text-[var(--color-charcoal)]';
-          formMessage.innerHTML = '<strong>Thank you!</strong> We\'ve received your message and will respond within 24 hours.';
+          formMessage.innerHTML = '<strong>Thank you!</strong> We\'ve received your project details and will respond within 24-48 hours.';
           formMessage.classList.remove('hidden');
           form.reset();
         } else {
