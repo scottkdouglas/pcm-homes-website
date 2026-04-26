@@ -166,7 +166,10 @@ const serviceImages: Record<string, string> = {
         <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
           Our <span class="italic">Process</span>
         </h2>
-        <div class="divider divider-center"></div>
+        <div class="divider divider-center mb-8"></div>
+        <p class="text-lg text-[var(--color-slate)] max-w-2xl mx-auto">
+          Your contract is signed before deep planning begins, so the time and money you invest with us is protected from day one.
+        </p>
       </div>
 
       <!-- Process Steps -->
@@ -176,11 +179,11 @@ const serviceImages: Record<string, string> = {
 
         <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {[
-            { num: '01', title: 'Design Consultation', desc: 'We listen to your vision and discuss possibilities' },
-            { num: '02', title: 'Budgeting', desc: 'Transparent pricing with no hidden surprises' },
-            { num: '03', title: 'Planning & PM', desc: 'Expert coordination and permit handling' },
-            { num: '04', title: 'Build', desc: 'Quality craftsmanship at every stage' },
-            { num: '05', title: 'Handover', desc: 'Your completed project, ready to enjoy' },
+            { num: '01', title: 'Planning & Design', desc: 'Your vision turned into a buildable plan' },
+            { num: '02', title: 'Pre-Construction & Budgeting', desc: 'Budget, permits, and contract signed before construction' },
+            { num: '03', title: 'Construction', desc: 'Foundation to finishes, built by our in-house crew' },
+            { num: '04', title: 'Project Management & Monitoring', desc: 'Schedule, quality, and changes tracked through the build' },
+            { num: '05', title: 'Handover & Closeout', desc: 'Walkthrough, warranty, documents, and keys' },
           ].map((step) => (
             <div class="relative text-center">
               <div class="relative z-10 w-20 h-20 mx-auto mb-6 bg-white border-2 border-[var(--color-timber)] flex items-center justify-center">

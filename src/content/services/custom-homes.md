@@ -10,11 +10,13 @@ Build your dream home exactly how you envision it. At PCM Homes, we specialize i
 
 ### Our Process
 
-1. **Design Consultation** - Work with our team to bring your vision to life
-2. **Budgeting** - Transparent pricing and cost planning
-3. **Planning & Project Management** - Expert coordination from start to finish
-4. **Build** - Quality craftsmanship at every stage
-5. **Handover** - Your dream home, ready to move in
+Your contract is signed before deep planning begins, so the time and money you invest with us is protected from day one.
+
+1. **Planning & Design** - Your vision turned into a buildable plan
+2. **Pre-Construction & Budgeting** - Budget, permits, and contract signed before construction
+3. **Construction** - Foundation to finishes, built by our in-house crew
+4. **Project Management & Monitoring** - Schedule, quality, and changes tracked through the build
+5. **Handover & Closeout** - Walkthrough, warranty, documents, and keys
 
 ### Timeline
 
