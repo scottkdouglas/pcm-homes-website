@@ -1,0 +1,261 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const durhamAreas = [
+  {
+    name: "Pickering & Ajax",
+    highlight: "Western Durham",
+    description: "Established neighbourhoods with strong renovation demand. Lakeshore properties, mature lots, growing infill opportunity."
+  },
+  {
+    name: "Whitby",
+    highlight: "Central Durham",
+    description: "Family-oriented neighbourhoods, growing custom home market, mix of new development and renovation work."
+  },
+  {
+    name: "Oshawa",
+    highlight: "Largest City",
+    description: "Diverse housing stock from 1950s bungalows to modern subdivisions. Strong demand for renovations, additions, and infill."
+  },
+  {
+    name: "Clarington",
+    highlight: "Rural & Lakefront",
+    description: "Larger lots, agricultural acreage, Lake Ontario shoreline. Where Durham starts to feel rural. Custom country homes are common here."
+  },
+  {
+    name: "Scugog & Brock",
+    highlight: "Northern Durham",
+    description: "Port Perry, Beaverton, Cannington. Lake Scugog cottages and rural-acreage custom builds. The countryside side of Durham."
+  }
+];
+
+const services = [
+  {
+    title: "Custom Homes",
+    description: "Ground-up custom builds on rural acreage, infill lots, and tear-down rebuilds in established neighbourhoods. We work with your architect or recommend one."
+  },
+  {
+    title: "Renovations",
+    description: "Kitchen, bathroom, basement, whole-home. Working around occupied homes is something we do well, with proper dust control and sequencing."
+  },
+  {
+    title: "Additions",
+    description: "Second-storey adds on bungalows, primary suite additions, kitchen expansions, full wing additions. The transition to existing structure is where we focus most."
+  },
+  {
+    title: "ICF Construction",
+    description: "ICF custom homes and ICF basement foundations across Durham. Energy savings of 50-70% over wood frame. We've been building ICF since 2016."
+  },
+  {
+    title: "Lakefront & Cottage Work",
+    description: "Lake Scugog, Lake Ontario shoreline, Beaverton. Cottages, year-round conversions, and lakeside custom homes."
+  },
+  {
+    title: "A-Frame Cabins",
+    description: "Rural Durham acreage suits A-frames well. Sloped lots, simpler foundations, distinctive design at a friendlier price than conventional builds."
+  }
+];
+
+const faqs = [
+  {
+    question: "How much does a custom home cost in Durham Region?",
+    answer: "Cost depends on size, finish level, lot conditions, and structure type. Rather than publish a per-square-foot range that could mislead you, we ask you to share your budget range on our contact form. Durham typically runs lower than Muskoka or Kawartha for comparable builds because of municipal services, easier access, and shorter trade travel. Northern Durham (Clarington, Brock, Scugog) sits between suburban and cottage country pricing."
+  },
+  {
+    question: "Do you build in Whitby and Ajax?",
+    answer: "Yes. We take custom builds, infill, additions, and renovations across western Durham. Tear-down rebuilds in established neighbourhoods are common in this part of Durham. We handle the demolition, permits, and rebuild end-to-end."
+  },
+  {
+    question: "What about rural Durham (Clarington, Brock, Scugog)?",
+    answer: "Northern and rural Durham is some of our most enjoyable build territory. Larger lots, more design freedom, and the opportunity for ICF or A-frame builds that don't fit a typical suburban subdivision. Wells and septic are common here. We factor that into both budget and schedule."
+  },
+  {
+    question: "How long does a Durham custom build take?",
+    answer: "Most custom homes take 12-18 months from signed contract to handover. Design and municipal permits run 3-6 months. Construction is typically 9-12 months, longer for larger or more complex builds. Suburban Durham builds tend to be on the faster end because of better trade access and predictable site conditions."
+  },
+  {
+    question: "Can you handle Durham municipal permits?",
+    answer: "Yes. We work with the municipal building departments in Pickering, Ajax, Whitby, Oshawa, Clarington, Scugog, and Brock. Permit timelines vary by municipality, but typical residential permits run 4-12 weeks. We handle applications and inspection coordination."
+  },
+  {
+    question: "Do you build on lakefront lots in Durham?",
+    answer: "Yes. Lake Ontario shoreline, Lake Scugog, and smaller lakes. Shoreline setbacks, conservation authority approval, and erosion considerations apply on the big lake. Lake Scugog has its own setback and septic rules. We handle the permit research before construction starts."
+  },
+  {
+    question: "What about renovating an older Oshawa or Whitby home?",
+    answer: "We do a lot of this. Older Durham homes have great bones but often need updated electrical, plumbing, insulation, and structural reinforcement. We do an honest walkthrough before quoting, point out the surprises we expect to find, and build a realistic contingency into the budget so we're not coming back with change orders later."
+  },
+  {
+    question: "How does building in Durham compare to cottage country?",
+    answer: "Easier, mostly. Municipal water and sewer in most areas (instead of well and septic), easier road access, shorter trade travel, more predictable permit timelines. Costs typically run 15-25% lower than Muskoka for comparable builds. Rural and northern Durham gets closer to cottage country dynamics."
+  }
+];
+---
+
+<BaseLayout title="Durham Region Custom Home Builder | Pickering, Ajax, Whitby, Oshawa, Clarington" description="Custom home builder and renovation contractor across Durham Region. Pickering, Ajax, Whitby, Oshawa, Clarington, Scugog, Brock. Custom builds, additions, renovations, ICF. 20+ years experience.">
+  <!-- Hero Section -->
+  <section data-hero="dark" class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/projects/image00004.jpeg"
+        alt="Custom home in Durham Region"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white pt-24">
+      <p class="section-label text-white/80 mb-4">Durham Region Builders</p>
+      <h1 class="text-5xl md:text-7xl font-display font-medium mb-6">
+        Durham Region <span class="italic">Custom Builder</span>
+      </h1>
+      <p class="text-xl text-white/80 max-w-2xl mx-auto mb-10">
+        Custom homes, renovations, and additions across Pickering, Ajax, Whitby, Oshawa, Clarington, Scugog, and Brock.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary">
+          <span>Start Your Durham Project</span>
+        </a>
+        <a href="tel:9057161939" class="btn-secondary-light">
+          Call (905) 716-1939
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas We Serve -->
+  <section class="py-24 md:py-32 bg-[var(--color-cream)]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">Areas Served</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Across <span class="italic">Durham</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {durhamAreas.map((area) => (
+          <div class="bg-white p-8 hover-lift">
+            <p class="text-[var(--color-timber)] text-sm uppercase tracking-widest mb-2">{area.highlight}</p>
+            <h3 class="text-2xl font-display text-[var(--color-charcoal)] mb-3">{area.name}</h3>
+            <p class="text-[var(--color-slate)] leading-relaxed">{area.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">What We Build</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Durham <span class="italic">Services</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((service) => (
+          <div class="card p-8 hover-lift">
+            <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-3">{service.title}</h3>
+            <p class="text-[var(--color-slate)] leading-relaxed">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Context -->
+  <section class="py-24 md:py-32 bg-[var(--color-charcoal)]">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="section-label text-[var(--color-timber)] mb-4">Local Knowledge</p>
+        <h2 class="text-4xl md:text-5xl font-display text-white mb-6">
+          Building in <span class="italic">Durham Region</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6 text-white/80 leading-relaxed">
+          <p>
+            Durham is one of the most varied regions we work in. Pickering and Ajax are mature suburban communities with strong demand for renovations and infill. Whitby and Oshawa mix established neighbourhoods with growing custom home work. Clarington, Scugog, and Brock are where Durham gets rural, with larger lots, well and septic, and Lake Scugog cottage country.
+          </p>
+          <p>
+            Suburban Durham is among the easier places to build in Ontario. Municipal services, predictable permits, good trade access from the 401 and 407. Rural Durham gets closer to cottage country dynamics: well and septic, longer site preparation, different rules.
+          </p>
+          <p>
+            We work the whole region. The build approach changes based on the lot, but the communication and quality standards don't.
+          </p>
+        </div>
+
+        <div class="img-zoom">
+          <img
+            src="/images/projects/image00007.jpeg"
+            alt="Modern custom interior"
+            class="w-full aspect-[4/3] object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-24 md:py-32 bg-[var(--color-cream)]">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">Common Questions</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Durham Building <span class="italic">FAQs</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group bg-white p-6 md:p-8 cursor-pointer">
+            <summary class="flex justify-between items-start gap-6 list-none">
+              <h3 class="font-display text-lg md:text-xl text-[var(--color-charcoal)]">{faq.question}</h3>
+              <span class="text-2xl text-[var(--color-timber)] group-open:rotate-45 transition-transform flex-shrink-0">+</span>
+            </summary>
+            <p class="text-[var(--color-slate)] leading-relaxed mt-4">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative py-32 overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/projects/image00005.jpeg"
+        alt="PCM Homes Durham custom build"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-[var(--color-charcoal)]/80"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white">
+      <p class="section-label text-[var(--color-timber)] mb-4">Start Your Project</p>
+      <h2 class="text-4xl md:text-6xl font-display mb-8">
+        Building in<br />
+        <span class="italic">Durham?</span>
+      </h2>
+      <p class="text-xl text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed">
+        Share your project details and budget range. We'll get back to you within 24-48 hours.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary bg-[var(--color-timber)] hover:bg-[var(--color-timber-dark)]">
+          <span>Tell Us About Your Project</span>
+        </a>
+        <a href="tel:9057161939" class="btn-secondary-light">
+          Call (905) 716-1939
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

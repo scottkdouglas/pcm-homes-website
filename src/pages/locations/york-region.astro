@@ -1,0 +1,266 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const yorkAreas = [
+  {
+    name: "Stouffville",
+    highlight: "Home Base",
+    description: "Where we're based. We know the local trades, the township process, the heritage rules, the rural-residential lot lines. Local advantage matters here."
+  },
+  {
+    name: "Markham",
+    highlight: "Suburban + Custom",
+    description: "Established neighbourhoods, premium custom homes, tear-down rebuilds. Strong demand for high-quality renovations and additions."
+  },
+  {
+    name: "Aurora & Newmarket",
+    highlight: "Central York",
+    description: "Mature streetscapes, growing custom build market, mix of suburban and small-town residential. Plenty of room for thoughtful infill."
+  },
+  {
+    name: "King Township",
+    highlight: "Estate Country",
+    description: "Rural acreage, equestrian estates, heritage properties. Where York Region gets quietly luxurious. Larger lots, longer driveways, room for serious custom builds."
+  },
+  {
+    name: "Vaughan & Richmond Hill",
+    highlight: "Urban Edge",
+    description: "Premium custom homes, tear-down infill, major renovations. Dense and competitive, but the right project at the right lot is always worth doing."
+  },
+  {
+    name: "East Gwillimbury & Georgina",
+    highlight: "Northern York",
+    description: "Lake Simcoe shoreline, rural-acreage builds, cottage and waterfront work. Where York meets cottage country."
+  }
+];
+
+const services = [
+  {
+    title: "Custom Homes",
+    description: "Ground-up custom builds on rural lots, infill, and tear-down rebuilds. Particularly strong in Stouffville, King, Markham, and rural East Gwillimbury."
+  },
+  {
+    title: "Renovations & Additions",
+    description: "Kitchen and bathroom renovations, basement finishing, room additions, second-storey adds on bungalows. We work around occupied homes well."
+  },
+  {
+    title: "ICF Construction",
+    description: "ICF custom homes and ICF basement foundations. York Region's climate makes ICF particularly cost-effective. Cuts heating and cooling bills 50-70%."
+  },
+  {
+    title: "Heritage & Sensitive Lots",
+    description: "Stouffville, Markham, and parts of Aurora have heritage rules and tree-protection requirements. We've worked through them and know what's possible."
+  },
+  {
+    title: "Lakefront Work (Simcoe)",
+    description: "Northern York Region touches Lake Simcoe. Cottages, year-round conversions, shoreline custom builds across Georgina and East Gwillimbury."
+  },
+  {
+    title: "A-Frame Cabins",
+    description: "Rural York acreage suits A-frame builds. Sloped lots, simpler foundations, a distinctive look at a friendlier price than conventional builds."
+  }
+];
+
+const faqs = [
+  {
+    question: "How much does a custom home cost in York Region?",
+    answer: "Cost depends on size, finish level, lot conditions, and structure type. Rather than publish a per-square-foot range that could mislead you, we ask you to share your budget range on our contact form. York Region generally runs slightly higher than Durham for comparable builds (tighter lots in established areas, higher land costs nearby) but lower than cottage country for builds with full municipal servicing."
+  },
+  {
+    question: "PCM Homes is based in Stouffville. Does that affect pricing or availability?",
+    answer: "It can. We work the whole region, but Stouffville and surrounding (Markham, Aurora, Whitchurch-Stouffville, Newmarket, King) are our shortest commutes, which usually means quicker response times and tighter scheduling. We're never going to turn down a great Durham or Muskoka build because we're in Stouffville, but local familiarity definitely helps the planning side."
+  },
+  {
+    question: "Do you build in Vaughan and Richmond Hill?",
+    answer: "Yes. We take custom builds, tear-down rebuilds, and major renovations in Vaughan and Richmond Hill. The market is competitive and the project needs to make sense (right lot, right scope, right client). When all three line up, we do great work there."
+  },
+  {
+    question: "What about King Township estate work?",
+    answer: "King is some of our favourite territory. Rural acreage, larger lot envelopes, and room for the kind of considered custom build that doesn't fit a typical suburban subdivision. We've done custom homes, additions, and outbuildings across the township."
+  },
+  {
+    question: "Are there heritage rules I should know about?",
+    answer: "Yes, especially in older parts of Stouffville, Markham, and Aurora. Heritage Conservation Districts protect streetscapes, exterior changes, and sometimes interior modifications. Tree-protection bylaws are common in mature neighbourhoods. We do the heritage research before quoting and tell you up front what's allowed and what isn't."
+  },
+  {
+    question: "How long does a York Region custom build take?",
+    answer: "Most custom homes take 12-18 months from signed contract to handover. Design and municipal permits run 3-6 months. Construction is typically 9-12 months. Suburban York Region builds tend to fall on the faster end because of better trade access and more predictable conditions. Rural and heritage builds run longer."
+  },
+  {
+    question: "Can you handle York Region municipal permits?",
+    answer: "Yes. We work with the building departments in Whitchurch-Stouffville, Markham, Aurora, Newmarket, King, Vaughan, Richmond Hill, East Gwillimbury, and Georgina. Each township has its own quirks. We handle the applications, inspections, and back-and-forth."
+  },
+  {
+    question: "Do you do Lake Simcoe waterfront work?",
+    answer: "Yes. Cottages and year-round homes on Lake Simcoe through Georgina and East Gwillimbury. Shoreline setbacks, conservation approval, and lake-water or well-and-septic considerations apply. We handle the permit research and applications before construction starts."
+  }
+];
+---
+
+<BaseLayout title="York Region Custom Home Builder | Stouffville, Markham, Aurora, King, Vaughan" description="York Region custom home builder based in Stouffville. Custom builds, renovations, additions across Markham, Aurora, Newmarket, King, Vaughan, Richmond Hill, East Gwillimbury, Georgina. 20+ years experience.">
+  <!-- Hero Section -->
+  <section data-hero="dark" class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/projects/image00005.jpeg"
+        alt="Custom home in York Region"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white pt-24">
+      <p class="section-label text-white/80 mb-4">York Region Builders</p>
+      <h1 class="text-5xl md:text-7xl font-display font-medium mb-6">
+        York Region <span class="italic">Custom Builder</span>
+      </h1>
+      <p class="text-xl text-white/80 max-w-2xl mx-auto mb-10">
+        Based in Stouffville. Custom homes, renovations, and additions across York Region, from Markham to Georgina.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary">
+          <span>Start Your York Region Project</span>
+        </a>
+        <a href="tel:9057161939" class="btn-secondary-light">
+          Call (905) 716-1939
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas We Serve -->
+  <section class="py-24 md:py-32 bg-[var(--color-cream)]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">Areas Served</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Across <span class="italic">York Region</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {yorkAreas.map((area) => (
+          <div class="bg-white p-8 hover-lift">
+            <p class="text-[var(--color-timber)] text-sm uppercase tracking-widest mb-2">{area.highlight}</p>
+            <h3 class="text-2xl font-display text-[var(--color-charcoal)] mb-3">{area.name}</h3>
+            <p class="text-[var(--color-slate)] leading-relaxed">{area.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">What We Build</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          York Region <span class="italic">Services</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((service) => (
+          <div class="card p-8 hover-lift">
+            <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-3">{service.title}</h3>
+            <p class="text-[var(--color-slate)] leading-relaxed">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Context -->
+  <section class="py-24 md:py-32 bg-[var(--color-charcoal)]">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="section-label text-[var(--color-timber)] mb-4">Local Knowledge</p>
+        <h2 class="text-4xl md:text-5xl font-display text-white mb-6">
+          Based in <span class="italic">Stouffville</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6 text-white/80 leading-relaxed">
+          <p>
+            PCM Homes is based in Stouffville. That isn't marketing language. It's where we live, where our trade relationships are strongest, where we know the township process, and where most of our work happens.
+          </p>
+          <p>
+            York Region is varied. Stouffville and the surrounding rural-residential lots. Markham's mix of suburban and custom infill. Aurora and Newmarket's established neighbourhoods. King's estate country. Vaughan and Richmond Hill's competitive urban edge. East Gwillimbury and Georgina where the region opens up to Lake Simcoe.
+          </p>
+          <p>
+            Different parts of the region call for different approaches. Heritage rules in some areas, tree-protection bylaws in others, conservation authority approval near Simcoe shorelines. We handle the research before quoting so the project starts with eyes open.
+          </p>
+        </div>
+
+        <div class="img-zoom">
+          <img
+            src="/images/projects/image00002.jpeg"
+            alt="Custom interior in York Region"
+            class="w-full aspect-[4/3] object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-24 md:py-32 bg-[var(--color-cream)]">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">Common Questions</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          York Region Building <span class="italic">FAQs</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group bg-white p-6 md:p-8 cursor-pointer">
+            <summary class="flex justify-between items-start gap-6 list-none">
+              <h3 class="font-display text-lg md:text-xl text-[var(--color-charcoal)]">{faq.question}</h3>
+              <span class="text-2xl text-[var(--color-timber)] group-open:rotate-45 transition-transform flex-shrink-0">+</span>
+            </summary>
+            <p class="text-[var(--color-slate)] leading-relaxed mt-4">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative py-32 overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/projects/image00004.jpeg"
+        alt="PCM Homes York Region custom build"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-[var(--color-charcoal)]/80"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white">
+      <p class="section-label text-[var(--color-timber)] mb-4">Start Your Project</p>
+      <h2 class="text-4xl md:text-6xl font-display mb-8">
+        Building in<br />
+        <span class="italic">York Region?</span>
+      </h2>
+      <p class="text-xl text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed">
+        Share your project details and budget range. We'll get back to you within 24-48 hours.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary bg-[var(--color-timber)] hover:bg-[var(--color-timber-dark)]">
+          <span>Tell Us About Your Project</span>
+        </a>
+        <a href="tel:9057161939" class="btn-secondary-light">
+          Call (905) 716-1939
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

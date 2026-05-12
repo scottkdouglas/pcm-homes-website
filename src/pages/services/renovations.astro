@@ -1,0 +1,351 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const renovationTypes = [
+  {
+    title: 'Kitchen Renovations',
+    desc: 'Layout changes, cabinetry, counters, appliances, lighting, flooring. From cosmetic refresh to full gut.',
+  },
+  {
+    title: 'Bathroom Renovations',
+    desc: 'Tub-to-shower conversions, primary ensuites, powder rooms, full builds. Tile, plumbing, electrical, the works.',
+  },
+  {
+    title: 'Basement Finishing',
+    desc: 'Unfinished space turned into a usable rec room, in-law suite, home office, gym, or rental unit. Permits handled.',
+  },
+  {
+    title: 'Room Additions',
+    desc: 'Adding a room, expanding the kitchen, building out a primary suite, putting a second storey on top of a bungalow.',
+  },
+  {
+    title: 'Whole-Home Renovations',
+    desc: 'Top-to-bottom renovations on an existing home. Often a smarter buy than starting over, especially with good bones.',
+  },
+  {
+    title: 'Structural Modifications',
+    desc: 'Removing load-bearing walls, opening up floor plans, repairing foundation issues, adding support beams.',
+  },
+];
+
+const processSteps = [
+  { num: '01', title: 'Planning & Design', desc: 'Your vision turned into a buildable plan' },
+  { num: '02', title: 'Pre-Construction & Budgeting', desc: 'Budget, permits, and contract signed before construction' },
+  { num: '03', title: 'Construction', desc: 'Foundation to finishes, built by our in-house crew' },
+  { num: '04', title: 'Project Management & Monitoring', desc: 'Schedule, quality, and changes tracked through the build' },
+  { num: '05', title: 'Handover & Closeout', desc: 'Walkthrough, warranty, documents, and keys' },
+];
+
+const costFactors = [
+  { title: 'Scope', desc: 'A bathroom refresh is a different project than a tub-to-shower conversion with new tile and rough-ins. Scope drives everything.' },
+  { title: 'Existing Conditions', desc: 'Older homes hide surprises. Knob-and-tube wiring, galvanized plumbing, asbestos, balloon framing. We do an honest walkthrough before quoting.' },
+  { title: 'Permits & Structural', desc: 'Cosmetic work usually does not need permits. Anything structural, electrical, or plumbing-changing typically does. We handle the paperwork.' },
+  { title: 'Finishes', desc: 'Standard finishes and stock cabinetry move fast and cost less. Custom millwork, stone counters, and specialty tile add real money and time.' },
+  { title: 'Whether You Live There', desc: 'Working around an occupied home takes more careful sequencing, dust control, and protective measures. We do it well, but it adds time.' },
+  { title: 'Region', desc: 'Cottage country and rural builds run higher than suburban GTA because of longer trade travel, material logistics, and site access.' },
+];
+
+const faqs = [
+  {
+    question: "What does a home renovation cost in Ontario?",
+    answer: "It depends entirely on scope. A basic bathroom refresh is a different project than a full kitchen gut, and both are different from a whole-home renovation. Rather than publish a range that could mislead you, we ask for your budget range on our contact form. We will tell you honestly what's possible at that number, what isn't, and where the right scope cuts are if your project is bigger than the budget."
+  },
+  {
+    question: "How long does a renovation take?",
+    answer: "Small renovations (single bathroom, basement room): 3-6 weeks. Mid-size renovations (full kitchen, basement finish): 6-12 weeks. Large renovations and additions: 4-8 months. Whole-home renovations: 6-12 months. Permitting and design add 4-12 weeks before construction starts. We give you a realistic schedule before we begin."
+  },
+  {
+    question: "Do you work on occupied homes?",
+    answer: "Yes. We renovate around clients living in their homes regularly. Dust control, work hours, traffic patterns, and sequencing all get planned with you up front. Some projects (kitchens, primary bathrooms, whole-home work) are easier if you can stay elsewhere for a stretch. We will tell you honestly what's livable and what isn't."
+  },
+  {
+    question: "Do you handle permits and inspections?",
+    answer: "Yes. We pull all required permits, coordinate inspections, and handle municipal back-and-forth. Cosmetic work usually doesn't need permits. Structural, electrical, plumbing, and additions almost always do. We figure that out on the walkthrough, so you're not guessing."
+  },
+  {
+    question: "What if you find something unexpected during the renovation?",
+    answer: "It happens, especially in older homes. Hidden water damage, old wiring, structural surprises. The moment we find something, we document it, photograph it, and call you. We give you a clear price to address it and don't proceed until you approve. We will never quietly charge you for work you didn't authorize."
+  },
+  {
+    question: "Can you do additions, or just interior renovations?",
+    answer: "Both. We've built single-room additions, second-storey adds on bungalows, primary suite additions, kitchen extensions, and full wing additions. We handle foundation work, structural tie-ins to the existing house, weatherproofing the join, and finishes. The transition from existing house to new addition is the hardest part to get right. It's where we focus the most."
+  },
+  {
+    question: "Do you offer emergency or rush services?",
+    answer: "Yes, when we have capacity. Storm damage, water leaks, structural concerns. Call (905) 716-1939 and we will give you a straight answer on whether we can help quickly. If we can't, we'll point you to someone who can."
+  },
+  {
+    question: "Will I work with Dan directly?",
+    answer: "Yes. Dan personally walks every renovation, from the initial site visit through the punch list. You'll also work with Anita on scheduling and updates. PCM stays small intentionally so you're never handed off to a project coordinator who hasn't seen your job."
+  }
+];
+---
+
+<BaseLayout title="Home Renovations & Additions Ontario | Kitchen, Bathroom, Whole-Home, Additions" description="Renovation and addition contractor serving Muskoka, Kawartha, Durham, York, GTA. Kitchen, bathroom, basement, additions, whole-home. 20+ years experience, owner-led, occupied-home-friendly.">
+  <!-- Hero Section -->
+  <section data-hero="dark" class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/projects/image00001.jpeg"
+        alt="Renovated living space by PCM Homes"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white pt-24">
+      <p class="section-label text-white/80 mb-4">Renovations & Additions</p>
+      <h1 class="text-5xl md:text-7xl font-display font-medium mb-6">
+        Renovations & <span class="italic">Additions</span>
+      </h1>
+      <p class="text-xl text-white/80 max-w-2xl mx-auto mb-10">
+        Kitchens, bathrooms, basements, additions, and whole-home renovations across Ontario. We work around you, talk to you, and finish what we start.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary">
+          <span>Start Your Renovation</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro / Featured Snippet -->
+  <section class="py-24 md:py-32 bg-[var(--color-cream)]">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <p class="section-label mb-4">What We Do</p>
+      <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+        Renovations & Additions, <span class="italic">Done Right</span>
+      </h2>
+      <div class="divider mb-10"></div>
+
+      <div class="bg-white border-l-4 border-[var(--color-timber)] p-6 md:p-8 mb-10">
+        <p class="text-lg md:text-xl text-[var(--color-charcoal)] leading-relaxed">
+          <strong>PCM Homes is a full-service renovation and addition contractor serving Ontario.</strong> We handle kitchen and bathroom renovations, basement finishing, room additions, second-storey adds, structural modifications, and whole-home renovations. We work around occupied homes, pull all required permits, and back our workmanship with a 2-year warranty.
+        </p>
+      </div>
+
+      <div class="prose-pcm text-lg">
+        <p class="mb-6">
+          The renovation market is full of contractors who underbid to win the job and then come back with change orders once they're inside the walls. We don't work that way. We do an honest walkthrough, point out the things we expect to find, build a realistic contingency into the budget, and tell you up front where the risks are.
+        </p>
+        <p class="mb-6">
+          Renovations are harder than new builds. You're working around existing structure, hidden conditions, occupied space, and an owner who's seeing every cut and patch. They reward contractors who plan carefully, sequence well, and communicate often. They punish the ones who don't.
+        </p>
+        <p>
+          PCM Homes is owner-led. Dan walks every renovation, from the site visit through the punch list. Most of our renovation clients come from referrals because the people we've worked with before are willing to send their friends and family our way.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Types of Renovations -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">Project Types</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Renovations We <span class="italic">Handle</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {renovationTypes.map((type) => (
+          <div class="card p-8 hover-lift">
+            <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-3">{type.title}</h3>
+            <p class="text-[var(--color-slate)] leading-relaxed">{type.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Working in Occupied Homes -->
+  <section class="py-24 md:py-32 bg-[var(--color-charcoal)]">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="section-label text-[var(--color-timber)] mb-4">Our Specialty</p>
+        <h2 class="text-4xl md:text-5xl font-display text-white mb-6">
+          Renovating <span class="italic">Occupied Homes</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6 text-white/80 leading-relaxed">
+          <p>
+            Most of our renovation clients are living in their homes while we work. We do this well because we plan it carefully.
+          </p>
+          <p>
+            Dust control on every job. Plastic-sealed work zones. Daily cleanup. Defined work hours. Sequencing that keeps a bathroom or kitchen usable as long as possible. Clear daily communication so you know what's coming next.
+          </p>
+          <p>
+            Some projects (a primary bathroom gut, a full kitchen rebuild, a whole-home renovation) are easier if you can stay elsewhere for a stretch. We'll tell you honestly when that's the case. We won't pretend you can live through something you can't.
+          </p>
+        </div>
+
+        <div class="img-zoom">
+          <img
+            src="/images/projects/image00010.jpeg"
+            alt="Interior renovation by PCM Homes"
+            class="w-full aspect-[4/3] object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Process -->
+  <section class="py-24 md:py-32 bg-[var(--color-cream)]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-20">
+        <p class="section-label mb-4">How We Work</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Our <span class="italic">Process</span>
+        </h2>
+        <div class="divider divider-center mb-8"></div>
+        <p class="text-lg text-[var(--color-slate)] max-w-2xl mx-auto">
+          Your contract is signed before deep planning begins, so the time and money you invest with us is protected from day one.
+        </p>
+      </div>
+
+      <div class="relative">
+        <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-px bg-[var(--color-timber-light)]"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+          {processSteps.map((step) => (
+            <div class="relative text-center">
+              <div class="relative z-10 w-20 h-20 mx-auto mb-6 bg-white border-2 border-[var(--color-timber)] flex items-center justify-center">
+                <span class="text-2xl font-display text-[var(--color-charcoal)]">{step.num}</span>
+              </div>
+              <h3 class="text-lg font-display text-[var(--color-charcoal)] mb-2">{step.title}</h3>
+              <p class="text-[var(--color-slate)] text-sm leading-relaxed">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Affects Cost -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">Investment</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          What Affects <span class="italic">Renovation Cost</span>
+        </h2>
+        <div class="divider divider-center mb-8"></div>
+        <p class="text-lg text-[var(--color-slate)] max-w-3xl mx-auto">
+          Renovation pricing varies more than new builds because every existing house is different. Here's what drives the budget.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        {costFactors.map((factor) => (
+          <div class="bg-[var(--color-cream)] p-8">
+            <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-3">{factor.title}</h3>
+            <p class="text-[var(--color-slate)] leading-relaxed">{factor.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Budget conversation CTA -->
+      <div class="bg-[var(--color-charcoal)] text-white p-10 md:p-12 max-w-4xl mx-auto text-center">
+        <h3 class="text-2xl md:text-3xl font-display mb-4">Have a budget range in mind?</h3>
+        <p class="text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+          Our contact form asks for your budget range and planning stage. We'll tell you honestly what's possible in your range before you spend money on design. No quote until we understand the project and your space.
+        </p>
+        <a href="/contact" class="btn-primary bg-[var(--color-timber)] hover:bg-[var(--color-timber-dark)]">
+          <span>Tell Us About Your Project</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-24 md:py-32 bg-[var(--color-cream)]">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">Common Questions</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Renovation <span class="italic">FAQs</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group bg-white p-6 md:p-8 cursor-pointer">
+            <summary class="flex justify-between items-start gap-6 list-none">
+              <h3 class="font-display text-lg md:text-xl text-[var(--color-charcoal)]">{faq.question}</h3>
+              <span class="text-2xl text-[var(--color-timber)] group-open:rotate-45 transition-transform flex-shrink-0">+</span>
+            </summary>
+            <p class="text-[var(--color-slate)] leading-relaxed mt-4">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">Where We Renovate</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Renovation Service <span class="italic">Areas</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { name: 'Muskoka', href: '/locations/muskoka' },
+          { name: 'Kawartha Lakes', href: '/locations/kawartha-lakes' },
+          { name: 'Durham Region', href: '/locations/durham-region' },
+          { name: 'York Region', href: '/locations/york-region' },
+          { name: 'Greater Toronto Area', href: '/locations/gta' },
+        ].map((area) => (
+          <a href={area.href} class="card p-6 hover-lift flex items-center justify-between">
+            <span class="font-display text-lg text-[var(--color-charcoal)]">{area.name}</span>
+            <svg class="w-5 h-5 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative py-32 overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/projects/image00007.jpeg"
+        alt="Renovated kitchen by PCM Homes"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-[var(--color-charcoal)]/80"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white">
+      <p class="section-label text-[var(--color-timber)] mb-4">Start Your Project</p>
+      <h2 class="text-4xl md:text-6xl font-display mb-8">
+        Ready to Renovate or<br />
+        <span class="italic">Add On?</span>
+      </h2>
+      <p class="text-xl text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed">
+        Share your project details and budget range. We'll get back to you within 24-48 hours.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary bg-[var(--color-timber)] hover:bg-[var(--color-timber-dark)]">
+          <span>Tell Us About Your Project</span>
+        </a>
+        <a href="tel:9057161939" class="btn-secondary-light">
+          Call (905) 716-1939
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

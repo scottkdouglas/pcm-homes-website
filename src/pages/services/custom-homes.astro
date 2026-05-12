@@ -1,0 +1,298 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const processSteps = [
+  { num: '01', title: 'Planning & Design', desc: 'Your vision turned into a buildable plan' },
+  { num: '02', title: 'Pre-Construction & Budgeting', desc: 'Budget, permits, and contract signed before construction' },
+  { num: '03', title: 'Construction', desc: 'Foundation to finishes, built by our in-house crew' },
+  { num: '04', title: 'Project Management & Monitoring', desc: 'Schedule, quality, and changes tracked through the build' },
+  { num: '05', title: 'Handover & Closeout', desc: 'Walkthrough, warranty, documents, and keys' },
+];
+
+const includedItems = [
+  { title: 'Full Project Management', desc: 'One point of contact from design through handover. We coordinate every trade.' },
+  { title: 'Design Consultation', desc: 'Work with our team and design partners to shape a buildable plan around your vision.' },
+  { title: 'Permits & Approvals', desc: 'We handle municipal permits, site plans, and inspection coordination.' },
+  { title: 'In-House Structure', desc: 'Concrete (ICF) and wood framing handled by our own crew, not subcontracted out.' },
+  { title: 'Trusted Sub-Trades', desc: 'Long-standing relationships with electricians, plumbers, HVAC, finish trades.' },
+  { title: '2-Year Workmanship Warranty', desc: 'Standard on every PCM build. Backed by 20+ years of trade experience.' },
+];
+
+const costFactors = [
+  { title: 'Size & Layout', desc: 'A 2,000 sq ft single-storey on a flat lot is a very different cost than a 4,500 sq ft custom with a walk-out basement and complex roof lines.' },
+  { title: 'Finish Level', desc: 'Standard finishes look great and work hard. Premium finishes (custom millwork, stone, integrated tech) can double the per-square-foot cost.' },
+  { title: 'Site Conditions', desc: 'Bedrock, slope, drainage, and access drive foundation and excavation costs. A flat suburban lot is far cheaper to build on than a Shield-country waterfront.' },
+  { title: 'Servicing', desc: 'Municipal water and sewer keep costs predictable. Wells and septic systems add $50,000 to $100,000+ depending on conditions.' },
+  { title: 'Structure Type', desc: 'Wood frame, ICF, hybrid. ICF costs 5-15% more upfront but cuts heating and cooling bills 50-70% for life. We help you make the right call for your build.' },
+  { title: 'Region', desc: 'Cottage country and rural builds run higher than suburban GTA because of longer trade travel, material logistics, and stricter site conditions.' },
+];
+
+const faqs = [
+  {
+    question: "How long does a custom home build take in Ontario?",
+    answer: "Most custom homes take 12-18 months from signed contract to handover. Design and permitting typically run 3-6 months before ground breaks. Construction is usually 9-12 months, longer for larger or more complex builds. We give you a realistic schedule before construction starts and update it weekly through the build."
+  },
+  {
+    question: "What does a custom home cost in Ontario?",
+    answer: "Cost depends on size, finish level, site conditions, and structure type. Rather than publish a per-square-foot range that could mislead you, we ask you to share your budget range on our contact form. We'll tell you honestly what's possible in that range, and what isn't. If your budget doesn't match the project you want, we'll say so before you spend money on design."
+  },
+  {
+    question: "Do you work with architects and designers, or do you provide design?",
+    answer: "Both. Many clients come to us with plans from their architect or designer, and we work with several professionals across Ontario we'd happily recommend. If you don't have a designer, we'll help you find one who fits your style and budget. We can also work from stock plans or sketches you've put together yourself."
+  },
+  {
+    question: "What's included in your custom home pricing?",
+    answer: "Our quotes cover everything from foundation to finishes: permits, structure, mechanicals, interior and exterior finishes, project management, and our 2-year workmanship warranty. We're transparent about what's in and what's out. Land, design fees, landscaping, and furnishings are typically separate. We tell you up front what each line includes."
+  },
+  {
+    question: "Do you build outside the GTA?",
+    answer: "Yes. We build across Muskoka, the Kawarthas, Durham Region, York Region, and the GTA. We've done builds as far north as needed. Distance affects scheduling and material logistics, so we factor that into our quote and timeline."
+  },
+  {
+    question: "Can I get a fixed-price contract?",
+    answer: "Yes, for most builds. After design is complete and we've selected finishes, we can give you a fixed-price contract that locks the scope and the number. Change orders are managed in writing. The goal is no surprises, on either side. For early-stage planning we use realistic budget ranges, not lowball numbers we'd have to revise later."
+  },
+  {
+    question: "What sets PCM apart from other custom home builders?",
+    answer: "Three things. First, communication. We provide regular updates with photos by email, text, and phone. You always know what's happening. Second, in-house structure. We handle both concrete (ICF) and wood framing with our own crew, which gives us tighter control over quality and timelines. Third, owner-led oversight. Dan personally walks every project, from foundation to final finishes. Nothing slips through the cracks."
+  },
+  {
+    question: "What happens if the project goes over budget or schedule?",
+    answer: "We build a contingency (typically 10-20%) into every project plan because surprises happen, especially on rural and older lots. If a change comes up, we document it, price it, and get your approval before we proceed. We won't surprise you with an invoice for work you didn't authorize. Schedule slips get communicated the moment we know, not at the end of the month."
+  }
+];
+---
+
+<BaseLayout title="Custom Home Builder Ontario | Muskoka, Kawartha, York, Durham, GTA" description="Custom home builder serving Ontario. From 900 sq ft homes to 10,000+ sq ft luxury estates. 20+ years experience, in-house ICF and wood framing, 2-year warranty. Tell us about your project.">
+  <!-- Hero Section -->
+  <section data-hero="dark" class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/projects/image00004.jpeg"
+        alt="Custom home built by PCM Homes in Ontario"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white pt-24">
+      <p class="section-label text-white/80 mb-4">Custom Home Builder</p>
+      <h1 class="text-5xl md:text-7xl font-display font-medium mb-6">
+        Custom <span class="italic">Homes</span> Ontario
+      </h1>
+      <p class="text-xl text-white/80 max-w-2xl mx-auto mb-10">
+        From 900 sq ft homes to 10,000+ sq ft luxury estates. Owner-led, in-house structure, communication you can count on.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary">
+          <span>Start Your Custom Build</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What is a Custom Home - Featured Snippet -->
+  <section class="py-24 md:py-32 bg-[var(--color-cream)]">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <p class="section-label mb-4">The Basics</p>
+      <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+        What is a <span class="italic">Custom Home?</span>
+      </h2>
+      <div class="divider mb-10"></div>
+
+      <div class="bg-white border-l-4 border-[var(--color-timber)] p-6 md:p-8 mb-10">
+        <p class="text-lg md:text-xl text-[var(--color-charcoal)] leading-relaxed">
+          <strong>A custom home is designed and built for a specific homeowner on a specific lot, rather than chosen from a builder's stock plans.</strong> Every decision (layout, structure type, finishes, mechanical systems) is shaped around your needs. Custom builds take longer and require more decisions than spec or production homes, but the result is a home that fits how you actually live, on the land you actually have.
+        </p>
+      </div>
+
+      <div class="prose-pcm text-lg">
+        <p class="mb-6">
+          Most of what we build at PCM Homes is custom. Some are full ground-up builds on raw land. Some are tear-down-and-rebuilds on existing lots. Some are A-frame cottages, some are 5,000 sq ft family homes, some are ICF builds engineered for half the heating bills of a wood-framed equivalent.
+        </p>
+        <p class="mb-6">
+          What they share is process. Custom builds work when communication is good and decisions get made on time. They fail when there are surprises buried in the schedule or budget. Our job is to keep the surprises out by planning carefully, talking often, and giving you real information instead of polished answers.
+        </p>
+        <p>
+          Founded by Dan Edralin in 2015 and backed by 20+ years in the trades, PCM Homes has built across Muskoka, the Kawarthas, Durham, York Region, and the GTA. Concrete and wood structure both run through our own crew. Sub-trades have worked with us for years. The result is fewer handoffs and tighter quality control than you get from a builder who subs out everything.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">What You Get</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          What's <span class="italic">Included</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {includedItems.map((item) => (
+          <div class="card p-8 hover-lift">
+            <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-3">{item.title}</h3>
+            <p class="text-[var(--color-slate)] leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Process -->
+  <section class="py-24 md:py-32 bg-[var(--color-cream)]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-20">
+        <p class="section-label mb-4">How We Work</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Our <span class="italic">Process</span>
+        </h2>
+        <div class="divider divider-center mb-8"></div>
+        <p class="text-lg text-[var(--color-slate)] max-w-2xl mx-auto">
+          Your contract is signed before deep planning begins, so the time and money you invest with us is protected from day one.
+        </p>
+      </div>
+
+      <div class="relative">
+        <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-px bg-[var(--color-timber-light)]"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+          {processSteps.map((step) => (
+            <div class="relative text-center">
+              <div class="relative z-10 w-20 h-20 mx-auto mb-6 bg-white border-2 border-[var(--color-timber)] flex items-center justify-center">
+                <span class="text-2xl font-display text-[var(--color-charcoal)]">{step.num}</span>
+              </div>
+              <h3 class="text-lg font-display text-[var(--color-charcoal)] mb-2">{step.title}</h3>
+              <p class="text-[var(--color-slate)] text-sm leading-relaxed">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Affects Cost -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">Investment</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          What Affects <span class="italic">Custom Home Cost</span>
+        </h2>
+        <div class="divider divider-center mb-8"></div>
+        <p class="text-lg text-[var(--color-slate)] max-w-3xl mx-auto">
+          Custom home cost depends on too many variables for a single per-square-foot number to be honest. Here's what actually drives the budget on a PCM build.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        {costFactors.map((factor) => (
+          <div class="bg-[var(--color-cream)] p-8">
+            <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-3">{factor.title}</h3>
+            <p class="text-[var(--color-slate)] leading-relaxed">{factor.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Budget conversation CTA -->
+      <div class="bg-[var(--color-charcoal)] text-white p-10 md:p-12 max-w-4xl mx-auto text-center">
+        <h3 class="text-2xl md:text-3xl font-display mb-4">Have a budget range in mind?</h3>
+        <p class="text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+          Our contact form asks for your budget range and planning stage. We'll tell you honestly what's possible in your range before you spend money on design. No quote until we understand the project.
+        </p>
+        <a href="/contact" class="btn-primary bg-[var(--color-timber)] hover:bg-[var(--color-timber-dark)]">
+          <span>Tell Us About Your Project</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-24 md:py-32 bg-[var(--color-cream)]">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">Common Questions</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Custom Home <span class="italic">FAQs</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group bg-white p-6 md:p-8 cursor-pointer">
+            <summary class="flex justify-between items-start gap-6 list-none">
+              <h3 class="font-display text-lg md:text-xl text-[var(--color-charcoal)]">{faq.question}</h3>
+              <span class="text-2xl text-[var(--color-timber)] group-open:rotate-45 transition-transform flex-shrink-0">+</span>
+            </summary>
+            <p class="text-[var(--color-slate)] leading-relaxed mt-4">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">Where We Build</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Custom Home Service <span class="italic">Areas</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { name: 'Muskoka', href: '/locations/muskoka' },
+          { name: 'Kawartha Lakes', href: '/locations/kawartha-lakes' },
+          { name: 'Durham Region', href: '/locations/durham-region' },
+          { name: 'York Region', href: '/locations/york-region' },
+          { name: 'Greater Toronto Area', href: '/locations/gta' },
+        ].map((area) => (
+          <a href={area.href} class="card p-6 hover-lift flex items-center justify-between">
+            <span class="font-display text-lg text-[var(--color-charcoal)]">{area.name}</span>
+            <svg class="w-5 h-5 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative py-32 overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/projects/image00005.jpeg"
+        alt="PCM Homes custom build"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-[var(--color-charcoal)]/80"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white">
+      <p class="section-label text-[var(--color-timber)] mb-4">Start Your Project</p>
+      <h2 class="text-4xl md:text-6xl font-display mb-8">
+        Ready to Build Your<br />
+        <span class="italic">Custom Home?</span>
+      </h2>
+      <p class="text-xl text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed">
+        Share your project details and budget range. We'll get back to you within 24-48 hours.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary bg-[var(--color-timber)] hover:bg-[var(--color-timber-dark)]">
+          <span>Tell Us About Your Project</span>
+        </a>
+        <a href="tel:9057161939" class="btn-secondary-light">
+          Call (905) 716-1939
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

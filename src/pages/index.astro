@@ -4,6 +4,13 @@ import { getCollection } from 'astro:content';
 
 const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
 
+const serviceLinks: Record<string, string> = {
+  'custom-homes': '/services/custom-homes',
+  'cottages': '/services/a-frame-cabins',
+  'icf-framing': '/services/icf-construction',
+  'renovations': '/services/renovations',
+};
+
 const projectImages = [
   { src: '/images/projects/image00004.jpeg', alt: 'Modern custom home exterior', category: 'Custom Home' },
   { src: '/images/projects/image00005.jpeg', alt: 'Luxury backyard with pool', category: 'Custom Home' },
@@ -150,7 +157,7 @@ const projectImages = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {services.map((service, index) => (
           <a
-            href={`/services#${service.slug}`}
+            href={serviceLinks[service.slug] || `/services#${service.slug}`}
             class="group card p-8 hover-lift"
           >
             <div class="flex items-start justify-between mb-6">

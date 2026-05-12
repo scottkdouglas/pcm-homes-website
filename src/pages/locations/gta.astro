@@ -1,0 +1,261 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const gtaAreas = [
+  {
+    name: "Markham, Vaughan, Richmond Hill",
+    highlight: "Northern GTA",
+    description: "Premium custom builds, tear-down rebuilds, major renovations. Strong demand for high-quality work that fits established streetscapes."
+  },
+  {
+    name: "Mississauga, Brampton",
+    highlight: "Western GTA",
+    description: "Established suburban communities with steady renovation and addition work. Older neighbourhoods with great bones."
+  },
+  {
+    name: "Stouffville, Whitchurch-Stouffville",
+    highlight: "Our Home Base",
+    description: "Where we're based. Local knowledge of trades, permits, and lot conditions. Our quickest response area."
+  },
+  {
+    name: "Pickering, Ajax",
+    highlight: "Eastern GTA",
+    description: "Mature lakeshore neighbourhoods, growing custom market, strong demand for renovations and additions."
+  },
+  {
+    name: "Aurora, Newmarket",
+    highlight: "Northern Outer GTA",
+    description: "Established communities mixed with newer custom development. Plenty of room for thoughtful infill and renovation."
+  }
+];
+
+const services = [
+  {
+    title: "Custom Homes",
+    description: "Ground-up custom builds on infill lots and tear-down rebuilds. We work with your architect or recommend one we trust."
+  },
+  {
+    title: "Major Renovations",
+    description: "Kitchen, bathroom, basement, and whole-home renovations. We work around occupied homes, handle permits, and back our work with a 2-year warranty."
+  },
+  {
+    title: "Additions",
+    description: "Room additions, primary suite additions, second-storey adds on bungalows, full wing additions. The transition to existing structure is where we focus most."
+  },
+  {
+    title: "ICF Construction",
+    description: "ICF custom homes and ICF basement foundations. Particularly cost-effective in GTA climate. Cuts heating and cooling bills 50-70% for the life of the building."
+  },
+  {
+    title: "Tear-Down Rebuilds",
+    description: "Common in established GTA neighbourhoods where the lot is more valuable than the house. We handle demolition, permits, and rebuild end-to-end."
+  },
+  {
+    title: "A-Frame & Cottage Country Builds",
+    description: "If your project is closer to cottage country than core GTA, see our Muskoka, Kawartha, and A-Frame pages. We work across the region."
+  }
+];
+
+const faqs = [
+  {
+    question: "Does PCM Homes build in core Toronto (the 416)?",
+    answer: "Our focus is the outer GTA and the surrounding 905. Markham, Vaughan, Richmond Hill, Stouffville, Aurora, Newmarket, Pickering, Ajax, Mississauga, Brampton, and the regions north of Toronto. We can take selective projects in core Toronto when they're a good fit, but laneway and tight-lot urban work isn't our primary focus. If you're building in core Toronto, give us a call and we'll tell you honestly whether we're the right builder."
+  },
+  {
+    question: "How much does a custom home cost in the GTA?",
+    answer: "Cost depends on size, finish level, lot conditions, and structure type. Rather than publish a per-square-foot range that could mislead you, we ask you to share your budget range on our contact form. Outer GTA builds typically run higher than rural Durham or Kawartha because land costs and labour pricing are higher, but lower than cottage country for builds with full municipal servicing."
+  },
+  {
+    question: "Do you handle tear-down rebuilds?",
+    answer: "Yes, regularly. In established GTA neighbourhoods (Markham, Vaughan, Richmond Hill, Mississauga, Aurora) the lot is often more valuable than the existing house. We handle demolition, permits, foundation, and rebuild. Heritage and tree-protection bylaws apply in some neighbourhoods. We do the research before quoting."
+  },
+  {
+    question: "How long does a GTA custom build take?",
+    answer: "Most custom homes take 12-18 months from signed contract to handover. Design and municipal permits run 3-6 months, sometimes longer in heritage-protected neighbourhoods. Construction is typically 9-12 months. GTA trade availability is good but permit timelines vary widely by municipality."
+  },
+  {
+    question: "Can you handle municipal permits across the GTA?",
+    answer: "Yes. We work with the building departments across the GTA regions we serve. Each municipality has its own process and timelines, ranging from 4-12 weeks for typical residential permits. Heritage and tree-protection cases add time. We handle the applications, inspections, and follow-up."
+  },
+  {
+    question: "Do you offer renovation services in the GTA?",
+    answer: "Yes. Kitchen, bathroom, basement, additions, structural modifications, whole-home renovations. We work around occupied homes carefully (proper dust control, defined work hours, daily cleanup). Most of our renovation clients come from referrals because the people we've worked with refer their friends and family."
+  },
+  {
+    question: "What sets PCM apart from larger GTA builders?",
+    answer: "Three things. Communication: regular updates with photos, by email, text, and phone. Owner-led oversight: Dan personally walks every project. In-house structure: we handle ICF and wood framing with our own crew, not subcontracted out. We're not the biggest builder in the GTA. We're the one that talks to you and stands behind the work."
+  },
+  {
+    question: "Where exactly is PCM based?",
+    answer: "We're based in Stouffville, on the northeast edge of the GTA. That means our quickest response areas are York Region (Markham, Aurora, Newmarket, King) and the surrounding 905. We travel across the broader GTA and into cottage country, but Stouffville is home."
+  }
+];
+---
+
+<BaseLayout title="GTA Custom Home Builder | Markham, Vaughan, Mississauga, Aurora, Stouffville" description="GTA custom home builder and renovation contractor. Markham, Vaughan, Richmond Hill, Mississauga, Brampton, Stouffville, Aurora, Newmarket, Pickering, Ajax. Custom builds, additions, renovations. 20+ years experience.">
+  <!-- Hero Section -->
+  <section data-hero="dark" class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/projects/image00004.jpeg"
+        alt="Custom home in the GTA"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white pt-24">
+      <p class="section-label text-white/80 mb-4">GTA Custom Builders</p>
+      <h1 class="text-5xl md:text-7xl font-display font-medium mb-6">
+        GTA <span class="italic">Custom Builder</span>
+      </h1>
+      <p class="text-xl text-white/80 max-w-2xl mx-auto mb-10">
+        Custom homes, renovations, and additions across the outer GTA. Markham, Vaughan, Mississauga, Stouffville, and the 905.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary">
+          <span>Start Your GTA Project</span>
+        </a>
+        <a href="tel:9057161939" class="btn-secondary-light">
+          Call (905) 716-1939
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas We Serve -->
+  <section class="py-24 md:py-32 bg-[var(--color-cream)]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">Areas Served</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Across the <span class="italic">GTA</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {gtaAreas.map((area) => (
+          <div class="bg-white p-8 hover-lift">
+            <p class="text-[var(--color-timber)] text-sm uppercase tracking-widest mb-2">{area.highlight}</p>
+            <h3 class="text-2xl font-display text-[var(--color-charcoal)] mb-3">{area.name}</h3>
+            <p class="text-[var(--color-slate)] leading-relaxed">{area.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">What We Build</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          GTA <span class="italic">Services</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((service) => (
+          <div class="card p-8 hover-lift">
+            <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-3">{service.title}</h3>
+            <p class="text-[var(--color-slate)] leading-relaxed">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Context -->
+  <section class="py-24 md:py-32 bg-[var(--color-charcoal)]">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="section-label text-[var(--color-timber)] mb-4">Local Knowledge</p>
+        <h2 class="text-4xl md:text-5xl font-display text-white mb-6">
+          Building Across the <span class="italic">GTA</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6 text-white/80 leading-relaxed">
+          <p>
+            We're based in Stouffville and work across the outer GTA. Our strongest day-to-day territory is York Region and the surrounding 905. We also build through Durham, Peel, and into cottage country.
+          </p>
+          <p>
+            Most of our GTA work is on infill lots, tear-down rebuilds, or major renovations of established homes. Each GTA municipality has its own permit process and timelines. Heritage protection applies in some neighbourhoods. Tree-protection bylaws are common. We do the research before quoting so the project starts with eyes open.
+          </p>
+          <p>
+            We're not the biggest builder in the GTA. We don't try to be. We're the one that handles concrete and wood structure with our own crew, that talks to you weekly with photos, and that stands behind the work with a 2-year warranty.
+          </p>
+        </div>
+
+        <div class="img-zoom">
+          <img
+            src="/images/projects/image00001.jpeg"
+            alt="Custom GTA interior"
+            class="w-full aspect-[4/3] object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-24 md:py-32 bg-[var(--color-cream)]">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">Common Questions</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          GTA Building <span class="italic">FAQs</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group bg-white p-6 md:p-8 cursor-pointer">
+            <summary class="flex justify-between items-start gap-6 list-none">
+              <h3 class="font-display text-lg md:text-xl text-[var(--color-charcoal)]">{faq.question}</h3>
+              <span class="text-2xl text-[var(--color-timber)] group-open:rotate-45 transition-transform flex-shrink-0">+</span>
+            </summary>
+            <p class="text-[var(--color-slate)] leading-relaxed mt-4">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative py-32 overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/projects/image00005.jpeg"
+        alt="PCM Homes GTA custom build"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-[var(--color-charcoal)]/80"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white">
+      <p class="section-label text-[var(--color-timber)] mb-4">Start Your Project</p>
+      <h2 class="text-4xl md:text-6xl font-display mb-8">
+        Building in the<br />
+        <span class="italic">GTA?</span>
+      </h2>
+      <p class="text-xl text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed">
+        Share your project details and budget range. We'll get back to you within 24-48 hours.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary bg-[var(--color-timber)] hover:bg-[var(--color-timber-dark)]">
+          <span>Tell Us About Your Project</span>
+        </a>
+        <a href="tel:9057161939" class="btn-secondary-light">
+          Call (905) 716-1939
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

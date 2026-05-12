@@ -1,0 +1,253 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const kawarthaAreas = [
+  {
+    name: "Lindsay",
+    highlight: "Regional Hub",
+    description: "Largest town in the Kawarthas. Good services, easy access from the GTA, mix of established neighbourhoods and rural lots."
+  },
+  {
+    name: "Bobcaygeon",
+    highlight: "Trent-Severn Heart",
+    description: "On the Pigeon-Sturgeon lake chain. Active cottage and year-round community with shoreline lots and historic charm."
+  },
+  {
+    name: "Fenelon Falls",
+    highlight: "Lockside Living",
+    description: "Where Sturgeon Lake meets Cameron Lake at the iconic falls. Walkable downtown, premium waterfront lots."
+  },
+  {
+    name: "Lakefield & Buckhorn",
+    highlight: "Northern Kawarthas",
+    description: "Quieter, more remote feel. Pristine water, granite outcrops, and the cottage character of the original Kawartha vacation country."
+  },
+  {
+    name: "Peterborough County",
+    highlight: "Rural Acreage",
+    description: "Larger rural lots outside the towns. Good fit for custom homes that want space and privacy without going all the way north."
+  }
+];
+
+const services = [
+  {
+    title: "Custom Lake Homes",
+    description: "Waterfront custom builds across the Kawartha chain. Pigeon, Sturgeon, Cameron, Balsam, Buckhorn. We design for the view and build for year-round use."
+  },
+  {
+    title: "Cottages & Year-Round Conversions",
+    description: "Three-season cottages turned into year-round homes. Modern insulation, proper heating, foundation upgrades. Or built right from day one."
+  },
+  {
+    title: "A-Frame Cabins",
+    description: "A-frame cabins fit the Kawartha landscape well. Sloped lots, simple foundations, the kind of clean lines that work on a lake."
+  },
+  {
+    title: "Additions & Renovations",
+    description: "Modernizing older cottages, adding primary suites, opening up dated layouts. We work around occupied homes when needed."
+  }
+];
+
+const faqs = [
+  {
+    question: "How much does it cost to build a custom home in the Kawarthas?",
+    answer: "Cost depends on size, finish level, site conditions, and structure type. Rather than publish a per-square-foot range that could mislead you, we ask you to share your budget range on our contact form. We'll tell you honestly what's possible in that range. Generally, Kawartha builds run lower than Muskoka (less Shield rock, easier access) but higher than suburban GTA (longer trade travel, well and septic instead of municipal services)."
+  },
+  {
+    question: "How long does a Kawartha custom build take?",
+    answer: "Most custom homes take 12-18 months from signed contract to handover. Design and permits run 3-6 months before construction. Construction itself is typically 9-12 months. The optimal build season runs April through November. Pro tip: start in fall so trades are available and the house is weather-tight before winter."
+  },
+  {
+    question: "Can you build on the Kawartha lakes?",
+    answer: "Yes. We build on Pigeon, Sturgeon, Cameron, Balsam, Buckhorn, and the smaller lakes through the chain. Each township has shoreline setback rules, septic requirements, and conservation considerations. We handle the permit research and applications. Water-access-only lots add complexity and cost (typically 15-25%) but they're absolutely doable."
+  },
+  {
+    question: "What permits do I need to build in Kawartha Lakes?",
+    answer: "Standard requirements: building permit from the City of Kawartha Lakes or Peterborough County (depending on location), septic system approval from the health unit, well permit if applicable, and shoreline development approval for waterfront lots. Conservation authority approval may be needed near wetlands or designated areas. We handle the applications and inspections."
+  },
+  {
+    question: "What's septic and well going to cost on a Kawartha lot?",
+    answer: "Conventional septic systems start around $20,000-$30,000 for a typical 3-bedroom home. Larger homes or sites with bad percolation can run $35,000-$50,000. Drilled wells typically run $15,000-$25,000 depending on depth. Lake water systems with proper treatment cost about 20% less than wells but require ongoing maintenance. Get the site assessed before you buy the lot if possible."
+  },
+  {
+    question: "Do you build year-round in the Kawarthas?",
+    answer: "Yes. We work through winter when the project is weather-tight. We sequence outdoor work (foundation, framing, exterior) for the open season and interior work for cold months. Lake-access water lines, septic, and final landscaping wait for thaw, but the rest of the build keeps moving."
+  },
+  {
+    question: "Can you convert a seasonal cottage to year-round?",
+    answer: "Yes, regularly. Conversion typically involves upgrading insulation to R-40+, installing year-round heating, freeze-protecting plumbing and electrical, and often foundation work. Budget $80,000-$200,000 for a full conversion depending on the cottage's starting condition. Sometimes demolishing and rebuilding makes more financial sense. We'll give you an honest assessment."
+  },
+  {
+    question: "How does building in the Kawarthas compare to Muskoka?",
+    answer: "Kawartha is generally easier and less expensive to build in than Muskoka. Less Canadian Shield bedrock (less blasting), shorter trade travel from the GTA, easier road access to most lots, and somewhat less restrictive shoreline rules. Costs typically run 10-20% lower than Muskoka for comparable builds, though still 15-30% higher than suburban GTA because of well, septic, and trade logistics."
+  }
+];
+---
+
+<BaseLayout title="Kawartha Lakes Custom Home Builder | Lindsay, Bobcaygeon, Fenelon Falls" description="Custom home builder in the Kawarthas. Lindsay, Bobcaygeon, Fenelon Falls, Lakefield, Buckhorn, Peterborough County. Cottages, year-round homes, A-frames, renovations. 20+ years experience.">
+  <!-- Hero Section -->
+  <section data-hero="dark" class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/projects/image00006.jpeg"
+        alt="Custom home on a Kawartha lake"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white pt-24">
+      <p class="section-label text-white/80 mb-4">Kawartha Lakes Builders</p>
+      <h1 class="text-5xl md:text-7xl font-display font-medium mb-6">
+        Kawartha Lakes <span class="italic">Custom Builder</span>
+      </h1>
+      <p class="text-xl text-white/80 max-w-2xl mx-auto mb-10">
+        Custom homes, cottages, A-frames, and renovations across Lindsay, Bobcaygeon, Fenelon Falls, and the Kawartha chain.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary">
+          <span>Start Your Kawartha Project</span>
+        </a>
+        <a href="tel:9057161939" class="btn-secondary-light">
+          Call (905) 716-1939
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas We Serve -->
+  <section class="py-24 md:py-32 bg-[var(--color-cream)]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">Areas Served</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Across the <span class="italic">Kawarthas</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {kawarthaAreas.map((area) => (
+          <div class="bg-white p-8 hover-lift">
+            <p class="text-[var(--color-timber)] text-sm uppercase tracking-widest mb-2">{area.highlight}</p>
+            <h3 class="text-2xl font-display text-[var(--color-charcoal)] mb-3">{area.name}</h3>
+            <p class="text-[var(--color-slate)] leading-relaxed">{area.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="py-24 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">What We Build</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Kawartha <span class="italic">Services</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {services.map((service) => (
+          <div class="card p-8 hover-lift">
+            <h3 class="text-2xl font-display text-[var(--color-charcoal)] mb-4">{service.title}</h3>
+            <p class="text-[var(--color-slate)] leading-relaxed">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Different About Building Here -->
+  <section class="py-24 md:py-32 bg-[var(--color-charcoal)]">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="section-label text-[var(--color-timber)] mb-4">Local Knowledge</p>
+        <h2 class="text-4xl md:text-5xl font-display text-white mb-6">
+          Building in the <span class="italic">Kawarthas</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6 text-white/80 leading-relaxed">
+          <p>
+            The Kawarthas sit on the southern edge of the Canadian Shield. Less bedrock than Muskoka, easier access than the deep north, but still distinctly cottage country. The Trent-Severn Waterway runs through it. The lakes connect.
+          </p>
+          <p>
+            Building here is easier than Muskoka and harder than the suburbs. You'll deal with wells, septic systems, conservation rules, and shoreline setbacks. Permitting is usually faster than Muskoka but slower than the GTA. Material logistics are manageable from the 401.
+          </p>
+          <p>
+            The build season is roughly April through November for outdoor work. Foundations need to be in before deep frost. Smart sequencing keeps interior work moving through winter once the house is closed in.
+          </p>
+        </div>
+
+        <div class="img-zoom">
+          <img
+            src="/images/projects/image00009.jpeg"
+            alt="Open concept lake-country interior"
+            class="w-full aspect-[4/3] object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-24 md:py-32 bg-[var(--color-cream)]">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="section-label mb-4">Common Questions</p>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
+          Kawartha Building <span class="italic">FAQs</span>
+        </h2>
+        <div class="divider divider-center"></div>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group bg-white p-6 md:p-8 cursor-pointer">
+            <summary class="flex justify-between items-start gap-6 list-none">
+              <h3 class="font-display text-lg md:text-xl text-[var(--color-charcoal)]">{faq.question}</h3>
+              <span class="text-2xl text-[var(--color-timber)] group-open:rotate-45 transition-transform flex-shrink-0">+</span>
+            </summary>
+            <p class="text-[var(--color-slate)] leading-relaxed mt-4">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative py-32 overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/projects/image00011.jpeg"
+        alt="Custom Kawartha lake home"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-[var(--color-charcoal)]/80"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white">
+      <p class="section-label text-[var(--color-timber)] mb-4">Start Your Project</p>
+      <h2 class="text-4xl md:text-6xl font-display mb-8">
+        Building in the<br />
+        <span class="italic">Kawarthas?</span>
+      </h2>
+      <p class="text-xl text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed">
+        Share your project details and budget range. We'll get back to you within 24-48 hours.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary bg-[var(--color-timber)] hover:bg-[var(--color-timber-dark)]">
+          <span>Tell Us About Your Project</span>
+        </a>
+        <a href="tel:9057161939" class="btn-secondary-light">
+          Call (905) 716-1939
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
