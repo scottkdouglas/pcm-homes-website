@@ -97,8 +97,8 @@ const breadcrumbLd = breadcrumbs && breadcrumbs.length
   <div id="scroll-progress" class="scroll-progress" style="transform: scaleX(0);"></div>
 
   <!-- Header -->
-  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
-    <div class="absolute inset-0 bg-white/0 backdrop-blur-none transition-all duration-500" id="header-bg"></div>
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50">
+    <div class="absolute inset-0 bg-white/0 backdrop-blur-none transition-[background-color,backdrop-filter] duration-500" id="header-bg"></div>
     <nav class="relative max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex justify-between items-center h-24">
         <!-- Logo -->
@@ -106,7 +106,7 @@ const breadcrumbLd = breadcrumbs && breadcrumbs.length
           <img
             src="/images/logo.png"
             alt="PCM Homes"
-            class="h-12 w-auto transition-all duration-300"
+            class="h-12 w-auto"
             id="header-logo"
           />
         </a>
@@ -115,19 +115,19 @@ const breadcrumbLd = breadcrumbs && breadcrumbs.length
         <div class="hidden md:flex items-center gap-10" id="nav-links">
           <a href="/" class="nav-link text-sm font-medium tracking-wide uppercase relative group">
             Home
-            <span class="absolute -bottom-1 left-0 w-0 h-px bg-[var(--color-timber)] group-hover:w-full transition-all duration-300"></span>
+            <span class="absolute -bottom-1 left-0 w-full h-px bg-[var(--color-timber)] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
           </a>
           <a href="/services" class="nav-link text-sm font-medium tracking-wide uppercase relative group">
             Services
-            <span class="absolute -bottom-1 left-0 w-0 h-px bg-[var(--color-timber)] group-hover:w-full transition-all duration-300"></span>
+            <span class="absolute -bottom-1 left-0 w-full h-px bg-[var(--color-timber)] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
           </a>
           <a href="/locations" class="nav-link text-sm font-medium tracking-wide uppercase relative group">
             Locations
-            <span class="absolute -bottom-1 left-0 w-0 h-px bg-[var(--color-timber)] group-hover:w-full transition-all duration-300"></span>
+            <span class="absolute -bottom-1 left-0 w-full h-px bg-[var(--color-timber)] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
           </a>
           <a href="/about" class="nav-link text-sm font-medium tracking-wide uppercase relative group">
             About
-            <span class="absolute -bottom-1 left-0 w-0 h-px bg-[var(--color-timber)] group-hover:w-full transition-all duration-300"></span>
+            <span class="absolute -bottom-1 left-0 w-full h-px bg-[var(--color-timber)] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
           </a>
           <a href="tel:+19057161939" class="nav-link text-sm font-medium tracking-wide">
             (905) 716-1939
@@ -140,9 +140,9 @@ const breadcrumbLd = breadcrumbs && breadcrumbs.length
         <!-- Mobile Menu Button -->
         <button id="mobile-menu-button" class="md:hidden relative z-10 p-2 -mr-2" aria-label="Toggle menu">
           <div class="w-6 h-5 relative flex flex-col justify-between" id="hamburger">
-            <span class="w-full h-px bg-current transition-all duration-300 origin-left" id="line1"></span>
-            <span class="w-full h-px bg-current transition-all duration-300" id="line2"></span>
-            <span class="w-full h-px bg-current transition-all duration-300 origin-left" id="line3"></span>
+            <span class="w-full h-px bg-current transition-[transform,opacity] duration-300 origin-left" id="line1"></span>
+            <span class="w-full h-px bg-current transition-[transform,opacity] duration-300" id="line2"></span>
+            <span class="w-full h-px bg-current transition-[transform,opacity] duration-300 origin-left" id="line3"></span>
           </div>
         </button>
       </div>
@@ -235,7 +235,7 @@ const breadcrumbLd = breadcrumbs && breadcrumbs.length
           <h4 class="text-xs font-semibold tracking-[0.2em] uppercase mb-6 text-white/40">Contact</h4>
           <ul class="space-y-4">
             <li>
-              <a href="tel:9057161939" class="flex items-center gap-3 text-white/70 hover:text-[var(--color-timber)] transition-colors text-sm">
+              <a href="tel:+19057161939" class="flex items-center gap-3 py-1 text-white/70 hover:text-[var(--color-timber)] transition-colors text-sm">
                 <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                 </svg>
@@ -243,7 +243,7 @@ const breadcrumbLd = breadcrumbs && breadcrumbs.length
               </a>
             </li>
             <li>
-              <a href="mailto:info.pcmhomes@gmail.com" class="flex items-center gap-3 text-white/70 hover:text-[var(--color-timber)] transition-colors text-sm">
+              <a href="mailto:info.pcmhomes@gmail.com" class="flex items-center gap-3 py-1 text-white/70 hover:text-[var(--color-timber)] transition-colors text-sm">
                 <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                 </svg>

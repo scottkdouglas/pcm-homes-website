@@ -1,6 +1,6 @@
 ---
 title: "Additions & Renovations"
-description: "Transform your existing space with professional renovations and additions tailored to your lifestyle."
+description: "Additions, kitchens, basements and whole-home renovations. Small renovation quotes in 2 to 3 days."
 order: 4
 ---
 

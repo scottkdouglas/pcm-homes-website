@@ -1,6 +1,6 @@
 ---
 title: "Custom Homes"
-description: "Design and build your dream home from the ground up with our comprehensive custom home building services."
+description: "New custom homes from foundation to finish, with Dan overseeing every stage."
 order: 1
 ---
 

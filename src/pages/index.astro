@@ -92,12 +92,10 @@ const projectImages = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <!-- Text Content -->
         <div>
-          <p class="section-label mb-4">About PCM Homes</p>
           <h2 class="text-4xl md:text-5xl font-display mb-8 text-[var(--color-charcoal)]">
-            Communication is<br />
-            <span class="italic">Our Foundation</span>
+            Communication Is<br />
+            Our Foundation
           </h2>
-          <div class="divider mb-8"></div>
           <p class="text-[var(--color-slate)] text-lg leading-relaxed mb-6">
             What sets PCM Homes apart? It's simple: we actually talk to you. While other contractors leave you wondering about your project, we provide regular updates, listen to your concerns, and solve problems together.
           </p>
@@ -127,7 +125,7 @@ const projectImages = [
             />
           </div>
           <!-- Floating Stats Card -->
-          <div class="absolute -bottom-8 -left-8 bg-white p-8 shadow-xl">
+          <div class="absolute -bottom-8 left-0 lg:-left-8 bg-white p-8 shadow-xl">
             <div class="flex items-baseline gap-2 mb-2">
               <span class="text-5xl font-display font-medium text-[var(--color-charcoal)]">9</span>
               <span class="text-[var(--color-timber)] uppercase tracking-widest text-sm">Years</span>
@@ -140,15 +138,13 @@ const projectImages = [
   </section>
 
   <!-- Services Section -->
-  <section class="py-24 md:py-32 bg-white">
+  <section class="py-24 md:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <!-- Section Header -->
       <div class="text-center mb-16">
-        <p class="section-label mb-4">What We Build</p>
-        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
-          Our <span class="italic">Services</span>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)]">
+          Our Services
         </h2>
-        <div class="divider divider-center"></div>
       </div>
 
       <!-- Services Grid -->
@@ -156,7 +152,7 @@ const projectImages = [
         {services.map((service, index) => (
           <a
             href={serviceLinks[service.id] || `/services#${service.id}`}
-            class="group card p-8 hover-lift"
+            class="group block p-8"
           >
             <div class="flex items-start justify-between mb-6">
               <span class="text-6xl font-display text-[var(--color-timber-light)]">
@@ -190,11 +186,9 @@ const projectImages = [
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <!-- Section Header -->
       <div class="text-center mb-16">
-        <p class="section-label text-[var(--color-timber)] mb-4">Portfolio</p>
-        <h2 class="text-4xl md:text-5xl font-display text-white mb-6">
-          Featured <span class="italic">Projects</span>
+        <h2 class="text-4xl md:text-5xl font-display text-white">
+          Featured Projects
         </h2>
-        <div class="divider divider-center"></div>
       </div>
 
       <!-- Gallery Grid -->
@@ -209,12 +203,6 @@ const projectImages = [
               loading="lazy"
               decoding="async"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div class="absolute bottom-0 left-0 right-0 p-6">
-                <span class="text-[var(--color-timber)] text-xs uppercase tracking-widest">{image.category}</span>
-                <p class="text-white font-display text-lg mt-1">{image.alt}</p>
-              </div>
-            </div>
           </div>
         ))}
       </div>
@@ -227,37 +215,19 @@ const projectImages = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <!-- Map/Visual Side -->
         <div class="relative order-2 lg:order-1">
-          <div class="grid grid-cols-2 gap-4">
-            <div class="space-y-4">
-              <div class="img-zoom">
-                <img src="/images/projects/image00006.webp" srcset="/images/projects/image00006-800.webp 800w, /images/projects/image00006.webp 1920w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Cottage interior" class="w-full aspect-square object-cover" width="1920" height="1440" loading="lazy" decoding="async" />
-              </div>
-              <div class="img-zoom">
-                <img src="/images/projects/image00009.webp" srcset="/images/projects/image00009-800.webp 800w, /images/projects/image00009.webp 1920w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Open concept living" class="w-full aspect-[3/4] object-cover" width="1920" height="2560" loading="lazy" decoding="async" />
-              </div>
-            </div>
-            <div class="space-y-4 pt-12">
-              <div class="img-zoom">
-                <img src="/images/projects/image00007.webp" srcset="/images/projects/image00007-800.webp 800w, /images/projects/image00007.webp 1920w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Kitchen with timber beams" class="w-full aspect-[3/4] object-cover" width="1920" height="1440" loading="lazy" decoding="async" />
-              </div>
-              <div class="img-zoom">
-                <img src="/images/projects/image00008.webp" srcset="/images/projects/image00008-800.webp 800w, /images/projects/image00008.webp 1920w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Living room detail" class="w-full aspect-square object-cover" width="1920" height="2560" loading="lazy" decoding="async" />
-              </div>
-            </div>
+          <div class="img-zoom">
+            <img src="/images/projects/image00007.webp" srcset="/images/projects/image00007-800.webp 800w, /images/projects/image00007.webp 1920w" sizes="(min-width: 1024px) 50vw, 100vw" alt="Kitchen with timber beams in a PCM Homes build" class="w-full aspect-[4/5] object-cover" width="1920" height="1440" loading="lazy" decoding="async" />
           </div>
         </div>
 
         <!-- Content Side -->
         <div class="order-1 lg:order-2">
-          <p class="section-label mb-4">Where We Build</p>
           <h2 class="text-4xl md:text-5xl font-display mb-8 text-[var(--color-charcoal)]">
-            Our Service<br />
-            <span class="italic">Areas</span>
+            Our Service Areas
           </h2>
-          <div class="divider mb-8"></div>
 
           <p class="text-[var(--color-slate)] text-lg leading-relaxed mb-8">
-            From the serene lakes of Muskoka to the bustling GTA, we bring the same dedication and craftsmanship to every project.
+            One crew and one standard across five regions. Dan oversees every job, from a lakefront cottage to a GTA addition.
           </p>
 
           <!-- Location List -->
@@ -282,27 +252,20 @@ const projectImages = [
     </div>
   </section>
 
-  <!-- Why Choose Us -->
-  <section class="py-24 md:py-32 bg-white">
+  <!-- How We Work -->
+  <section class="py-24 md:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <!-- Section Header -->
       <div class="text-center mb-16">
-        <p class="section-label mb-4">The PCM Difference</p>
-        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
-          Why Choose <span class="italic">Us</span>
+        <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)]">
+          How We Work
         </h2>
-        <div class="divider divider-center"></div>
       </div>
 
       <!-- Features Grid -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Feature 1 -->
         <div class="text-center p-8">
-          <div class="w-20 h-20 mx-auto mb-6 border border-[var(--color-timber)] flex items-center justify-center">
-            <svg class="w-8 h-8 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-            </svg>
-          </div>
           <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-4">Clear Communication</h3>
           <p class="text-[var(--color-slate)] leading-relaxed">
             Regular updates via email, text, and calls with photos. You'll always know exactly where your project stands.
@@ -311,11 +274,6 @@ const projectImages = [
 
         <!-- Feature 2 -->
         <div class="text-center p-8">
-          <div class="w-20 h-20 mx-auto mb-6 border border-[var(--color-timber)] flex items-center justify-center">
-            <svg class="w-8 h-8 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-            </svg>
-          </div>
           <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-4">In-House Expertise</h3>
           <p class="text-[var(--color-slate)] leading-relaxed">
             We handle both concrete (ICF) and wood structures in-house, giving us complete control over quality and timelines.
@@ -324,12 +282,6 @@ const projectImages = [
 
         <!-- Feature 3 -->
         <div class="text-center p-8">
-          <div class="w-20 h-20 mx-auto mb-6 border border-[var(--color-timber)] flex items-center justify-center">
-            <svg class="w-8 h-8 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-            </svg>
-          </div>
           <h3 class="text-xl font-display text-[var(--color-charcoal)] mb-4">Owner-Led Detail</h3>
           <p class="text-[var(--color-slate)] leading-relaxed">
             Dan personally oversees every project, from structure to finish, ensuring nothing falls through the cracks.
@@ -358,19 +310,18 @@ const projectImages = [
 
     <!-- Content -->
     <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white">
-      <p class="section-label text-[var(--color-timber)] mb-4">Start Your Journey</p>
       <h2 class="text-4xl md:text-6xl font-display mb-8">
-        Ready to Build Your<br />
-        <span class="italic">Dream Home?</span>
+        Ready to Talk About<br />
+        Your Build?
       </h2>
       <p class="text-xl text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed">
-        Let's discuss your vision and discover why homeowners, designers, and architects trust PCM Homes with their most important projects.
+        Send your plans or just an idea. We reply within 24 to 48 hours, and Dan or Anita answers every call.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact" class="btn-primary bg-[var(--color-timber)] hover:bg-[var(--color-timber-dark)]">
+        <a href="/contact" class="btn-primary">
           <span>Tell Us About Your Project</span>
         </a>
-        <a href="tel:9057161939" class="btn-secondary-light">
+        <a href="tel:+19057161939" class="btn-secondary-light">
           Call (905) 716-1939
         </a>
       </div>

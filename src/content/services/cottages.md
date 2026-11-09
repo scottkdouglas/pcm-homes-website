@@ -1,6 +1,6 @@
 ---
 title: "Cottages & A-Frame Cabins"
-description: "Build your dream cottage or A-frame cabin for year-round enjoyment or seasonal getaways."
+description: "Cottages and A-frame cabins in Muskoka and Kawartha Lakes, built for year-round or seasonal use."
 order: 2
 ---
 

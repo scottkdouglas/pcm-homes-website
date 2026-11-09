@@ -1,6 +1,6 @@
 ---
 title: "ICF & Framing"
-description: "Expert framing and Insulated Concrete Form (ICF) construction for superior energy efficiency and durability."
+description: "ICF and wood framing done by our own crew, not subcontracted."
 order: 3
 ---
 
