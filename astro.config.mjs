@@ -13,6 +13,8 @@ export default defineConfig({
   build: {
     format: 'file'
   },
+  // Keep v5 whitespace handling. Astro 7 defaults to 'jsx', which strips spaces between inline elements.
+  compressHTML: true,
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()]

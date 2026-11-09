@@ -157,7 +157,7 @@ const projectImages = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {services.map((service, index) => (
           <a
-            href={serviceLinks[service.slug] || `/services#${service.slug}`}
+            href={serviceLinks[service.id] || `/services#${service.id}`}
             class="group card p-8 hover-lift"
           >
             <div class="flex items-start justify-between mb-6">
