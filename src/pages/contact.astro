@@ -24,7 +24,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="lg:col-span-3">
           <div class="bg-white p-8 md:p-12">
             <h2 class="text-3xl font-display text-[var(--color-charcoal)] mb-2">Tell Us About Your Project</h2>
-            <p class="text-[var(--color-slate)] mb-8">Fill out the form below and we'll get back to you within 24-48 hours.</p>
+            <p id="form-intro" class="text-[var(--color-slate)] mb-8">Fill out the form below and we'll get back to you within 24-48 hours.</p>
 
             <form id="contact-form" class="space-y-6">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -205,7 +205,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               </p>
             </form>
 
-            <div id="form-message" class="mt-6 hidden"></div>
+            <div id="form-message" class="mt-6 hidden" role="status" aria-live="polite" tabindex="-1"></div>
           </div>
         </div>
 
@@ -345,10 +345,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         });
 
         if (response.ok) {
-          formMessage.className = 'mt-6 p-6 bg-[var(--color-timber-light)]/30 text-[var(--color-charcoal)]';
+          // Replace the form with the confirmation. A thank-you note under a
+          // long, freshly emptied form is easy to miss and invites resubmits.
+          form.reset();
+          form.classList.add('hidden');
+          document.getElementById('form-intro')?.classList.add('hidden');
+          formMessage.className = 'p-6 bg-[var(--color-timber-light)]/30 text-[var(--color-charcoal)] text-lg';
           formMessage.innerHTML = '<strong>Thank you!</strong> We\'ve received your project details and will respond within 24-48 hours.';
           formMessage.classList.remove('hidden');
-          form.reset();
         } else {
           throw new Error('Form submission failed');
         }
@@ -359,7 +363,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       } finally {
         submitBtn.innerHTML = originalHTML;
         submitBtn.disabled = false;
-        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        formMessage.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+        formMessage.focus({ preventScroll: true });
       }
     });
   </script>
