@@ -180,6 +180,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 ></textarea>
               </div>
 
+              <!-- Marketing consent (CASL: optional, unchecked by default) -->
+              <label for="marketing_consent" class="flex items-start gap-3 py-2 cursor-pointer text-sm text-[var(--color-slate)] leading-relaxed">
+                <input
+                  type="checkbox"
+                  id="marketing_consent"
+                  name="marketing_consent"
+                  value="yes"
+                  class="mt-0.5 h-5 w-5 shrink-0 cursor-pointer accent-[var(--color-charcoal)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-timber-dark)]"
+                />
+                <span>Send me occasional project photos and building tips from PCM Homes. Unsubscribe anytime.</span>
+              </label>
+
               <!-- Submit Button -->
               <button
                 type="submit"
@@ -318,6 +330,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       try {
         const formData = new FormData(form);
+        // Record an explicit yes/no plus the exact wording shown, so each
+        // Formspree submission doubles as the CASL consent record.
+        const consentBox = form.querySelector('#marketing_consent') as HTMLInputElement | null;
+        const consentLabel = consentBox?.closest('label')?.textContent?.trim() ?? '';
+        formData.set('marketing_consent', consentBox?.checked ? 'yes' : 'no');
+        formData.set('marketing_consent_text', consentLabel);
         const response = await fetch('https://formspree.io/f/mlgllpnk', {
           method: 'POST',
           body: formData,
