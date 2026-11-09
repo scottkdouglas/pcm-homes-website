@@ -14,6 +14,7 @@
   --color-timber-dark: #a68b5b;
   --color-timber-light: #e8dcc8;
   --color-accent: #8b7355;
+  --color-timber-text: #7d6643; /* gold for small text on light backgrounds, 5.18:1 on cream */
 
   /* Typography */
   --font-display: 'Cormorant Garamond', Georgia, serif;
@@ -189,6 +190,9 @@ h1, h2, h3, h4 {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  /* overflow alone does not clip the hover layer on inline links */
+  clip-path: inset(0);
+  isolation: isolate;
   transition: all 0.4s ease;
 }
 
@@ -272,7 +276,16 @@ h1, h2, h3, h4 {
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-timber-dark);
+  color: var(--color-timber-text);
+}
+
+/* Let the per-use color classes win on dark and photo backgrounds */
+.section-label.text-white\/80 {
+  color: rgb(255 255 255 / 0.8);
+}
+
+.section-label.text-\[var\(--color-timber\)\] {
+  color: var(--color-timber);
 }
 
 /* Card styles */
@@ -451,5 +464,35 @@ h1, h2, h3, h4 {
 @media (max-width: 768px) {
   .parallax-bg {
     background-attachment: scroll;
+  }
+}
+
+/* Visible keyboard focus on light and dark backgrounds */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--color-charcoal);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #fff;
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Show the end state of entrance animations */
+  .animate-on-load {
+    opacity: 1;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
   }
 }

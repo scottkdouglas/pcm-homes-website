@@ -6,7 +6,7 @@ order: 2
 
 ## Cottage & A-Frame Construction
 
-Escape to your own private retreat. We specialize in building cottages and A-frame cabins throughout Ontario's beautiful cottage country.
+Escape to your own private retreat. We build cottages and A-frame cabins in Muskoka, Kawartha Lakes and nearby cottage country.
 
 ### Year-Round or Seasonal
 
