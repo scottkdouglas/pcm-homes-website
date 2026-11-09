@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page Not Found" description="This page doesn't exist. Head back to PCM Homes to see our custom homes, cottages, and renovations.">
+  <meta slot="head" name="robots" content="noindex">
+  <section class="pt-40 pb-24 min-h-[60vh] bg-[var(--color-cream)]">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+      <p class="section-label mb-4">404</p>
+      <h1 class="text-5xl md:text-7xl font-display font-medium mb-6 text-[var(--color-charcoal)]">
+        Page Not <span class="italic">Found</span>
+      </h1>
+      <p class="text-xl text-[var(--color-slate)] mb-10">
+        That page doesn't exist or has moved.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/" class="btn-primary"><span>Back to Home</span></a>
+        <a href="/contact" class="btn-secondary"><span>Contact Us</span></a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

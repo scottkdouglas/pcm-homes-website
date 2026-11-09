@@ -1,0 +1,24 @@
+{
+  // Static Astro site served from Cloudflare Workers static assets.
+  // No Worker script: every request is answered from ./dist.
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "pcm-homes-website",
+  // PCM's Cloudflare account (owner: the PCM Gmail). Pinned so a deploy
+  // never lands in another account the logged-in user belongs to.
+  "account_id": "88d7f6cfb508228bb3c1482bf10b2665",
+  "compatibility_date": "2026-11-01",
+  // www is attached so it resolves; a zone Redirect Rule sends it to the apex.
+  // No public workers.dev copy of the site. Preview URLs stay on so branch
+  // and PR builds get their own link (canonical tags point to pcm.homes).
+  "workers_dev": false,
+  "preview_urls": true,
+  "routes": [
+    { "pattern": "pcm.homes", "custom_domain": true },
+    { "pattern": "www.pcm.homes", "custom_domain": true }
+  ],
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
