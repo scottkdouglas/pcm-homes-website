@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
 
@@ -39,12 +39,12 @@ const serviceImages: Record<string, string> = {
   <section class="py-24 md:py-32 bg-[var(--color-cream)]">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       {await Promise.all(services.map(async (service, index) => {
-        const { Content } = await service.render();
+        const { Content } = await render(service);
         const isEven = index % 2 === 0;
-        const imageUrl = serviceImages[service.slug] || '/images/projects/image00001.jpeg';
+        const imageUrl = serviceImages[service.id] || '/images/projects/image00001.jpeg';
 
         return (
-          <div id={service.slug} class="scroll-mt-32 mb-32 last:mb-0">
+          <div id={service.id} class="scroll-mt-32 mb-32 last:mb-0">
             <div class={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${!isEven ? 'lg:grid-flow-dense' : ''}`}>
               <!-- Image -->
               <div class={`relative ${!isEven ? 'lg:col-start-2' : ''}`}>
