@@ -26,3 +26,6 @@ pnpm-debug.log*
 
 # wrangler local state
 .wrangler/
+
+# Claude Code agent worktrees
+.claude/worktrees/
