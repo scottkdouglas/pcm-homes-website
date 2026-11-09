@@ -1,15 +1,36 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const serviceLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "ICF Construction",
+  "description": "Insulated Concrete Forms (ICF) construction services for basements, full homes, and cottages in Ontario. Energy-efficient building with 50-70% heating/cooling savings.",
+  "serviceType": ["ICF Basement Construction", "Full ICF Home Construction", "ICF Cottage Construction"],
+  "provider": { "@id": "https://pcm.homes/#business" },
+  "areaServed": [
+  { "@type": "AdministrativeArea", "name": "Durham Region" },
+  { "@type": "AdministrativeArea", "name": "York Region" },
+  { "@type": "AdministrativeArea", "name": "Greater Toronto Area" },
+  { "@type": "AdministrativeArea", "name": "Kawartha Lakes" },
+  { "@type": "AdministrativeArea", "name": "Muskoka" }
+]
+};
 ---
 
-<BaseLayout title="ICF Construction Ontario | ICF Homes & Basements" description="ICF construction cuts heating bills 50-70% and lasts 100+ years. Ontario ICF builder with 9 years experience. Get real costs, honest trade-offs, and see if ICF is right for you.">
+<BaseLayout breadcrumbs={[{ name: "Services", path: "/services" }, { name: "ICF Construction", path: "/services/icf-construction" }]} title="ICF Construction Ontario | ICF Homes & Basements" description="ICF homes and basements built by our own crew. Ontario ICF builder, 9 years in business. Honest trade-offs to help you decide if ICF fits your build.">
   <!-- Hero Section -->
   <section data-hero="dark" class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="/images/projects/image00004.jpeg"
+        src="/images/projects/image00004.webp"
+        srcset="/images/projects/image00004-800.webp 800w, /images/projects/image00004.webp 1920w"
+        sizes="100vw"
         alt="ICF home under construction in Ontario"
         class="w-full h-full object-cover"
+        width="1920"
+        height="1280"
+        fetchpriority="high" decoding="async"
       />
       <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
     </div>
@@ -109,9 +130,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="relative">
           <div class="img-zoom">
             <img
-              src="/images/projects/image00008.jpeg"
+              src="/images/projects/image00008.webp"
+              srcset="/images/projects/image00008-800.webp 800w, /images/projects/image00008.webp 1920w"
+              sizes="(min-width: 1024px) 50vw, 100vw"
               alt="ICF wall forms ready for concrete pour"
               class="w-full aspect-[4/3] object-cover"
+              width="1920"
+              height="2560"
+              loading="lazy" decoding="async"
             />
           </div>
           <div class="absolute -bottom-6 -right-6 bg-[var(--color-timber)] p-6 text-[var(--color-charcoal)]">
@@ -346,9 +372,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="group">
           <div class="img-zoom mb-6">
             <img
-              src="/images/projects/image00006.jpeg"
+              src="/images/projects/image00006.webp"
+              srcset="/images/projects/image00006-800.webp 800w, /images/projects/image00006.webp 1920w"
+              sizes="(min-width: 768px) 33vw, 100vw"
               alt="ICF basement under construction"
               class="w-full aspect-[4/3] object-cover"
+              width="1920"
+              height="1440"
+              loading="lazy" decoding="async"
             />
           </div>
           <h3 class="text-2xl font-display text-[var(--color-charcoal)] mb-3">ICF Basements</h3>
@@ -363,9 +394,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="group">
           <div class="img-zoom mb-6">
             <img
-              src="/images/projects/image00002.jpeg"
+              src="/images/projects/image00002.webp"
+              srcset="/images/projects/image00002-800.webp 800w, /images/projects/image00002.webp 1920w"
+              sizes="(min-width: 768px) 33vw, 100vw"
               alt="Custom ICF home interior"
               class="w-full aspect-[4/3] object-cover"
+              width="1920"
+              height="1440"
+              loading="lazy" decoding="async"
             />
           </div>
           <h3 class="text-2xl font-display text-[var(--color-charcoal)] mb-3">Full ICF Homes</h3>
@@ -380,9 +416,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="group">
           <div class="img-zoom mb-6">
             <img
-              src="/images/projects/image00011.jpeg"
+              src="/images/projects/image00011.webp"
+              srcset="/images/projects/image00011-800.webp 800w, /images/projects/image00011.webp 1920w"
+              sizes="(min-width: 768px) 33vw, 100vw"
               alt="ICF cottage in Muskoka"
               class="w-full aspect-[4/3] object-cover"
+              width="1920"
+              height="1440"
+              loading="lazy" decoding="async"
             />
           </div>
           <h3 class="text-2xl font-display text-[var(--color-charcoal)] mb-3">ICF Cottages</h3>
@@ -468,10 +509,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
         <div class="grid grid-cols-2 gap-4">
           <div class="img-zoom">
-            <img src="/images/projects/image00003.jpeg" alt="Finished ICF home interior" class="w-full aspect-square object-cover" />
+            <img src="/images/projects/image00003.webp" srcset="/images/projects/image00003-800.webp 800w, /images/projects/image00003.webp 1920w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Finished ICF home interior" class="w-full aspect-square object-cover" width="1920" height="2560" loading="lazy" decoding="async" />
           </div>
           <div class="img-zoom mt-12">
-            <img src="/images/projects/image00009.jpeg" alt="ICF construction detail" class="w-full aspect-square object-cover" />
+            <img src="/images/projects/image00009.webp" srcset="/images/projects/image00009-800.webp 800w, /images/projects/image00009.webp 1920w" sizes="(min-width: 1024px) 25vw, 50vw" alt="ICF construction detail" class="w-full aspect-square object-cover" width="1920" height="2560" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -605,9 +646,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section data-hero="dark" class="relative py-24 md:py-32 overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="/images/projects/image00001.jpeg"
+        src="/images/projects/image00001.webp"
+        srcset="/images/projects/image00001-800.webp 800w, /images/projects/image00001.webp 1920w"
+        sizes="100vw"
         alt="Luxury ICF home interior"
         class="w-full h-full object-cover"
+        width="1920"
+        height="1440"
+        loading="lazy" decoding="async"
       />
       <div class="absolute inset-0 bg-black/75"></div>
     </div>
@@ -645,27 +691,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   </section>
 
   <!-- Schema Markup -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "ICF Construction",
-      "description": "Insulated Concrete Forms (ICF) construction services for basements, full homes, and cottages in Ontario. Energy-efficient building with 50-70% heating/cooling savings.",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "PCM Homes",
-        "telephone": "+1-905-716-1939",
-        "email": "info.pcmhomes@gmail.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressRegion": "Ontario",
-          "addressCountry": "CA"
-        },
-        "areaServed": ["Muskoka", "Kawartha Lakes", "Durham Region", "York Region", "Greater Toronto Area"]
-      },
-      "serviceType": ["ICF Basement Construction", "Full ICF Home Construction", "ICF Cottage Construction"]
-    }
-  </script>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceLd)} />
 
   <script type="application/ld+json">
     {
@@ -677,7 +703,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           "name": "What does ICF stand for?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ICF stands for Insulated Concrete Forms. The forms are interlocking foam blocks that hold their shape while concrete is poured inside. Unlike traditional plywood forms that get stripped away, ICF forms stay in place permanently as the wall's insulation."
+            "text": "ICF stands for Insulated Concrete Forms. The \"forms\" are interlocking foam blocks that hold their shape while concrete is poured inside. Unlike traditional plywood forms that get stripped away, ICF forms stay in place permanently as the wall's insulation. You end up with a concrete wall that's insulated on both sides from day one."
           }
         },
         {
@@ -685,7 +711,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           "name": "How much more does ICF cost than wood frame?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "For walls only, ICF adds 5-15% to your construction cost. For ICF basements specifically, add $15,000-$25,000 compared to a poured concrete foundation. The payback comes through energy savings of $1,500-$2,500 per year—most owners break even within 5-10 years."
+            "text": "For walls only, ICF adds 5-15% to your construction cost. On a $500,000 build, that's $25,000-$75,000 more upfront. For ICF basements specifically, add $15,000-$25,000 compared to a poured concrete foundation that you'd later need to frame and insulate. The payback comes through energy savings of $1,500-$2,500 per year—most owners break even within 5-10 years."
           }
         },
         {
@@ -693,7 +719,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           "name": "Is ICF worth the extra cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "If you're keeping the home 10+ years, almost certainly yes. Energy savings alone pay back the premium. If you're building to flip in under 5 years, probably not—the resale market doesn't yet pay the full ICF premium in most Ontario areas."
+            "text": "If you're keeping the home 10+ years, almost certainly yes. Energy savings alone pay back the premium. After that, you're saving $1,500-$2,500 every year while enjoying a stronger, quieter, more comfortable home. If you're building to flip in under 5 years, probably not—the resale market doesn't yet pay the full ICF premium in most Ontario areas. We'll help you run the numbers for your specific situation."
           }
         },
         {
@@ -701,7 +727,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           "name": "How long does an ICF home last?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The concrete structure can last 100+ years with normal maintenance. It doesn't rot, rust, warp, or get eaten by insects. Compare that to wood-frame homes that typically last 50-80 years before major structural work is needed."
+            "text": "The concrete structure can last 100+ years with normal maintenance. It doesn't rot, rust, warp, or get eaten by insects. The foam insulation is chemically stable indefinitely. Compare that to wood-frame homes that typically last 50-80 years before major structural work is needed. Roman concrete buildings still stand after 2,000 years. Your ICF home could outlast multiple generations of your family."
           }
         },
         {
@@ -709,7 +735,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           "name": "What R-value does ICF provide?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Standard ICF walls provide R-22 to R-26 depending on the foam thickness. That R-value is continuous with no thermal bridging, unlike wood-frame walls where studs conduct heat and reduce effective R-value."
+            "text": "Standard ICF walls provide R-22 to R-26 depending on the foam thickness. But here's what matters more: that R-value is continuous. No thermal bridging. A wood-frame wall might be rated R-19, but studs conduct heat—the effective whole-wall R-value drops to R-14 or less. ICF's R-22 actually performs like R-22. In Ontario's climate, that difference is substantial."
           }
         },
         {
@@ -717,7 +743,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           "name": "Is ICF good for Ontario's cold climate?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ICF is arguably ideal for Ontario. The continuous insulation envelope and concrete thermal mass keep indoor temperatures stable even when it's -30°C outside. No cold spots near walls. Smaller heating systems work because they're not fighting heat loss."
+            "text": "ICF is arguably ideal for Ontario. The continuous insulation envelope and concrete thermal mass keep indoor temperatures stable even when it's -30°C outside. No cold spots near walls. Smaller heating systems work because they're not fighting heat loss. The concrete can even pour in cold weather since the foam keeps it warm while curing. Ontario's climate is exactly where ICF shines."
           }
         },
         {
@@ -725,7 +751,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           "name": "Can any contractor build with ICF?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Technically yes, but experience matters. ICF has a learning curve—bracing requirements, pour rates, window buck installation. Look for builders with at least 3-5 years of ICF-specific experience and ask for references from ICF projects."
+            "text": "Technically yes, but experience matters. A lot. ICF has a learning curve—bracing requirements, pour rates, window buck installation, electrical chase planning. Inexperienced crews have blowouts during pours, struggle with alignment, and waste material on bad cuts. We've seen cleanup jobs from contractors who watched a YouTube video and figured they'd wing it. Look for builders with at least 3-5 years of ICF-specific experience and ask for references from ICF projects."
           }
         },
         {
@@ -733,7 +759,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           "name": "Can you finish an ICF basement yourself?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, and it's actually easier than finishing a traditional basement. ICF walls have plastic web strips embedded in the foam—you screw drywall directly to these. No framing needed. No insulation to install. No vapor barrier."
+            "text": "Yes, and it's actually easier than finishing a traditional basement. ICF walls have plastic web strips embedded in the foam—you screw drywall directly to these. No framing needed. No insulation to install. No vapor barrier. The walls are already flat, insulated, and ready. A handy homeowner can finish an ICF basement with basic tools. The hard work is already done."
           }
         }
       ]

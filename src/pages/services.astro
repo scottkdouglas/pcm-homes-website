@@ -1,25 +1,31 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { projectImg } from '../lib/project-images';
 import { getCollection, render } from 'astro:content';
 
 const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
 
 const serviceImages: Record<string, string> = {
-  'custom-homes': '/images/projects/image00004.jpeg',
-  'cottages': '/images/projects/image00011.jpeg',
-  'icf-framing': '/images/projects/image00010.jpeg',
-  'renovations': '/images/projects/image00001.jpeg',
+  'custom-homes': '/images/projects/image00004.webp',
+  'cottages': '/images/projects/image00011.webp',
+  'icf-framing': '/images/projects/image00010.webp',
+  'renovations': '/images/projects/image00001.webp',
 };
 ---
 
-<BaseLayout title="Our Services" description="Comprehensive construction services including custom homes, cottages, ICF construction, and renovations throughout Ontario.">
+<BaseLayout breadcrumbs={[{ name: "Services", path: "/services" }]} title="Custom Homes, ICF, A-Frames and Renovations" description="Custom homes, cottages, ICF construction, A-frame cabins and renovations in Durham, York, Kawartha Lakes, Muskoka and the GTA.">
   <!-- Hero Section -->
   <section data-hero="dark" class="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="/images/projects/image00004.jpeg"
+        src="/images/projects/image00004.webp"
+        srcset="/images/projects/image00004-800.webp 800w, /images/projects/image00004.webp 1920w"
+        sizes="100vw"
         alt="PCM Homes custom build"
         class="w-full h-full object-cover"
+        width="1920"
+        height="1280"
+        fetchpriority="high" decoding="async"
       />
       <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
     </div>
@@ -41,7 +47,7 @@ const serviceImages: Record<string, string> = {
       {await Promise.all(services.map(async (service, index) => {
         const { Content } = await render(service);
         const isEven = index % 2 === 0;
-        const imageUrl = serviceImages[service.id] || '/images/projects/image00001.jpeg';
+        const imageUrl = serviceImages[service.id] || '/images/projects/image00001.webp';
 
         return (
           <div id={service.id} class="scroll-mt-32 mb-32 last:mb-0">
@@ -50,9 +56,12 @@ const serviceImages: Record<string, string> = {
               <div class={`relative ${!isEven ? 'lg:col-start-2' : ''}`}>
                 <div class="img-zoom">
                   <img
-                    src={imageUrl}
+                    {...projectImg(imageUrl)}
+                    sizes="(min-width: 1024px) 50vw, 100vw"
                     alt={service.data.title}
                     class="w-full aspect-[4/3] object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div class="absolute -bottom-6 -right-6 bg-[var(--color-charcoal)] text-white p-6">
@@ -104,9 +113,14 @@ const serviceImages: Record<string, string> = {
         <a href="/services/icf-construction" class="group card overflow-hidden hover-lift block">
           <div class="relative h-64 overflow-hidden">
             <img
-              src="/images/projects/image00010.jpeg"
+              src="/images/projects/image00010.webp"
+              srcset="/images/projects/image00010-800.webp 800w, /images/projects/image00010.webp 1920w"
+              sizes="(min-width: 768px) 50vw, 100vw"
               alt="ICF Construction by PCM Homes"
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              width="1920"
+              height="1440"
+              loading="lazy" decoding="async"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
             <div class="absolute bottom-6 left-6 right-6">
@@ -131,9 +145,14 @@ const serviceImages: Record<string, string> = {
         <a href="/services/a-frame-cabins" class="group card overflow-hidden hover-lift block">
           <div class="relative h-64 overflow-hidden">
             <img
-              src="/images/projects/image00011.jpeg"
+              src="/images/projects/image00011.webp"
+              srcset="/images/projects/image00011-800.webp 800w, /images/projects/image00011.webp 1920w"
+              sizes="(min-width: 768px) 50vw, 100vw"
               alt="A-Frame Cabin by PCM Homes"
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              width="1920"
+              height="1440"
+              loading="lazy" decoding="async"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
             <div class="absolute bottom-6 left-6 right-6">

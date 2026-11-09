@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { projectImg } from '../lib/project-images';
 
 const serviceAreas = [
   {
@@ -7,7 +8,7 @@ const serviceAreas = [
     tagline: 'Premier Cottage Country',
     description: 'Custom cottages and year-round homes in Ontario\'s most sought-after destination. Waterfront builds, A-frames, and luxury retreats.',
     services: ['Custom cottages & A-frames', 'Year-round builds', 'Waterfront expertise'],
-    image: '/images/projects/image00011.jpeg',
+    image: '/images/projects/image00011.webp',
     link: '/locations/muskoka',
   },
   {
@@ -15,7 +16,7 @@ const serviceAreas = [
     tagline: 'Natural Beauty Meets Craft',
     description: 'Beautiful homes and cottages in the heart of the Kawarthas, where natural beauty meets quality craftsmanship.',
     services: ['Cottage construction', 'Custom home builds', 'Renovations & additions'],
-    image: '/images/projects/image00009.jpeg',
+    image: '/images/projects/image00009.webp',
     link: '/locations/kawartha-lakes',
   },
   {
@@ -23,7 +24,7 @@ const serviceAreas = [
     tagline: 'Residential Excellence',
     description: 'Comprehensive residential construction throughout Durham. From ICF foundations to complete custom homes.',
     services: ['Custom residential builds', 'ICF construction', 'Home additions'],
-    image: '/images/projects/image00004.jpeg',
+    image: '/images/projects/image00004.webp',
     link: '/locations/durham-region',
   },
   {
@@ -31,7 +32,7 @@ const serviceAreas = [
     tagline: 'Based in Stouffville',
     description: 'Custom homes, renovations, and additions across York Region. From Markham to Georgina, with strongest local presence around our Stouffville base.',
     services: ['Custom homes', 'Renovations & additions', 'Heritage & rural work'],
-    image: '/images/projects/image00001.jpeg',
+    image: '/images/projects/image00001.webp',
     link: '/locations/york-region',
   },
   {
@@ -39,20 +40,25 @@ const serviceAreas = [
     tagline: 'Outer GTA Focus',
     description: 'Custom builds, tear-down rebuilds, and major renovations across the outer GTA. Markham, Vaughan, Mississauga, Pickering, and the 905.',
     services: ['Custom builds & rebuilds', 'Major renovations', 'Additions'],
-    image: '/images/projects/image00006.jpeg',
+    image: '/images/projects/image00006.webp',
     link: '/locations/gta',
   },
 ];
 ---
 
-<BaseLayout title="Service Areas" description="PCM Homes serves Muskoka Lakes, Kawartha Lakes, Durham Region, York Region, and the Greater Toronto Area (GTA).">
+<BaseLayout breadcrumbs={[{ name: "Service Areas", path: "/locations" }]} title="Service Areas: Durham, York, GTA, Kawartha, Muskoka" description="PCM Homes serves Muskoka Lakes, Kawartha Lakes, Durham Region, York Region, and the Greater Toronto Area (GTA).">
   <!-- Hero Section -->
   <section data-hero="dark" class="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="/images/projects/image00011.jpeg"
+        src="/images/projects/image00011.webp"
+        srcset="/images/projects/image00011-800.webp 800w, /images/projects/image00011.webp 1920w"
+        sizes="100vw"
         alt="PCM Homes cottage build in Muskoka"
         class="w-full h-full object-cover"
+        width="1920"
+        height="1440"
+        fetchpriority="high" decoding="async"
       />
       <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
     </div>
@@ -63,7 +69,7 @@ const serviceAreas = [
         Our <span class="italic">Service Areas</span>
       </h1>
       <p class="text-xl text-white/80 max-w-2xl mx-auto">
-        Serving communities throughout Ontario with quality construction and exceptional communication.
+        Durham, York, the GTA, Kawartha Lakes and Muskoka. Further afield when your project needs it.
       </p>
     </div>
   </section>
@@ -90,9 +96,12 @@ const serviceAreas = [
             <CardWrapper {...cardProps} class="group card overflow-hidden hover-lift block">
               <div class="relative h-56 overflow-hidden">
                 <img
-                  src={area.image}
+                  {...projectImg(area.image)}
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                   alt={`PCM Homes project in ${area.name}`}
                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div class="absolute bottom-4 left-4">
@@ -209,25 +218,40 @@ const serviceAreas = [
           <div class="space-y-4">
             <div class="img-zoom">
               <img
-                src="/images/projects/image00003.jpeg"
+                src="/images/projects/image00003.webp"
+                srcset="/images/projects/image00003-800.webp 800w, /images/projects/image00003.webp 1920w"
+                sizes="(min-width: 1024px) 25vw, 50vw"
                 alt="PCM Homes interior craftsmanship"
                 class="w-full aspect-[3/4] object-cover"
+                width="1920"
+                height="2560"
+                loading="lazy" decoding="async"
               />
             </div>
             <div class="img-zoom">
               <img
-                src="/images/projects/image00008.jpeg"
+                src="/images/projects/image00008.webp"
+                srcset="/images/projects/image00008-800.webp 800w, /images/projects/image00008.webp 1920w"
+                sizes="(min-width: 1024px) 25vw, 50vw"
                 alt="PCM Homes pool and outdoor living"
                 class="w-full aspect-square object-cover"
+                width="1920"
+                height="2560"
+                loading="lazy" decoding="async"
               />
             </div>
           </div>
           <div class="pt-8">
             <div class="img-zoom">
               <img
-                src="/images/projects/image00002.jpeg"
+                src="/images/projects/image00002.webp"
+                srcset="/images/projects/image00002-800.webp 800w, /images/projects/image00002.webp 1920w"
+                sizes="(min-width: 1024px) 25vw, 50vw"
                 alt="PCM Homes luxury interior"
                 class="w-full aspect-[3/5] object-cover"
+                width="1920"
+                height="1440"
+                loading="lazy" decoding="async"
               />
             </div>
           </div>
@@ -316,9 +340,14 @@ const serviceAreas = [
   <section data-hero="dark" class="relative py-24 md:py-32 overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="/images/projects/image00007.jpeg"
+        src="/images/projects/image00007.webp"
+        srcset="/images/projects/image00007-800.webp 800w, /images/projects/image00007.webp 1920w"
+        sizes="100vw"
         alt="PCM Homes timber frame"
         class="w-full h-full object-cover"
+        width="1920"
+        height="1440"
+        loading="lazy" decoding="async"
       />
       <div class="absolute inset-0 bg-black/70"></div>
     </div>

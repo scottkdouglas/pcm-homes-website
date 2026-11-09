@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { projectImg } from '../lib/project-images';
 import { getCollection } from 'astro:content';
 
 const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
@@ -12,31 +13,32 @@ const serviceLinks: Record<string, string> = {
 };
 
 const projectImages = [
-  { src: '/images/projects/image00004.jpeg', alt: 'Modern custom home exterior', category: 'Custom Home' },
-  { src: '/images/projects/image00005.jpeg', alt: 'Luxury backyard with pool', category: 'Custom Home' },
-  { src: '/images/projects/image00001.jpeg', alt: 'Luxury interior living space', category: 'Interior' },
-  { src: '/images/projects/image00006.jpeg', alt: 'Open concept cottage kitchen', category: 'Cottage' },
-  { src: '/images/projects/image00010.jpeg', alt: 'Timber frame entrance', category: 'Renovation' },
-  { src: '/images/projects/image00011.jpeg', alt: 'Modern farmhouse with pool', category: 'Custom Home' },
+  { src: '/images/projects/image00004.webp', alt: 'Modern custom home exterior', category: 'Custom Home' },
+  { src: '/images/projects/image00005.webp', alt: 'Luxury backyard with pool', category: 'Custom Home' },
+  { src: '/images/projects/image00001.webp', alt: 'Luxury interior living space', category: 'Interior' },
+  { src: '/images/projects/image00006.webp', alt: 'Open concept cottage kitchen', category: 'Cottage' },
+  { src: '/images/projects/image00010.webp', alt: 'Timber frame entrance', category: 'Renovation' },
+  { src: '/images/projects/image00011.webp', alt: 'Modern farmhouse with pool', category: 'Custom Home' },
 ];
 ---
 
-<BaseLayout title="Home">
+<BaseLayout title="Custom Home Builder in Durham, York and Muskoka" description="PCM Homes builds custom homes, ICF homes, A-frame cabins and renovations in Durham, York, Kawartha Lakes, Muskoka and the GTA. Call (905) 716-1939.">
   <!-- Preload hero image for better LCP -->
-  <link slot="head" rel="preload" as="image" href="/images/projects/image00005.jpeg" fetchpriority="high" />
+  <link slot="head" rel="preload" as="image" href="/images/projects/image00005.webp" imagesrcset="/images/projects/image00005-800.webp 800w, /images/projects/image00005.webp 1008w" imagesizes="100vw" fetchpriority="high" />
 
   <!-- Hero Section -->
   <section data-hero="dark" class="relative min-h-screen flex items-center justify-center overflow-hidden">
     <!-- Background Image -->
     <div class="absolute inset-0">
       <img
-        src="/images/projects/image00005.jpeg"
+        src="/images/projects/image00005.webp"
+        srcset="/images/projects/image00005-800.webp 800w, /images/projects/image00005.webp 1008w"
+        sizes="100vw"
         alt="PCM Homes luxury custom build"
         class="w-full h-full object-cover"
         width="1008"
         height="756"
-        fetchpriority="high"
-        decoding="async"
+        fetchpriority="high" decoding="async"
       />
       <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/70"></div>
     </div>
@@ -48,47 +50,40 @@ const projectImages = [
       </div>
 
       <h1 class="animate-on-load animate-fade-in-up delay-100 text-5xl md:text-7xl lg:text-8xl font-display font-medium mb-8 leading-[1.1]">
-        Crafting Exceptional<br />
-        <span class="italic text-[var(--color-timber-light)]">Homes</span> in Ontario
+        Custom <span class="italic text-[var(--color-timber-light)]">Homes</span><br />
+        from Durham to Muskoka
       </h1>
 
       <p class="animate-on-load animate-fade-in-up delay-200 text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-12 leading-relaxed">
-        From cottage country to the GTA, we build custom homes, cottages, and renovations with unmatched communication and craftsmanship.
+        Custom homes, ICF builds, A-frame cabins and renovations across Durham, York, the GTA, Kawartha Lakes and Muskoka. Dan or Anita answers every call.
       </p>
 
       <div class="animate-on-load animate-fade-in-up delay-300 flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/contact" class="btn-primary">
           <span>Start Your Project</span>
         </a>
-        <a href="/services" class="btn-secondary-light">
-          Explore Services
+        <a href="tel:+19057161939" class="btn-secondary-light">
+          Call (905) 716-1939
         </a>
       </div>
 
       <!-- Trust Indicators -->
       <div class="animate-on-load animate-fade-in delay-500 mt-20 flex flex-wrap justify-center gap-8 md:gap-16 text-white/60">
         <div class="text-center">
-          <div class="text-3xl md:text-4xl font-display font-medium text-white mb-1">9+</div>
-          <div class="text-xs uppercase tracking-widest">Years Experience</div>
+          <div class="text-3xl md:text-4xl font-display font-medium text-white mb-1">9</div>
+          <div class="text-xs uppercase tracking-widest">Years in Business</div>
         </div>
         <div class="text-center">
-          <div class="text-3xl md:text-4xl font-display font-medium text-white mb-1">100%</div>
-          <div class="text-xs uppercase tracking-widest">Fully Insured</div>
+          <div class="text-3xl md:text-4xl font-display font-medium text-white mb-1">Fully</div>
+          <div class="text-xs uppercase tracking-widest">Insured</div>
         </div>
         <div class="text-center">
-          <div class="text-3xl md:text-4xl font-display font-medium text-white mb-1">2yr</div>
-          <div class="text-xs uppercase tracking-widest">Warranty</div>
+          <div class="text-3xl md:text-4xl font-display font-medium text-white mb-1">2-Year</div>
+          <div class="text-xs uppercase tracking-widest">Workmanship Warranty</div>
         </div>
       </div>
     </div>
 
-    <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-      <svg class="w-6 h-10 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 40">
-        <rect x="1" y="1" width="22" height="38" rx="11" stroke-width="2" />
-        <circle cx="12" cy="12" r="3" fill="currentColor" class="animate-pulse" />
-      </svg>
-    </div>
   </section>
 
   <!-- Introduction Section -->
@@ -121,11 +116,14 @@ const projectImages = [
         <div class="relative">
           <div class="img-zoom">
             <img
-              src="/images/projects/image00003.jpeg"
+              src="/images/projects/image00003.webp"
+              srcset="/images/projects/image00003-800.webp 800w, /images/projects/image00003.webp 1920w"
+              sizes="(min-width: 1024px) 50vw, 100vw"
               alt="Piano room in PCM Homes custom build"
               class="w-full aspect-[4/5] object-cover"
-              loading="lazy"
-              decoding="async"
+              width="1920"
+              height="2560"
+              loading="lazy" decoding="async"
             />
           </div>
           <!-- Floating Stats Card -->
@@ -204,7 +202,8 @@ const projectImages = [
         {projectImages.map((image, index) => (
           <div class={`img-zoom relative group ${index === 0 ? 'md:col-span-2 md:row-span-2' : ''}`}>
             <img
-              src={image.src}
+              {...projectImg(image.src)}
+              sizes={index === 0 ? '(min-width: 1024px) 66vw, 100vw' : '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'}
               alt={image.alt}
               class={`w-full object-cover ${index === 0 ? 'aspect-square md:aspect-auto md:h-full' : 'aspect-[4/3]'}`}
               loading="lazy"
@@ -231,18 +230,18 @@ const projectImages = [
           <div class="grid grid-cols-2 gap-4">
             <div class="space-y-4">
               <div class="img-zoom">
-                <img src="/images/projects/image00006.jpeg" alt="Cottage interior" class="w-full aspect-square object-cover" loading="lazy" decoding="async" />
+                <img src="/images/projects/image00006.webp" srcset="/images/projects/image00006-800.webp 800w, /images/projects/image00006.webp 1920w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Cottage interior" class="w-full aspect-square object-cover" width="1920" height="1440" loading="lazy" decoding="async" />
               </div>
               <div class="img-zoom">
-                <img src="/images/projects/image00009.jpeg" alt="Open concept living" class="w-full aspect-[3/4] object-cover" loading="lazy" decoding="async" />
+                <img src="/images/projects/image00009.webp" srcset="/images/projects/image00009-800.webp 800w, /images/projects/image00009.webp 1920w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Open concept living" class="w-full aspect-[3/4] object-cover" width="1920" height="2560" loading="lazy" decoding="async" />
               </div>
             </div>
             <div class="space-y-4 pt-12">
               <div class="img-zoom">
-                <img src="/images/projects/image00007.jpeg" alt="Kitchen with timber beams" class="w-full aspect-[3/4] object-cover" loading="lazy" decoding="async" />
+                <img src="/images/projects/image00007.webp" srcset="/images/projects/image00007-800.webp 800w, /images/projects/image00007.webp 1920w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Kitchen with timber beams" class="w-full aspect-[3/4] object-cover" width="1920" height="1440" loading="lazy" decoding="async" />
               </div>
               <div class="img-zoom">
-                <img src="/images/projects/image00008.jpeg" alt="Living room detail" class="w-full aspect-square object-cover" loading="lazy" decoding="async" />
+                <img src="/images/projects/image00008.webp" srcset="/images/projects/image00008-800.webp 800w, /images/projects/image00008.webp 1920w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Living room detail" class="w-full aspect-square object-cover" width="1920" height="2560" loading="lazy" decoding="async" />
               </div>
             </div>
           </div>
@@ -345,11 +344,14 @@ const projectImages = [
     <!-- Background Image -->
     <div class="absolute inset-0">
       <img
-        src="/images/projects/image00002.jpeg"
+        src="/images/projects/image00002.webp"
+        srcset="/images/projects/image00002-800.webp 800w, /images/projects/image00002.webp 1920w"
+        sizes="100vw"
         alt="Luxury interior"
         class="w-full h-full object-cover"
-        loading="lazy"
-        decoding="async"
+        width="1920"
+        height="1440"
+        loading="lazy" decoding="async"
       />
       <div class="absolute inset-0 bg-[var(--color-charcoal)]/80"></div>
     </div>

@@ -84,14 +84,19 @@ const faqs = [
 ];
 ---
 
-<BaseLayout title="Kawartha Lakes Custom Home Builder | Lindsay, Bobcaygeon, Fenelon Falls" description="Custom home builder in the Kawarthas. Lindsay, Bobcaygeon, Fenelon Falls, Lakefield, Buckhorn, Peterborough County. Cottages, year-round homes, A-frames, renovations. 20+ years experience.">
+<BaseLayout breadcrumbs={[{ name: "Service Areas", path: "/locations" }, { name: "Kawartha Lakes", path: "/locations/kawartha-lakes" }]} title="Kawartha Lakes Custom Home Builder | Lindsay, Bobcaygeon, Fenelon Falls" description="Custom home builder in the Kawarthas. Lindsay, Bobcaygeon, Fenelon Falls, Lakefield, Buckhorn, Peterborough County. Cottages, year-round homes and A-frames.">
   <!-- Hero Section -->
   <section data-hero="dark" class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="/images/projects/image00006.jpeg"
+        src="/images/projects/image00006.webp"
+        srcset="/images/projects/image00006-800.webp 800w, /images/projects/image00006.webp 1920w"
+        sizes="100vw"
         alt="Custom home on a Kawartha lake"
         class="w-full h-full object-cover"
+        width="1920"
+        height="1440"
+        fetchpriority="high" decoding="async"
       />
       <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
     </div>
@@ -186,9 +191,14 @@ const faqs = [
 
         <div class="img-zoom">
           <img
-            src="/images/projects/image00009.jpeg"
+            src="/images/projects/image00009.webp"
+            srcset="/images/projects/image00009-800.webp 800w, /images/projects/image00009.webp 1920w"
+            sizes="(min-width: 1024px) 50vw, 100vw"
             alt="Open concept lake-country interior"
             class="w-full aspect-[4/3] object-cover"
+            width="1920"
+            height="2560"
+            loading="lazy" decoding="async"
           />
         </div>
       </div>
@@ -224,9 +234,14 @@ const faqs = [
   <section class="relative py-32 overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="/images/projects/image00011.jpeg"
+        src="/images/projects/image00011.webp"
+        srcset="/images/projects/image00011-800.webp 800w, /images/projects/image00011.webp 1920w"
+        sizes="100vw"
         alt="Custom Kawartha lake home"
         class="w-full h-full object-cover"
+        width="1920"
+        height="1440"
+        loading="lazy" decoding="async"
       />
       <div class="absolute inset-0 bg-[var(--color-charcoal)]/80"></div>
     </div>

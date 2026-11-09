@@ -1,15 +1,36 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const serviceLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "A-Frame Cabin Construction",
+  "description": "Custom A-frame cabin builder in Ontario. Year-round and seasonal A-frame homes in Muskoka, Kawartha Lakes, and cottage country. Founded in 2015.",
+  "serviceType": "Custom Home Construction",
+  "provider": { "@id": "https://pcm.homes/#business" },
+  "areaServed": [
+  { "@type": "AdministrativeArea", "name": "Durham Region" },
+  { "@type": "AdministrativeArea", "name": "York Region" },
+  { "@type": "AdministrativeArea", "name": "Greater Toronto Area" },
+  { "@type": "AdministrativeArea", "name": "Kawartha Lakes" },
+  { "@type": "AdministrativeArea", "name": "Muskoka" }
+]
+};
 ---
 
-<BaseLayout title="A-Frame Cabin Builder Ontario | Custom A-Frame Homes & Cottages" description="A-frame cabin construction in Ontario from $220-$300/sq ft (construction cost, kit separate). 20-40% less than traditional builds. Muskoka, Kawartha, Durham. 20+ years experience.">
+<BaseLayout breadcrumbs={[{ name: "Services", path: "/services" }, { name: "A-Frame Cabins", path: "/services/a-frame-cabins" }]} title="A-Frame Cabin Builder Ontario | Custom A-Frame Homes & Cottages" description="A-frame cabin construction in Ontario from $220-$300/sq ft (construction cost, kit separate). Cabins in Muskoka, Kawartha Lakes and Durham.">
   <!-- Hero Section -->
   <section data-hero="dark" class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="/images/projects/image00011.jpeg"
+        src="/images/projects/image00011.webp"
+        srcset="/images/projects/image00011-800.webp 800w, /images/projects/image00011.webp 1920w"
+        sizes="100vw"
         alt="Custom A-frame cabin built by PCM Homes in Ontario cottage country"
         class="w-full h-full object-cover"
+        width="1920"
+        height="1440"
+        fetchpriority="high" decoding="async"
       />
       <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
     </div>
@@ -384,9 +405,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="relative">
           <div class="img-zoom">
             <img
-              src="/images/projects/image00007.jpeg"
+              src="/images/projects/image00007.webp"
+              srcset="/images/projects/image00007-800.webp 800w, /images/projects/image00007.webp 1920w"
+              sizes="(min-width: 1024px) 50vw, 100vw"
               alt="A-frame cabin interior with exposed timber framing"
               class="w-full aspect-[4/5] object-cover"
+              width="1920"
+              height="1440"
+              loading="lazy" decoding="async"
             />
           </div>
           <div class="absolute -bottom-6 -left-6 bg-[var(--color-timber)] p-8 text-[var(--color-charcoal)]">
@@ -507,7 +533,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="group relative overflow-hidden">
           <div class="img-zoom aspect-[4/3]">
-            <img src="/images/projects/image00009.jpeg" alt="A-frame cabin exterior in Kawartha Lakes" class="w-full h-full object-cover" />
+            <img src="/images/projects/image00009.webp" srcset="/images/projects/image00009-800.webp 800w, /images/projects/image00009.webp 1920w" sizes="100vw" alt="A-frame cabin exterior in Kawartha Lakes" class="w-full h-full object-cover" width="1920" height="2560" loading="lazy" decoding="async" />
           </div>
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
             <div class="text-white">
@@ -518,7 +544,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         </div>
         <div class="group relative overflow-hidden">
           <div class="img-zoom aspect-[4/3]">
-            <img src="/images/projects/image00003.jpeg" alt="A-frame interior with modern finishes" class="w-full h-full object-cover" />
+            <img src="/images/projects/image00003.webp" srcset="/images/projects/image00003-800.webp 800w, /images/projects/image00003.webp 1920w" sizes="100vw" alt="A-frame interior with modern finishes" class="w-full h-full object-cover" width="1920" height="2560" loading="lazy" decoding="async" />
           </div>
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
             <div class="text-white">
@@ -529,7 +555,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         </div>
         <div class="group relative overflow-hidden">
           <div class="img-zoom aspect-[4/3]">
-            <img src="/images/projects/image00002.jpeg" alt="A-frame with large window wall overlooking lake" class="w-full h-full object-cover" />
+            <img src="/images/projects/image00002.webp" srcset="/images/projects/image00002-800.webp 800w, /images/projects/image00002.webp 1920w" sizes="100vw" alt="A-frame with large window wall overlooking lake" class="w-full h-full object-cover" width="1920" height="1440" loading="lazy" decoding="async" />
           </div>
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
             <div class="text-white">
@@ -692,9 +718,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section data-hero="dark" class="relative py-24 md:py-32 overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="/images/projects/image00005.jpeg"
+        src="/images/projects/image00005.webp"
+        srcset="/images/projects/image00005-800.webp 800w, /images/projects/image00005.webp 1008w"
+        sizes="100vw"
         alt="A-frame cabin at sunset in Ontario cottage country"
         class="w-full h-full object-cover"
+        width="1008"
+        height="756"
+        loading="lazy" decoding="async"
       />
       <div class="absolute inset-0 bg-black/70"></div>
     </div>
@@ -720,33 +751,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   </section>
 
   <!-- Schema Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "A-Frame Cabin Construction",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "PCM Homes",
-      "telephone": "(905) 716-1939",
-      "email": "info.pcmhomes@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": "Ontario",
-        "addressCountry": "CA"
-      },
-      "areaServed": [
-        "Muskoka",
-        "Kawartha Lakes",
-        "Durham Region",
-        "York Region",
-        "Greater Toronto Area"
-      ]
-    },
-    "description": "Custom A-frame cabin builder in Ontario. Year-round and seasonal A-frame homes in Muskoka, Kawartha Lakes, and cottage country. 20+ years trade experience.",
-    "serviceType": "Custom Home Construction"
-  }
-  </script>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceLd)} />
 
   <script type="application/ld+json">
   {
@@ -758,7 +763,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         "name": "How much does it cost to build an A-frame cabin in Ontario?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A-frame construction costs run $220 to $300 per square foot in Ontario (excluding the kit package)—20-40% less than traditional builds. An 800 sq ft seasonal cabin runs $175,000-$200,000 for construction. A year-round 1,200 sq ft home is typically $315,000-$400,000. The A-frame kit is a separate cost, typically starting around $60K+."
+          "text": "A-frame construction costs run $220 to $300 per square foot in Ontario—20-40% less than traditional builds. This is the construction cost and does not include the A-frame kit package (kits typically start around $60K+). An 800 sq ft seasonal cabin runs $175,000-$200,000 for construction. A year-round 1,200 sq ft home with premium finishes is typically $315,000-$400,000. The range depends on site access, foundation type, finishes, and whether you need well/septic. We provide fixed-price quotes after seeing your lot."
         }
       },
       {
@@ -766,7 +771,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         "name": "Are A-frame houses cheaper to build than traditional homes?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. A-frames typically cost 20-40% less than conventional homes of similar square footage. The savings come from simpler framing (30-50% less framing time), reduced material requirements, and faster construction."
+          "text": "Yes. A-frames typically cost 20-40% less than conventional homes of similar square footage. The savings come from simpler framing (30-50% less framing time), reduced material requirements, and faster construction. However, per usable square foot, the savings are smaller because A-frames lose floor space to the angled walls on upper levels."
         }
       },
       {
@@ -774,7 +779,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         "name": "How long does it take to build an A-frame?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Most A-frames take 3-5 months from foundation pour to move-in—compared to 6-12 months for traditional builds. Permits add 4-8 weeks before construction starts, depending on the municipality."
+          "text": "Most A-frames take 3-5 months from foundation pour to move-in—compared to 6-12 months for traditional builds. Permits add 4-8 weeks before construction starts, depending on the municipality. Remote locations with challenging access take longer. We give realistic timelines in our initial consultation."
         }
       },
       {
@@ -782,7 +787,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         "name": "Can an A-frame cabin be a year-round home in Ontario?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely. With R-40+ insulation standards, modern HVAC, triple-pane windows, and proper air sealing, A-frames are as warm and comfortable as any custom home. Many clients live in their A-frames full-time through Ontario winters."
+          "text": "Absolutely. We build A-frames to R-40+ insulation standards with modern HVAC, triple-pane windows, and proper air sealing. They're as warm and comfortable as any custom home. Many of our clients live in their A-frames full-time through Ontario winters. The key is building it right from the start—retrofit insulation is expensive and never as effective."
         }
       },
       {
@@ -790,7 +795,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         "name": "What are the disadvantages of A-frame houses?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The main drawbacks are: limited storage space due to angled walls, reduced usable floor space on upper levels, furniture placement requires planning, large windows can mean privacy concerns, heat rises making upper lofts hot, and roof repairs are more challenging due to steep pitch."
+          "text": "The main drawbacks are: 1) Limited storage space due to angled walls (built-ins help), 2) Reduced usable floor space on upper levels, 3) Furniture placement requires planning, 4) Large windows can mean privacy concerns without proper coverings, 5) Heat rises making upper lofts hot (solved with proper HVAC design), 6) Roof repairs are more challenging due to steep pitch. A-frames work best for couples, small families, or anyone who values dramatic design over maximum storage."
         }
       },
       {
@@ -798,7 +803,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         "name": "Do A-frames need special permits in Ontario?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A-frames require the same building permits as any other home in Ontario—a building permit from the municipality, plus septic and conservation authority approvals depending on your lot. Some townships have specific zoning requirements for roof pitch or building height."
+          "text": "A-frames require the same building permits as any other home in Ontario—a building permit from the municipality, plus septic and conservation authority approvals depending on your lot. Some townships have specific zoning requirements for roof pitch or building height. We handle all permit applications and know what each municipality requires."
         }
       },
       {
@@ -806,7 +811,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         "name": "What size A-frame can I build?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A-frames range from compact 400 sq ft cabins to spacious 2,500+ sq ft family homes. Most builds fall between 800 and 1,800 sq ft. Larger A-frames often incorporate dormers or bump-outs to maximize usable space."
+          "text": "A-frames range from compact 400 sq ft cabins to spacious 2,500+ sq ft family homes. Most of our builds fall between 800 and 1,800 sq ft. Larger A-frames often incorporate dormers, bump-outs, or a traditional second floor section to maximize usable space. We help you figure out what size makes sense for your needs and lot."
         }
       },
       {
@@ -814,7 +819,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         "name": "Where do you build A-frames in Ontario?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We build throughout Muskoka (Huntsville, Bracebridge, Gravenhurst, Port Carling), Kawartha Lakes (Lindsay, Bobcaygeon, Haliburton), Durham Region, York Region, and the GTA."
+          "text": "We build throughout Muskoka (Huntsville, Bracebridge, Gravenhurst, Port Carling), Kawartha Lakes (Lindsay, Bobcaygeon, Haliburton), Durham Region, York Region, and the GTA. Most of our A-frame projects are in cottage country, but we've also built A-frames as primary residences closer to the city. If you have a lot in Central Ontario, we can probably build on it."
         }
       }
     ]

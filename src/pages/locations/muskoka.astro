@@ -90,16 +90,48 @@ const faqs = [
     answer: "Absolutely. Many clients come with plans from their architect, and we work with several local designers who understand Muskoka building requirements. If you don't have an architect, we can recommend people who know the unique challenges here. We're also happy to work from stock plans or help you develop a design from scratch."
   }
 ];
+
+const serviceLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Custom Cottage and Home Building in Muskoka",
+  "description": "Custom cottage builder serving Muskoka including Huntsville, Bracebridge, Gravenhurst, Port Carling, and Lake of Bays. Founded in 2015. Cottages and year-round homes.",
+  "url": "https://pcm.homes/locations/muskoka",
+  "serviceType": ["Custom Cottage Building", "Year-Round Home Construction", "Cottage Renovation", "ICF Basement Construction"],
+  "provider": { "@id": "https://pcm.homes/#business" },
+  "areaServed": [
+    { "@type": "Place", "name": "Muskoka, Ontario" },
+    { "@type": "Place", "name": "Huntsville, Ontario" },
+    { "@type": "Place", "name": "Bracebridge, Ontario" },
+    { "@type": "Place", "name": "Gravenhurst, Ontario" },
+    { "@type": "Place", "name": "Port Carling, Ontario" },
+    { "@type": "Place", "name": "Lake of Bays, Ontario" }
+  ]
+};
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+  }))
+};
 ---
 
-<BaseLayout title="Muskoka Cottage Builder | Custom Homes Huntsville, Bracebridge, Gravenhurst" description="Custom cottage builder in Muskoka. Build costs $345-$650/sq ft. Huntsville, Bracebridge, Gravenhurst, Port Carling, Lake of Bays. 9 years experience.">
+<BaseLayout breadcrumbs={[{ name: "Service Areas", path: "/locations" }, { name: "Muskoka", path: "/locations/muskoka" }]} title="Muskoka Cottage Builder | Custom Homes Huntsville, Bracebridge, Gravenhurst" description="Custom cottage builder in Muskoka. Build costs $345-$650/sq ft. Huntsville, Bracebridge, Gravenhurst, Port Carling, Lake of Bays. 9 years experience.">
   <!-- Hero Section -->
   <section data-hero="dark" class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="/images/projects/image00011.jpeg"
+        src="/images/projects/image00011.webp"
+        srcset="/images/projects/image00011-800.webp 800w, /images/projects/image00011.webp 1920w"
+        sizes="100vw"
         alt="Custom cottage on Muskoka lake with waterfront view"
         class="w-full h-full object-cover"
+        width="1920"
+        height="1440"
+        fetchpriority="high" decoding="async"
       />
       <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
     </div>
@@ -469,18 +501,18 @@ const faqs = [
           <div class="grid grid-cols-2 gap-4">
             <div class="space-y-4">
               <div class="img-zoom">
-                <img src="/images/projects/image00003.jpeg" alt="PCM Homes interior craftsmanship" class="w-full aspect-square object-cover" />
+                <img src="/images/projects/image00003.webp" srcset="/images/projects/image00003-800.webp 800w, /images/projects/image00003.webp 1920w" sizes="(min-width: 1024px) 25vw, 50vw" alt="PCM Homes interior craftsmanship" class="w-full aspect-square object-cover" width="1920" height="2560" loading="lazy" decoding="async" />
               </div>
               <div class="img-zoom">
-                <img src="/images/projects/image00009.jpeg" alt="Open concept cottage living" class="w-full aspect-[3/4] object-cover" />
+                <img src="/images/projects/image00009.webp" srcset="/images/projects/image00009-800.webp 800w, /images/projects/image00009.webp 1920w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Open concept cottage living" class="w-full aspect-[3/4] object-cover" width="1920" height="2560" loading="lazy" decoding="async" />
               </div>
             </div>
             <div class="space-y-4 pt-12">
               <div class="img-zoom">
-                <img src="/images/projects/image00007.jpeg" alt="Timber frame details" class="w-full aspect-[3/4] object-cover" />
+                <img src="/images/projects/image00007.webp" srcset="/images/projects/image00007-800.webp 800w, /images/projects/image00007.webp 1920w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Timber frame details" class="w-full aspect-[3/4] object-cover" width="1920" height="1440" loading="lazy" decoding="async" />
               </div>
               <div class="img-zoom">
-                <img src="/images/projects/image00008.jpeg" alt="Waterfront property" class="w-full aspect-square object-cover" />
+                <img src="/images/projects/image00008.webp" srcset="/images/projects/image00008-800.webp 800w, /images/projects/image00008.webp 1920w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Waterfront property" class="w-full aspect-square object-cover" width="1920" height="2560" loading="lazy" decoding="async" />
               </div>
             </div>
           </div>
@@ -551,9 +583,14 @@ const faqs = [
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div class="img-zoom relative group lg:col-span-2 lg:row-span-2">
           <img
-            src="/images/projects/image00011.jpeg"
+            src="/images/projects/image00011.webp"
+            srcset="/images/projects/image00011-800.webp 800w, /images/projects/image00011.webp 1920w"
+            sizes="(min-width: 1024px) 66vw, 100vw"
             alt="Custom Muskoka waterfront cottage"
             class="w-full h-full object-cover aspect-square lg:aspect-auto"
+            width="1920"
+            height="1440"
+            loading="lazy" decoding="async"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div class="absolute bottom-0 left-0 right-0 p-6">
@@ -564,9 +601,14 @@ const faqs = [
         </div>
         <div class="img-zoom relative group">
           <img
-            src="/images/projects/image00006.jpeg"
+            src="/images/projects/image00006.webp"
+            srcset="/images/projects/image00006-800.webp 800w, /images/projects/image00006.webp 1920w"
+            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
             alt="Open concept cottage kitchen"
             class="w-full h-full object-cover aspect-[4/3]"
+            width="1920"
+            height="1440"
+            loading="lazy" decoding="async"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div class="absolute bottom-0 left-0 right-0 p-6">
@@ -577,9 +619,14 @@ const faqs = [
         </div>
         <div class="img-zoom relative group">
           <img
-            src="/images/projects/image00007.jpeg"
+            src="/images/projects/image00007.webp"
+            srcset="/images/projects/image00007-800.webp 800w, /images/projects/image00007.webp 1920w"
+            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
             alt="Timber frame construction"
             class="w-full h-full object-cover aspect-[4/3]"
+            width="1920"
+            height="1440"
+            loading="lazy" decoding="async"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div class="absolute bottom-0 left-0 right-0 p-6">
@@ -625,9 +672,14 @@ const faqs = [
   <section data-hero="dark" class="relative py-24 md:py-32 overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="/images/projects/image00005.jpeg"
+        src="/images/projects/image00005.webp"
+        srcset="/images/projects/image00005-800.webp 800w, /images/projects/image00005.webp 1008w"
+        sizes="100vw"
         alt="Luxury Muskoka waterfront property"
         class="w-full h-full object-cover"
+        width="1008"
+        height="756"
+        loading="lazy" decoding="async"
       />
       <div class="absolute inset-0 bg-black/70"></div>
     </div>
@@ -681,107 +733,6 @@ const faqs = [
   </section>
 
   <!-- Schema Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "PCM Homes - Muskoka Cottage Builder",
-    "description": "Custom cottage builder serving Muskoka including Huntsville, Bracebridge, Gravenhurst, Port Carling, and Lake of Bays. 9 years of experience building cottages and year-round homes.",
-    "url": "https://pcm.homes/locations/muskoka",
-    "telephone": "+1-905-716-1939",
-    "email": "info.pcmhomes@gmail.com",
-    "areaServed": [
-      { "@type": "Place", "name": "Muskoka, Ontario" },
-      { "@type": "Place", "name": "Huntsville, Ontario" },
-      { "@type": "Place", "name": "Bracebridge, Ontario" },
-      { "@type": "Place", "name": "Gravenhurst, Ontario" },
-      { "@type": "Place", "name": "Port Carling, Ontario" },
-      { "@type": "Place", "name": "Lake of Bays, Ontario" }
-    ],
-    "serviceType": ["Custom Cottage Building", "Year-Round Home Construction", "Cottage Renovation", "ICF Basement Construction"],
-    "priceRange": "$$$$",
-    "openingHours": "Mo-Fr 08:00-18:00"
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How much does it cost to build a cottage in Muskoka?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Expect $345-$650 per square foot in Muskoka, depending on quality level. Standard grade runs $345+/sq ft. Mid-range is $510+/sq ft. High-end custom is $645+/sq ft. A 1,500 sq ft cottage typically costs $520,000-$975,000."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does it take to build a cottage in Muskoka?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most custom cottages take 8-14 months from permit to move-in. Permits alone take 3-6 months depending on the township. The optimal building season runs April through November."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you build on water-access-only properties?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we've completed several water-access builds. These require barge transport for all materials, which adds 15-25% to your budget. We coordinate with local marine services for delivery."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What permits do I need to build in Muskoka?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You'll need: 1) Building permit from your local township, 2) Shoreline development approval from the District of Muskoka for waterfront properties, 3) Septic system approval from the Health Unit, 4) Conservation authority approval if applicable."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What are the shoreline setback requirements in Muskoka?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Setbacks typically range from 20-30 metres (66-100 feet) from the water's edge, varying by lake and township. Shoreline modification is limited to 25% of your frontage or 76 feet, whichever is less."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can you convert a seasonal cottage to year-round?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, and we do it regularly. Winterizing typically involves upgrading insulation to R-40+, installing proper heating systems, and upgrading electrical and plumbing for freeze protection. Budget $100,000-$250,000 for a full conversion."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What's different about building in Muskoka vs the GTA?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Muskoka builds deal with: Canadian Shield bedrock (often requires blasting, adding $20,000-$50,000+), strict shoreline setbacks (typically 30m), well and septic instead of municipal services ($50,000-$70,000), and seasonal road restrictions. Costs run 20-40% higher than rural Ontario."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much do septic and well systems cost in Muskoka?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Septic systems start around $25,000 for a modest 3-bedroom cottage but can rise to $40,000+ for larger builds. Drilled wells typically run $25,000-$30,000. Lake water systems cost about 25% less than wells."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you work with architects and designers?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolutely. Many clients come with plans from their architect, and we work with several local designers who understand Muskoka building requirements. We can also recommend people who know the unique challenges here."
-        }
-      }
-    ]
-  }
-  </script>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
 </BaseLayout>

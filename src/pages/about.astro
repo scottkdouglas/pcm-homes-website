@@ -2,14 +2,19 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="About Us" description="Learn about PCM Homes - founded by Dan Edralin with 20+ years in the trades. Custom home building, renovations, and construction services throughout Ontario.">
+<BaseLayout breadcrumbs={[{ name: "About", path: "/about" }]} title="About Us" description="PCM Homes was founded in 2015 by Dan Edralin, who has 20+ years in the trades. Custom homes, cottages and renovations from Durham to Muskoka.">
   <!-- Hero Section -->
   <section data-hero="dark" class="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="/images/projects/image00003.jpeg"
+        src="/images/projects/image00003.webp"
+        srcset="/images/projects/image00003-800.webp 800w, /images/projects/image00003.webp 1920w"
+        sizes="100vw"
         alt="PCM Homes craftsmanship"
         class="w-full h-full object-cover"
+        width="1920"
+        height="2560"
+        fetchpriority="high" decoding="async"
       />
       <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
     </div>
@@ -53,9 +58,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="relative">
           <div class="img-zoom">
             <img
-              src="/images/projects/image00002.jpeg"
+              src="/images/projects/image00002.webp"
+              srcset="/images/projects/image00002-800.webp 800w, /images/projects/image00002.webp 1920w"
+              sizes="(min-width: 1024px) 50vw, 100vw"
               alt="Luxury interior detail"
               class="w-full aspect-[4/5] object-cover"
+              width="1920"
+              height="1440"
+              loading="lazy" decoding="async"
             />
           </div>
           <div class="absolute -bottom-8 -left-8 bg-white p-8 shadow-xl">
@@ -211,10 +221,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- Image Grid -->
         <div class="grid grid-cols-2 gap-4">
           <div class="img-zoom">
-            <img src="/images/projects/image00006.jpeg" alt="Quality craftsmanship" class="w-full aspect-square object-cover" />
+            <img src="/images/projects/image00006.webp" srcset="/images/projects/image00006-800.webp 800w, /images/projects/image00006.webp 1920w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Quality craftsmanship" class="w-full aspect-square object-cover" width="1920" height="1440" loading="lazy" decoding="async" />
           </div>
           <div class="img-zoom mt-12">
-            <img src="/images/projects/image00008.jpeg" alt="Attention to detail" class="w-full aspect-square object-cover" />
+            <img src="/images/projects/image00008.webp" srcset="/images/projects/image00008-800.webp 800w, /images/projects/image00008.webp 1920w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Attention to detail" class="w-full aspect-square object-cover" width="1920" height="2560" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -299,9 +309,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="relative py-32 overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="/images/projects/image00001.jpeg"
+        src="/images/projects/image00001.webp"
+        srcset="/images/projects/image00001-800.webp 800w, /images/projects/image00001.webp 1920w"
+        sizes="100vw"
         alt="Luxury living space"
         class="w-full h-full object-cover"
+        width="1920"
+        height="1440"
+        loading="lazy" decoding="async"
       />
       <div class="absolute inset-0 bg-[var(--color-charcoal)]/80"></div>
     </div>

@@ -81,14 +81,19 @@ const faqs = [
 ];
 ---
 
-<BaseLayout title="Home Renovations & Additions Ontario | Kitchen, Bathroom, Whole-Home, Additions" description="Renovation and addition contractor serving Muskoka, Kawartha, Durham, York, GTA. Kitchen, bathroom, basement, additions, whole-home. 20+ years experience, owner-led, occupied-home-friendly.">
+<BaseLayout breadcrumbs={[{ name: "Services", path: "/services" }, { name: "Renovations", path: "/services/renovations" }]} title="Home Renovations & Additions Ontario | Kitchen, Bathroom, Whole-Home, Additions" description="Renovations and additions in Durham, York, the GTA, Kawartha and Muskoka. Kitchens, bathrooms, basements and whole-home. Owner-led, occupied homes welcome.">
   <!-- Hero Section -->
   <section data-hero="dark" class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="/images/projects/image00001.jpeg"
+        src="/images/projects/image00001.webp"
+        srcset="/images/projects/image00001-800.webp 800w, /images/projects/image00001.webp 1920w"
+        sizes="100vw"
         alt="Renovated living space by PCM Homes"
         class="w-full h-full object-cover"
+        width="1920"
+        height="1440"
+        fetchpriority="high" decoding="async"
       />
       <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
     </div>
@@ -186,9 +191,14 @@ const faqs = [
 
         <div class="img-zoom">
           <img
-            src="/images/projects/image00010.jpeg"
+            src="/images/projects/image00010.webp"
+            srcset="/images/projects/image00010-800.webp 800w, /images/projects/image00010.webp 1920w"
+            sizes="(min-width: 1024px) 50vw, 100vw"
             alt="Interior renovation by PCM Homes"
             class="w-full aspect-[4/3] object-cover"
+            width="1920"
+            height="1440"
+            loading="lazy" decoding="async"
           />
         </div>
       </div>
@@ -322,9 +332,14 @@ const faqs = [
   <section class="relative py-32 overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="/images/projects/image00007.jpeg"
+        src="/images/projects/image00007.webp"
+        srcset="/images/projects/image00007-800.webp 800w, /images/projects/image00007.webp 1920w"
+        sizes="100vw"
         alt="Renovated kitchen by PCM Homes"
         class="w-full h-full object-cover"
+        width="1920"
+        height="1440"
+        loading="lazy" decoding="async"
       />
       <div class="absolute inset-0 bg-[var(--color-charcoal)]/80"></div>
     </div>

@@ -92,14 +92,19 @@ const faqs = [
 ];
 ---
 
-<BaseLayout title="GTA Custom Home Builder | Markham, Vaughan, Mississauga, Aurora, Stouffville" description="GTA custom home builder and renovation contractor. Markham, Vaughan, Richmond Hill, Mississauga, Brampton, Stouffville, Aurora, Newmarket, Pickering, Ajax. Custom builds, additions, renovations. 20+ years experience.">
+<BaseLayout breadcrumbs={[{ name: "Service Areas", path: "/locations" }, { name: "Greater Toronto Area", path: "/locations/gta" }]} title="GTA Custom Home Builder | Markham, Vaughan, Mississauga, Aurora, Stouffville" description="GTA custom home builder based in Stouffville. Custom builds, additions and renovations in Markham, Vaughan, Richmond Hill, Aurora, Newmarket and Pickering.">
   <!-- Hero Section -->
   <section data-hero="dark" class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="/images/projects/image00004.jpeg"
+        src="/images/projects/image00004.webp"
+        srcset="/images/projects/image00004-800.webp 800w, /images/projects/image00004.webp 1920w"
+        sizes="100vw"
         alt="Custom home in the GTA"
         class="w-full h-full object-cover"
+        width="1920"
+        height="1280"
+        fetchpriority="high" decoding="async"
       />
       <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
     </div>
@@ -194,9 +199,14 @@ const faqs = [
 
         <div class="img-zoom">
           <img
-            src="/images/projects/image00001.jpeg"
+            src="/images/projects/image00001.webp"
+            srcset="/images/projects/image00001-800.webp 800w, /images/projects/image00001.webp 1920w"
+            sizes="(min-width: 1024px) 50vw, 100vw"
             alt="Custom GTA interior"
             class="w-full aspect-[4/3] object-cover"
+            width="1920"
+            height="1440"
+            loading="lazy" decoding="async"
           />
         </div>
       </div>
@@ -232,9 +242,14 @@ const faqs = [
   <section class="relative py-32 overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="/images/projects/image00005.jpeg"
+        src="/images/projects/image00005.webp"
+        srcset="/images/projects/image00005-800.webp 800w, /images/projects/image00005.webp 1008w"
+        sizes="100vw"
         alt="PCM Homes GTA custom build"
         class="w-full h-full object-cover"
+        width="1008"
+        height="756"
+        loading="lazy" decoding="async"
       />
       <div class="absolute inset-0 bg-[var(--color-charcoal)]/80"></div>
     </div>
