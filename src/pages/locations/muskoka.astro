@@ -4,27 +4,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 const muskokaAreas = [
   {
     name: "Huntsville",
-    highlight: "Northern Muskoka",
     description: "Gateway to Algonquin. Lake of Bays and Peninsula Lake access. Growing year-round community with strong infrastructure."
   },
   {
     name: "Bracebridge",
-    highlight: "Central Hub",
     description: "Heart of Muskoka. Easy access to all three big lakes. Best balance of amenities and cottage country feel."
   },
   {
     name: "Gravenhurst",
-    highlight: "Southern Gateway",
     description: "Closest to Toronto. Lake Muskoka shoreline. Established cottage community with excellent services."
   },
   {
     name: "Port Carling",
-    highlight: "The Hub",
     description: "Where the big three lakes connect. Premium waterfront. Historic cottage country character."
   },
   {
     name: "Lake of Bays",
-    highlight: "Northern Lakes",
     description: "Quieter, less crowded. Pristine water quality. Ideal for those seeking privacy and natural beauty."
   }
 ];
@@ -155,11 +150,9 @@ const faqLd = {
   <!-- Featured Snippet Target: Building in Muskoka -->
   <section class="py-24 md:py-32 bg-[var(--color-cream)]">
     <div class="max-w-4xl mx-auto px-6 lg:px-8">
-      <p class="section-label mb-4">The Basics</p>
       <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
-        Building a Cottage <span class="italic">in Muskoka</span>
+        Building a Cottage in Muskoka
       </h2>
-      <div class="divider mb-10"></div>
 
       <!-- Featured Snippet Box -->
       <div class="bg-white border-l-4 border-[var(--color-timber)] p-6 md:p-8 mb-10">
@@ -186,11 +179,9 @@ const faqLd = {
   <section class="py-24 md:py-32 bg-white">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16">
-        <p class="section-label mb-4">Real Numbers</p>
         <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
-          Muskoka Building <span class="italic">Costs</span>
+          Muskoka Building Costs
         </h2>
-        <div class="divider divider-center"></div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -287,11 +278,9 @@ const faqLd = {
   <section class="py-24 md:py-32 bg-[var(--color-cream)]">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16">
-        <p class="section-label mb-4">What We Build</p>
         <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
-          Muskoka <span class="italic">Services</span>
+          Muskoka Services
         </h2>
-        <div class="divider divider-center"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -324,11 +313,9 @@ const faqLd = {
   <section class="py-24 md:py-32 bg-[var(--color-charcoal)]">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16">
-        <p class="section-label text-[var(--color-timber)] mb-4">Areas We Serve</p>
         <h2 class="text-4xl md:text-5xl font-display text-white mb-6">
-          Throughout <span class="italic">Muskoka</span>
+          Throughout Muskoka
         </h2>
-        <div class="divider divider-center"></div>
         <p class="text-white/70 max-w-2xl mx-auto mt-6">
           We build across the District of Muskoka—from the southern gateway towns to the northern reaches of Lake of Bays.
         </p>
@@ -337,7 +324,6 @@ const faqLd = {
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {muskokaAreas.map((area) => (
           <div class="bg-white/5 border border-white/10 p-8 hover:border-[var(--color-timber)] transition-colors">
-            <span class="text-[var(--color-timber)] text-xs uppercase tracking-widest mb-3 block">{area.highlight}</span>
             <h3 class="text-2xl font-display text-white mb-4">{area.name}</h3>
             <p class="text-white/60 leading-relaxed">{area.description}</p>
           </div>
@@ -345,7 +331,6 @@ const faqLd = {
 
         <!-- Lakes Card -->
         <div class="bg-[var(--color-timber)] p-8">
-          <span class="text-white/80 text-xs uppercase tracking-widest mb-3 block">Major Lakes</span>
           <h3 class="text-2xl font-display text-white mb-4">The Big Three & Beyond</h3>
           <ul class="space-y-2 text-white/90">
             <li class="flex items-center gap-2">
@@ -382,11 +367,9 @@ const faqLd = {
   <section class="py-24 md:py-32 bg-white">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16">
-        <p class="section-label mb-4">What You Need to Know</p>
         <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
-          Muskoka Waterfront <span class="italic">Regulations</span>
+          Muskoka Waterfront Regulations
         </h2>
-        <div class="divider divider-center mb-8"></div>
         <p class="text-xl text-[var(--color-slate)] max-w-3xl mx-auto">
           Muskoka's shorelines are heavily regulated to protect water quality and natural landscapes. Here's what you need to know before buying or building.
         </p>
@@ -519,12 +502,10 @@ const faqLd = {
         </div>
 
         <div class="order-1 lg:order-2">
-          <p class="section-label mb-4">The PCM Difference</p>
           <h2 class="text-4xl md:text-5xl font-display mb-8 text-[var(--color-charcoal)]">
             Why Choose PCM<br />
-            <span class="italic">for Muskoka</span>
+            for Muskoka
           </h2>
-          <div class="divider mb-8"></div>
 
           <div class="space-y-8">
             <div class="flex gap-4">
@@ -573,11 +554,9 @@ const faqLd = {
   <section class="py-24 md:py-32 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16">
-        <p class="section-label mb-4">Our Work</p>
         <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
-          Muskoka <span class="italic">Projects</span>
+          Muskoka Projects
         </h2>
-        <div class="divider divider-center"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -592,12 +571,6 @@ const faqLd = {
             height="1440"
             loading="lazy" decoding="async"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="absolute bottom-0 left-0 right-0 p-6">
-              <span class="text-[var(--color-timber)] text-xs uppercase tracking-widest">Custom Cottage</span>
-              <p class="text-white font-display text-lg mt-1">Waterfront Build</p>
-            </div>
-          </div>
         </div>
         <div class="img-zoom relative group">
           <img
@@ -610,12 +583,6 @@ const faqLd = {
             height="1440"
             loading="lazy" decoding="async"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="absolute bottom-0 left-0 right-0 p-6">
-              <span class="text-[var(--color-timber)] text-xs uppercase tracking-widest">Interior</span>
-              <p class="text-white font-display text-lg mt-1">Cottage Kitchen</p>
-            </div>
-          </div>
         </div>
         <div class="img-zoom relative group">
           <img
@@ -628,12 +595,6 @@ const faqLd = {
             height="1440"
             loading="lazy" decoding="async"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="absolute bottom-0 left-0 right-0 p-6">
-              <span class="text-[var(--color-timber)] text-xs uppercase tracking-widest">Timber Frame</span>
-              <p class="text-white font-display text-lg mt-1">Custom Details</p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -643,11 +604,9 @@ const faqLd = {
   <section class="py-24 md:py-32 bg-[var(--color-cream)]">
     <div class="max-w-4xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16">
-        <p class="section-label mb-4">Common Questions</p>
         <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
-          Muskoka Building <span class="italic">FAQ</span>
+          Muskoka Building FAQ
         </h2>
-        <div class="divider divider-center"></div>
       </div>
 
       <div class="space-y-4">
@@ -685,10 +644,9 @@ const faqLd = {
     </div>
 
     <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white">
-      <p class="section-label text-[var(--color-timber)] mb-4">Start Your Muskoka Project</p>
       <h2 class="text-4xl md:text-5xl font-display mb-8">
         Ready to Build on<br />
-        <span class="italic">the Lake?</span>
+        the Lake?
       </h2>
       <p class="text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed">
         Free consultation and site assessment. We'll discuss your vision, review your property, and give you a realistic timeline and budget.

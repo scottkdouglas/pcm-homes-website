@@ -4,32 +4,26 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 const yorkAreas = [
   {
     name: "Stouffville",
-    highlight: "Home Base",
     description: "Where we're based. We know the local trades, the township process, the heritage rules, the rural-residential lot lines. Local advantage matters here."
   },
   {
     name: "Markham",
-    highlight: "Suburban + Custom",
     description: "Established neighbourhoods, premium custom homes, tear-down rebuilds. Strong demand for high-quality renovations and additions."
   },
   {
     name: "Aurora & Newmarket",
-    highlight: "Central York",
     description: "Mature streetscapes, growing custom build market, mix of suburban and small-town residential. Plenty of room for thoughtful infill."
   },
   {
     name: "King Township",
-    highlight: "Estate Country",
     description: "Rural acreage, equestrian estates, heritage properties. Where York Region gets quietly luxurious. Larger lots, longer driveways, room for serious custom builds."
   },
   {
     name: "Vaughan & Richmond Hill",
-    highlight: "Urban Edge",
     description: "Premium custom homes, tear-down infill, major renovations. Dense and competitive, but the right project at the right lot is always worth doing."
   },
   {
     name: "East Gwillimbury & Georgina",
-    highlight: "Northern York",
     description: "Lake Simcoe shoreline, rural-acreage builds, cottage and waterfront work. Where York meets cottage country."
   }
 ];
@@ -137,17 +131,14 @@ const faqs = [
   <section class="py-24 md:py-32 bg-[var(--color-cream)]">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16">
-        <p class="section-label mb-4">Areas Served</p>
         <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
-          Across <span class="italic">York Region</span>
+          Across York Region
         </h2>
-        <div class="divider divider-center"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {yorkAreas.map((area) => (
           <div class="bg-white p-8 hover-lift">
-            <p class="text-[var(--color-timber)] text-sm uppercase tracking-widest mb-2">{area.highlight}</p>
             <h3 class="text-2xl font-display text-[var(--color-charcoal)] mb-3">{area.name}</h3>
             <p class="text-[var(--color-slate)] leading-relaxed">{area.description}</p>
           </div>
@@ -160,11 +151,9 @@ const faqs = [
   <section class="py-24 md:py-32 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16">
-        <p class="section-label mb-4">What We Build</p>
         <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
-          York Region <span class="italic">Services</span>
+          York Region Services
         </h2>
-        <div class="divider divider-center"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -182,11 +171,9 @@ const faqs = [
   <section class="py-24 md:py-32 bg-[var(--color-charcoal)]">
     <div class="max-w-5xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-12">
-        <p class="section-label text-[var(--color-timber)] mb-4">Local Knowledge</p>
         <h2 class="text-4xl md:text-5xl font-display text-white mb-6">
-          Based in <span class="italic">Stouffville</span>
+          Based in Stouffville
         </h2>
-        <div class="divider divider-center"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -222,11 +209,9 @@ const faqs = [
   <section class="py-24 md:py-32 bg-[var(--color-cream)]">
     <div class="max-w-4xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16">
-        <p class="section-label mb-4">Common Questions</p>
         <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
-          York Region Building <span class="italic">FAQs</span>
+          York Region Building FAQs
         </h2>
-        <div class="divider divider-center"></div>
       </div>
 
       <div class="space-y-4">
@@ -260,10 +245,9 @@ const faqs = [
     </div>
 
     <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white">
-      <p class="section-label text-[var(--color-timber)] mb-4">Start Your Project</p>
       <h2 class="text-4xl md:text-6xl font-display mb-8">
         Building in<br />
-        <span class="italic">York Region?</span>
+        York Region?
       </h2>
       <p class="text-xl text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed">
         Share your project details and budget range. We'll get back to you within 24-48 hours.

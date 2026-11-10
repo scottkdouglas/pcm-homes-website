@@ -4,27 +4,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 const kawarthaAreas = [
   {
     name: "Lindsay",
-    highlight: "Regional Hub",
     description: "Largest town in the Kawarthas. Good services, easy access from the GTA, mix of established neighbourhoods and rural lots."
   },
   {
     name: "Bobcaygeon",
-    highlight: "Trent-Severn Heart",
     description: "On the Pigeon-Sturgeon lake chain. Active cottage and year-round community with shoreline lots and historic charm."
   },
   {
     name: "Fenelon Falls",
-    highlight: "Lockside Living",
     description: "Where Sturgeon Lake meets Cameron Lake at the iconic falls. Walkable downtown, premium waterfront lots."
   },
   {
     name: "Lakefield & Buckhorn",
-    highlight: "Northern Kawarthas",
     description: "Quieter, more remote feel. Pristine water, granite outcrops, and the cottage character of the original Kawartha vacation country."
   },
   {
     name: "Peterborough County",
-    highlight: "Rural Acreage",
     description: "Larger rural lots outside the towns. Good fit for custom homes that want space and privacy without going all the way north."
   }
 ];
@@ -124,17 +119,14 @@ const faqs = [
   <section class="py-24 md:py-32 bg-[var(--color-cream)]">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16">
-        <p class="section-label mb-4">Areas Served</p>
         <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
-          Across the <span class="italic">Kawarthas</span>
+          Across the Kawarthas
         </h2>
-        <div class="divider divider-center"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {kawarthaAreas.map((area) => (
           <div class="bg-white p-8 hover-lift">
-            <p class="text-[var(--color-timber)] text-sm uppercase tracking-widest mb-2">{area.highlight}</p>
             <h3 class="text-2xl font-display text-[var(--color-charcoal)] mb-3">{area.name}</h3>
             <p class="text-[var(--color-slate)] leading-relaxed">{area.description}</p>
           </div>
@@ -147,11 +139,9 @@ const faqs = [
   <section class="py-24 md:py-32 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16">
-        <p class="section-label mb-4">What We Build</p>
         <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
-          Kawartha <span class="italic">Services</span>
+          Kawartha Services
         </h2>
-        <div class="divider divider-center"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -169,11 +159,9 @@ const faqs = [
   <section class="py-24 md:py-32 bg-[var(--color-charcoal)]">
     <div class="max-w-5xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-12">
-        <p class="section-label text-[var(--color-timber)] mb-4">Local Knowledge</p>
         <h2 class="text-4xl md:text-5xl font-display text-white mb-6">
-          Building in the <span class="italic">Kawarthas</span>
+          Building in the Kawarthas
         </h2>
-        <div class="divider divider-center"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -209,11 +197,9 @@ const faqs = [
   <section class="py-24 md:py-32 bg-[var(--color-cream)]">
     <div class="max-w-4xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16">
-        <p class="section-label mb-4">Common Questions</p>
         <h2 class="text-4xl md:text-5xl font-display text-[var(--color-charcoal)] mb-6">
-          Kawartha Building <span class="italic">FAQs</span>
+          Kawartha Building FAQs
         </h2>
-        <div class="divider divider-center"></div>
       </div>
 
       <div class="space-y-4">
@@ -247,10 +233,9 @@ const faqs = [
     </div>
 
     <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center text-white">
-      <p class="section-label text-[var(--color-timber)] mb-4">Start Your Project</p>
       <h2 class="text-4xl md:text-6xl font-display mb-8">
         Building in the<br />
-        <span class="italic">Kawarthas?</span>
+        Kawarthas?
       </h2>
       <p class="text-xl text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed">
         Share your project details and budget range. We'll get back to you within 24-48 hours.
