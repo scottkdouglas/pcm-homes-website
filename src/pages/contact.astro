@@ -339,6 +339,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         });
 
         if (response.ok) {
+          // GA key event. Fires only after Formspree accepts the submission.
+          const service = (form.querySelector('[name="service"]') as HTMLSelectElement | null)?.value || 'unspecified';
+          (window as any).pcmTrack?.('generate_lead', { form_id: 'contact', service });
           // Replace the form with the confirmation. A thank-you note under a
           // long, freshly emptied form is easy to miss and invites resubmits.
           form.reset();

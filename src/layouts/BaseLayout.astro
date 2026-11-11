@@ -93,6 +93,68 @@ const breadcrumbLd = breadcrumbs && breadcrumbs.length
   <link rel="icon" type="image/png" href="/favicon-dark.png" media="(prefers-color-scheme: dark)">
   <script type="application/ld+json" set:html={JSON.stringify(siteGraph)} />
   {breadcrumbLd && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />}
+  <!-- Google Analytics. Only runs on the production host, so local and
+       preview builds never send data. Visiting any page with ?staff=1 opts
+       that browser out entirely (phones included, any network), so staff
+       visits never reach GA. ?staff=off undoes it. GA's own page view ignores
+       traffic_type, so tagging internal traffic was not reliable. -->
+  <script is:inline>
+    (function () {
+      if (location.hostname !== 'pcm.homes') return;
+      var id = 'G-MYGKV9H4EF';
+      var internal = false;
+      try {
+        var flag = new URLSearchParams(location.search).get('staff');
+        if (flag === 'off') localStorage.removeItem('pcm_internal');
+        else if (flag !== null) localStorage.setItem('pcm_internal', '1');
+        internal = localStorage.getItem('pcm_internal') === '1';
+      } catch (e) {}
+      if (internal) return;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      gtag('js', new Date());
+      var send = function (name, params) { gtag('event', name, params || {}); };
+      window.pcmTrack = send;
+      gtag('config', id);
+
+      // A click that navigates away is lost before GA flushes it, so the
+      // contact-link click is stored and sent from the next page instead.
+      try {
+        var pending = sessionStorage.getItem('pcm_pending_event');
+        if (pending) {
+          sessionStorage.removeItem('pcm_pending_event');
+          var ev = JSON.parse(pending);
+          send(ev.name, ev.params);
+        }
+      } catch (e) {}
+
+      // Lead clicks. One delegated listener covers every phone and contact
+      // link, including ones added later. link_location says which one.
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href]');
+        if (!a) return;
+        var href = a.getAttribute('href') || '';
+        var where = a.closest('header') ? 'header'
+          : a.closest('[data-cta-bar]') ? 'mobile_bar'
+          : a.closest('footer') ? 'footer'
+          : 'page';
+        var text = (a.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 60);
+        var params = { link_location: where, link_text: text, source_page: location.pathname };
+        if (href.indexOf('tel:') === 0) {
+          send('phone_call', params);
+        } else if (href === '/contact' || href.indexOf('/contact#') === 0 || href.indexOf('/contact?') === 0) {
+          if (location.pathname === '/contact') { send('quote_click', params); return; }
+          try {
+            sessionStorage.setItem('pcm_pending_event', JSON.stringify({ name: 'quote_click', params: params }));
+          } catch (e) { send('quote_click', params); }
+        }
+      });
+    })();
+  </script>
   <slot name="head" />
 </head>
 <body class="min-h-screen flex flex-col pb-[calc(4rem+env(safe-area-inset-bottom))] md:pb-0">
@@ -169,7 +231,7 @@ const breadcrumbLd = breadcrumbs && breadcrumbs.length
   </main>
 
   <!-- Mobile call bar: one tap to call or reach the form from anywhere on the page -->
-  <div class="md:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-2 bg-white border-t border-gray-200 pb-[env(safe-area-inset-bottom)]">
+  <div data-cta-bar class="md:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-2 bg-white border-t border-gray-200 pb-[env(safe-area-inset-bottom)]">
     <a href="tel:+19057161939" class="h-16 flex items-center justify-center gap-2 text-[var(--color-charcoal)] text-sm font-medium tracking-wide uppercase active:bg-gray-100">
       <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
       Call
