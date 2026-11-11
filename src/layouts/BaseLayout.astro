@@ -1,4 +1,5 @@
 ---
+import { Font } from 'astro:assets';
 import '../styles/global.css';
 
 interface Props {
@@ -67,6 +68,8 @@ const breadcrumbLd = breadcrumbs && breadcrumbs.length
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <Font cssVariable="--font-cormorant" preload />
+  <Font cssVariable="--font-dm-sans" preload={[{ style: 'normal' }]} />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content={description}>
   <title>{title} | PCM Homes</title>

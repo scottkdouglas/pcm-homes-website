@@ -45,20 +45,20 @@ const projectImages = [
 
     <!-- Content -->
     <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 text-center text-white pt-24">
-      <div class="animate-on-load animate-fade-in-up">
+      <div>
         <p class="section-label text-white/80 mb-6">Custom Home Builders</p>
       </div>
 
-      <h1 class="animate-on-load animate-fade-in-up delay-100 text-5xl md:text-7xl lg:text-8xl font-display font-medium mb-8 leading-[1.1]">
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-medium mb-8 leading-[1.1]">
         Custom <span class="italic text-[var(--color-timber-light)]">Homes</span><br />
         from Durham to Muskoka
       </h1>
 
-      <p class="animate-on-load animate-fade-in-up delay-200 text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-12 leading-relaxed">
+      <p class="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-12 leading-relaxed">
         Custom homes, ICF builds, A-frame cabins and renovations across Durham, York, the GTA, Kawartha Lakes and Muskoka. Dan or Anita answers every call.
       </p>
 
-      <div class="animate-on-load animate-fade-in-up delay-300 flex flex-col sm:flex-row gap-4 justify-center">
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/contact" class="btn-primary">
           <span>Start Your Project</span>
         </a>
@@ -68,7 +68,7 @@ const projectImages = [
       </div>
 
       <!-- Trust Indicators -->
-      <div class="animate-on-load animate-fade-in delay-500 mt-20 flex flex-wrap justify-center gap-8 md:gap-16 text-white/60">
+      <div class="mt-20 flex flex-wrap justify-center gap-8 md:gap-16 text-white/60">
         <div class="text-center">
           <div class="text-3xl md:text-4xl font-display font-medium text-white mb-1">9</div>
           <div class="text-xs uppercase tracking-widest">Years in Business</div>
@@ -328,13 +328,4 @@ const projectImages = [
     </div>
   </section>
 
-  <script>
-    // Animate elements on load
-    document.addEventListener('DOMContentLoaded', () => {
-      const animatedElements = document.querySelectorAll('.animate-on-load');
-      animatedElements.forEach(el => {
-        el.classList.remove('animate-on-load');
-      });
-    });
-  </script>
 </BaseLayout>
