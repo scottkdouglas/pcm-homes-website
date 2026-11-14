@@ -79,6 +79,15 @@ const faqs = [
     answer: "Yes. Dan personally walks every renovation, from the initial site visit through the punch list. You'll also work with Anita on scheduling and updates. PCM stays small intentionally so you're never handed off to a project coordinator who hasn't seen your job."
   }
 ];
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+  }))
+};
 ---
 
 <BaseLayout breadcrumbs={[{ name: "Services", path: "/services" }, { name: "Renovations", path: "/services/renovations" }]} title="Home Renovations & Additions Ontario | Kitchen, Bathroom, Whole-Home, Additions" description="Renovations and additions in Durham, York, the GTA, Kawartha and Muskoka. Kitchens, bathrooms, basements and whole-home. Owner-led, occupied homes welcome.">
@@ -345,4 +354,5 @@ const faqs = [
       </div>
     </div>
   </section>
+  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
 </BaseLayout>

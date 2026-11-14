@@ -77,6 +77,15 @@ const faqs = [
     answer: "Kawartha is generally easier and less expensive to build in than Muskoka. Less Canadian Shield bedrock (less blasting), shorter trade travel from the GTA, easier road access to most lots, and somewhat less restrictive shoreline rules. Costs typically run 10-20% lower than Muskoka for comparable builds, though still 15-30% higher than suburban GTA because of well, septic, and trade logistics."
   }
 ];
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+  }))
+};
 ---
 
 <BaseLayout breadcrumbs={[{ name: "Service Areas", path: "/locations" }, { name: "Kawartha Lakes", path: "/locations/kawartha-lakes" }]} title="Kawartha Lakes Custom Home Builder | Lindsay, Bobcaygeon, Fenelon Falls" description="Custom home builder in the Kawarthas. Lindsay, Bobcaygeon, Fenelon Falls, Lakefield, Buckhorn, Peterborough County. Cottages, year-round homes and A-frames.">
@@ -244,4 +253,5 @@ const faqs = [
       </div>
     </div>
   </section>
+  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
 </BaseLayout>

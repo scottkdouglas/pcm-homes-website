@@ -89,6 +89,15 @@ const faqs = [
     answer: "Yes. Cottages and year-round homes on Lake Simcoe through Georgina and East Gwillimbury. Shoreline setbacks, conservation approval, and lake-water or well-and-septic considerations apply. We handle the permit research and applications before construction starts."
   }
 ];
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+  }))
+};
 ---
 
 <BaseLayout breadcrumbs={[{ name: "Service Areas", path: "/locations" }, { name: "York Region", path: "/locations/york-region" }]} title="York Region Custom Home Builder | Stouffville, Markham, Aurora, King, Vaughan" description="York Region custom home builder based in Stouffville. Custom builds, renovations and additions in Markham, Aurora, Newmarket, King and Vaughan.">
@@ -256,4 +265,5 @@ const faqs = [
       </div>
     </div>
   </section>
+  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
 </BaseLayout>

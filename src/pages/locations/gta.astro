@@ -85,6 +85,15 @@ const faqs = [
     answer: "We're based in Stouffville, on the northeast edge of the GTA. That means our quickest response areas are York Region (Markham, Aurora, Newmarket, King) and the surrounding 905. We travel across the broader GTA and into cottage country, but Stouffville is home."
   }
 ];
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+  }))
+};
 ---
 
 <BaseLayout breadcrumbs={[{ name: "Service Areas", path: "/locations" }, { name: "Greater Toronto Area", path: "/locations/gta" }]} title="GTA Custom Home Builder | Markham, Vaughan, Mississauga, Aurora, Stouffville" description="GTA custom home builder based in Stouffville. Custom builds, additions and renovations in Markham, Vaughan, Richmond Hill, Aurora, Newmarket and Pickering.">
@@ -252,4 +261,5 @@ const faqs = [
       </div>
     </div>
   </section>
+  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
 </BaseLayout>

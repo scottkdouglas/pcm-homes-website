@@ -16,6 +16,50 @@ const serviceLd = {
   { "@type": "AdministrativeArea", "name": "Muskoka" }
 ]
 };
+const faqs = [
+  {
+    question: "What does ICF stand for?",
+    answer: "ICF stands for Insulated Concrete Forms. The \"forms\" are interlocking foam blocks that hold their shape while concrete is poured inside. Unlike traditional plywood forms that get stripped away, ICF forms stay in place permanently as the wall's insulation. You end up with a concrete wall that's insulated on both sides from day one."
+  },
+  {
+    question: "How much more does ICF cost than wood frame?",
+    answer: "For walls only, ICF adds 5-15% to your construction cost. On a $500,000 build, that's $25,000-$75,000 more upfront. For ICF basements specifically, add $15,000-$25,000 compared to a poured concrete foundation that you'd later need to frame and insulate. The payback comes through energy savings of $1,500-$2,500 per year. Most owners break even within 5-10 years."
+  },
+  {
+    question: "Is ICF worth the extra cost?",
+    answer: "If you're keeping the home 10+ years, almost certainly yes. Energy savings alone pay back the premium. After that, you're saving $1,500-$2,500 every year while enjoying a stronger, quieter, more comfortable home. If you're building to flip in under 5 years, probably not. The resale market doesn't yet pay the full ICF premium in most Ontario areas. We'll help you run the numbers for your specific situation."
+  },
+  {
+    question: "How long does an ICF home last?",
+    answer: "The concrete structure can last 100+ years with normal maintenance. It doesn't rot, rust, warp, or get eaten by insects. The foam insulation is chemically stable indefinitely. Compare that to wood-frame homes that typically last 50-80 years before major structural work is needed. Roman concrete buildings still stand after 2,000 years. Your ICF home could outlast multiple generations of your family."
+  },
+  {
+    question: "Can you finish an ICF basement yourself?",
+    answer: "Yes, and it's actually easier than finishing a traditional basement. ICF walls have plastic web strips embedded in the foam. You screw drywall directly to these. No framing needed. No insulation to install. No vapor barrier. The walls are already flat, insulated, and ready. A handy homeowner can finish an ICF basement with basic tools. The hard work is already done."
+  },
+  {
+    question: "What R-value does ICF provide?",
+    answer: "Standard ICF walls provide R-22 to R-26 depending on the foam thickness. But here's what matters more: that R-value is continuous. No thermal bridging. A wood-frame wall might be rated R-19, but studs conduct heat. The effective whole-wall R-value drops to R-14 or less. ICF's R-22 actually performs like R-22. In Ontario's climate, that difference is substantial."
+  },
+  {
+    question: "Is ICF good for Ontario's cold climate?",
+    answer: "ICF is arguably ideal for Ontario. The continuous insulation envelope and concrete thermal mass keep indoor temperatures stable even when it's -30°C outside. No cold spots near walls. Smaller heating systems work because they're not fighting heat loss. The concrete can even pour in cold weather since the foam keeps it warm while curing. Ontario's climate is exactly where ICF shines."
+  },
+  {
+    question: "Can any contractor build with ICF?",
+    answer: "Technically yes, but experience matters. A lot. ICF has a learning curve: bracing requirements, pour rates, window buck installation, electrical chase planning. Inexperienced crews have blowouts during pours, struggle with alignment, and waste material on bad cuts. We've seen cleanup jobs from contractors who watched a YouTube video and figured they'd wing it. Look for builders with at least 3-5 years of ICF-specific experience and ask for references from ICF projects."
+  },
+];
+
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+  }))
+};
 ---
 
 <BaseLayout breadcrumbs={[{ name: "Services", path: "/services" }, { name: "ICF Construction", path: "/services/icf-construction" }]} title="ICF Construction Ontario | ICF Homes & Basements" description="ICF homes and basements built by our own crew. Ontario ICF builder, 9 years in business. Honest trade-offs to help you decide if ICF fits your build.">
@@ -485,101 +529,19 @@ const serviceLd = {
       </div>
 
       <div class="space-y-4">
-        <details class="group bg-[var(--color-cream)] p-6">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <h3 class="text-lg font-display text-[var(--color-charcoal)] pr-4">What does ICF stand for?</h3>
-            <svg class="w-6 h-6 text-[var(--color-timber)] group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-            </svg>
-          </summary>
-          <div class="mt-4 text-[var(--color-slate)] leading-relaxed">
-            <p>ICF stands for Insulated Concrete Forms. The "forms" are interlocking foam blocks that hold their shape while concrete is poured inside. Unlike traditional plywood forms that get stripped away, ICF forms stay in place permanently as the wall's insulation. You end up with a concrete wall that's insulated on both sides from day one.</p>
-          </div>
-        </details>
-
-        <details class="group bg-[var(--color-cream)] p-6">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <h3 class="text-lg font-display text-[var(--color-charcoal)] pr-4">How much more does ICF cost than wood frame?</h3>
-            <svg class="w-6 h-6 text-[var(--color-timber)] group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-            </svg>
-          </summary>
-          <div class="mt-4 text-[var(--color-slate)] leading-relaxed">
-            <p>For walls only, ICF adds 5-15% to your construction cost. On a $500,000 build, that's $25,000-$75,000 more upfront. For ICF basements specifically, add $15,000-$25,000 compared to a poured concrete foundation that you'd later need to frame and insulate. The payback comes through energy savings of $1,500-$2,500 per year. Most owners break even within 5-10 years.</p>
-          </div>
-        </details>
-
-        <details class="group bg-[var(--color-cream)] p-6">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <h3 class="text-lg font-display text-[var(--color-charcoal)] pr-4">Is ICF worth the extra cost?</h3>
-            <svg class="w-6 h-6 text-[var(--color-timber)] group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-            </svg>
-          </summary>
-          <div class="mt-4 text-[var(--color-slate)] leading-relaxed">
-            <p>If you're keeping the home 10+ years, almost certainly yes. Energy savings alone pay back the premium. After that, you're saving $1,500-$2,500 every year while enjoying a stronger, quieter, more comfortable home. If you're building to flip in under 5 years, probably not. The resale market doesn't yet pay the full ICF premium in most Ontario areas. We'll help you run the numbers for your specific situation.</p>
-          </div>
-        </details>
-
-        <details class="group bg-[var(--color-cream)] p-6">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <h3 class="text-lg font-display text-[var(--color-charcoal)] pr-4">How long does an ICF home last?</h3>
-            <svg class="w-6 h-6 text-[var(--color-timber)] group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-            </svg>
-          </summary>
-          <div class="mt-4 text-[var(--color-slate)] leading-relaxed">
-            <p>The concrete structure can last 100+ years with normal maintenance. It doesn't rot, rust, warp, or get eaten by insects. The foam insulation is chemically stable indefinitely. Compare that to wood-frame homes that typically last 50-80 years before major structural work is needed. Roman concrete buildings still stand after 2,000 years. Your ICF home could outlast multiple generations of your family.</p>
-          </div>
-        </details>
-
-        <details class="group bg-[var(--color-cream)] p-6">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <h3 class="text-lg font-display text-[var(--color-charcoal)] pr-4">Can you finish an ICF basement yourself?</h3>
-            <svg class="w-6 h-6 text-[var(--color-timber)] group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-            </svg>
-          </summary>
-          <div class="mt-4 text-[var(--color-slate)] leading-relaxed">
-            <p>Yes, and it's actually easier than finishing a traditional basement. ICF walls have plastic web strips embedded in the foam. You screw drywall directly to these. No framing needed. No insulation to install. No vapor barrier. The walls are already flat, insulated, and ready. A handy homeowner can finish an ICF basement with basic tools. The hard work is already done.</p>
-          </div>
-        </details>
-
-        <details class="group bg-[var(--color-cream)] p-6">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <h3 class="text-lg font-display text-[var(--color-charcoal)] pr-4">What R-value does ICF provide?</h3>
-            <svg class="w-6 h-6 text-[var(--color-timber)] group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-            </svg>
-          </summary>
-          <div class="mt-4 text-[var(--color-slate)] leading-relaxed">
-            <p>Standard ICF walls provide R-22 to R-26 depending on the foam thickness. But here's what matters more: that R-value is continuous. No thermal bridging. A wood-frame wall might be rated R-19, but studs conduct heat. The effective whole-wall R-value drops to R-14 or less. ICF's R-22 actually performs like R-22. In Ontario's climate, that difference is substantial.</p>
-          </div>
-        </details>
-
-        <details class="group bg-[var(--color-cream)] p-6">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <h3 class="text-lg font-display text-[var(--color-charcoal)] pr-4">Is ICF good for Ontario's cold climate?</h3>
-            <svg class="w-6 h-6 text-[var(--color-timber)] group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-            </svg>
-          </summary>
-          <div class="mt-4 text-[var(--color-slate)] leading-relaxed">
-            <p>ICF is arguably ideal for Ontario. The continuous insulation envelope and concrete thermal mass keep indoor temperatures stable even when it's -30°C outside. No cold spots near walls. Smaller heating systems work because they're not fighting heat loss. The concrete can even pour in cold weather since the foam keeps it warm while curing. Ontario's climate is exactly where ICF shines.</p>
-          </div>
-        </details>
-
-        <details class="group bg-[var(--color-cream)] p-6">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <h3 class="text-lg font-display text-[var(--color-charcoal)] pr-4">Can any contractor build with ICF?</h3>
-            <svg class="w-6 h-6 text-[var(--color-timber)] group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-            </svg>
-          </summary>
-          <div class="mt-4 text-[var(--color-slate)] leading-relaxed">
-            <p>Technically yes, but experience matters. A lot. ICF has a learning curve: bracing requirements, pour rates, window buck installation, electrical chase planning. Inexperienced crews have blowouts during pours, struggle with alignment, and waste material on bad cuts. We've seen cleanup jobs from contractors who watched a YouTube video and figured they'd wing it. Look for builders with at least 3-5 years of ICF-specific experience and ask for references from ICF projects.</p>
-          </div>
-        </details>
+        {faqs.map((faq) => (
+          <details class="group bg-[var(--color-cream)] p-6">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-lg font-display text-[var(--color-charcoal)] pr-4">{faq.question}</h3>
+              <svg class="w-6 h-6 text-[var(--color-timber)] group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+              </svg>
+            </summary>
+            <div class="mt-4 text-[var(--color-slate)] leading-relaxed">
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        ))}
       </div>
     </div>
   </section>
@@ -642,76 +604,5 @@ const serviceLd = {
   <!-- Schema Markup -->
   <script type="application/ld+json" set:html={JSON.stringify(serviceLd)} />
 
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What does ICF stand for?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "ICF stands for Insulated Concrete Forms. The \"forms\" are interlocking foam blocks that hold their shape while concrete is poured inside. Unlike traditional plywood forms that get stripped away, ICF forms stay in place permanently as the wall's insulation. You end up with a concrete wall that's insulated on both sides from day one."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much more does ICF cost than wood frame?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "For walls only, ICF adds 5-15% to your construction cost. On a $500,000 build, that's $25,000-$75,000 more upfront. For ICF basements specifically, add $15,000-$25,000 compared to a poured concrete foundation that you'd later need to frame and insulate. The payback comes through energy savings of $1,500-$2,500 per year. Most owners break even within 5-10 years."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is ICF worth the extra cost?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "If you're keeping the home 10+ years, almost certainly yes. Energy savings alone pay back the premium. After that, you're saving $1,500-$2,500 every year while enjoying a stronger, quieter, more comfortable home. If you're building to flip in under 5 years, probably not. The resale market doesn't yet pay the full ICF premium in most Ontario areas. We'll help you run the numbers for your specific situation."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does an ICF home last?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The concrete structure can last 100+ years with normal maintenance. It doesn't rot, rust, warp, or get eaten by insects. The foam insulation is chemically stable indefinitely. Compare that to wood-frame homes that typically last 50-80 years before major structural work is needed. Roman concrete buildings still stand after 2,000 years. Your ICF home could outlast multiple generations of your family."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What R-value does ICF provide?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Standard ICF walls provide R-22 to R-26 depending on the foam thickness. But here's what matters more: that R-value is continuous. No thermal bridging. A wood-frame wall might be rated R-19, but studs conduct heat. The effective whole-wall R-value drops to R-14 or less. ICF's R-22 actually performs like R-22. In Ontario's climate, that difference is substantial."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is ICF good for Ontario's cold climate?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "ICF is arguably ideal for Ontario. The continuous insulation envelope and concrete thermal mass keep indoor temperatures stable even when it's -30°C outside. No cold spots near walls. Smaller heating systems work because they're not fighting heat loss. The concrete can even pour in cold weather since the foam keeps it warm while curing. Ontario's climate is exactly where ICF shines."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can any contractor build with ICF?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Technically yes, but experience matters. A lot. ICF has a learning curve: bracing requirements, pour rates, window buck installation, electrical chase planning. Inexperienced crews have blowouts during pours, struggle with alignment, and waste material on bad cuts. We've seen cleanup jobs from contractors who watched a YouTube video and figured they'd wing it. Look for builders with at least 3-5 years of ICF-specific experience and ask for references from ICF projects."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can you finish an ICF basement yourself?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, and it's actually easier than finishing a traditional basement. ICF walls have plastic web strips embedded in the foam. You screw drywall directly to these. No framing needed. No insulation to install. No vapor barrier. The walls are already flat, insulated, and ready. A handy homeowner can finish an ICF basement with basic tools. The hard work is already done."
-          }
-        }
-      ]
-    }
-  </script>
+  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
 </BaseLayout>

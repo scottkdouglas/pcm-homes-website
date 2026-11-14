@@ -85,6 +85,15 @@ const faqs = [
     answer: "Easier, mostly. Municipal water and sewer in most areas (instead of well and septic), easier road access, shorter trade travel, more predictable permit timelines. Costs typically run 15-25% lower than Muskoka for comparable builds. Rural and northern Durham gets closer to cottage country dynamics."
   }
 ];
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+  }))
+};
 ---
 
 <BaseLayout breadcrumbs={[{ name: "Service Areas", path: "/locations" }, { name: "Durham Region", path: "/locations/durham-region" }]} title="Durham Region Custom Home Builder | Pickering, Ajax, Whitby, Oshawa, Clarington" description="Custom home builder and renovation contractor across Durham Region. Pickering, Ajax, Whitby, Oshawa and Clarington. Custom builds, additions, renovations and ICF.">
@@ -252,4 +261,5 @@ const faqs = [
       </div>
     </div>
   </section>
+  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
 </BaseLayout>
