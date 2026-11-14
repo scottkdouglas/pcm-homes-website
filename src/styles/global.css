@@ -205,7 +205,8 @@ h1, h2, h3, h4 {
 /* Card styles */
 .card {
   background: white;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  /* Same grey as form inputs so card edges read on both white and cream sections. */
+  border: 1px solid #e0e0e0;
   transition: border-color 0.4s ease;
 }
 
