@@ -11,6 +11,8 @@ interface Props {
 
 const { title, description = "PCM Homes - Custom Home Builder & Renovation Contractor serving Muskoka, Kawartha, Durham, York Region and GTA", ogImage = "https://pcm.homes/og-image.jpg", breadcrumbs } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/'), Astro.site);
+// No mobile contact bar on the contact page: the visitor is already at the form.
+const showCtaBar = !/^\/contact\/?$/.test(Astro.url.pathname.replace(/\.html$/, ""));
 
 const SITE = "https://pcm.homes";
 const siteGraph = {
@@ -157,7 +159,7 @@ const breadcrumbLd = breadcrumbs && breadcrumbs.length
   </script>
   <slot name="head" />
 </head>
-<body class="min-h-screen flex flex-col pb-[calc(4rem+env(safe-area-inset-bottom))] md:pb-0">
+<body class:list={["min-h-screen flex flex-col", showCtaBar && "pb-[calc(4rem+env(safe-area-inset-bottom))] md:pb-0"]}>
   <!-- Scroll Progress Bar -->
   <div id="scroll-progress" class="scroll-progress" style="transform: scaleX(0);"></div>
 
@@ -229,11 +231,13 @@ const breadcrumbLd = breadcrumbs && breadcrumbs.length
 
   <!-- Mobile contact bar: one tap to the contact form from anywhere on the page.
        Phone stays in the footer and on the contact page only (client request, May 2026). -->
+  {showCtaBar && (
   <div data-cta-bar class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-gray-200 pb-[env(safe-area-inset-bottom)]">
     <a href="/contact#contact-form" class="h-16 w-full flex items-center justify-center bg-[var(--color-charcoal)] text-white text-sm font-medium tracking-wide uppercase active:bg-[var(--color-timber)]">
       Work With Us
     </a>
   </div>
+  )}
 
   <!-- Footer -->
   <footer class="bg-[var(--color-charcoal)] text-white">
