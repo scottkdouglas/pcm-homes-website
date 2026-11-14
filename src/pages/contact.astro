@@ -269,8 +269,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 { time: 'Call us', project: 'Emergency Repairs' },
               ].map((item) => (
                 <div class="flex items-center gap-4">
-                  <div class="w-16 h-16 bg-[var(--color-timber-light)]/30 flex items-center justify-center flex-shrink-0">
-                    <span class="text-sm font-medium text-[var(--color-charcoal)]">{item.time}</span>
+                  <div class="w-24 h-16 px-2 bg-[var(--color-timber-light)]/30 flex items-center justify-center text-center flex-shrink-0">
+                    <span class="text-sm font-medium text-[var(--color-charcoal)] whitespace-nowrap">{item.time}</span>
                   </div>
                   <div>
                     <p class="font-medium text-[var(--color-charcoal)]">{item.project}</p>
