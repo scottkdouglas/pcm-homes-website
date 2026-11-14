@@ -1,6 +1,6 @@
 ---
 title: "Additions & Renovations"
-description: "Additions, kitchens, basements and whole-home renovations. Small renovation quotes in 2 to 3 days."
+description: "Additions, kitchens, basements and whole-home renovations. Tell us about your project and we reply within 24 to 48 hours."
 order: 4
 ---
 
