@@ -253,11 +253,11 @@ const serviceAreas = [
         <table class="w-full">
           <thead>
             <tr class="border-b-2 border-[var(--color-charcoal)]">
-              <th class="py-4 px-6 text-left font-display text-lg text-[var(--color-charcoal)]">Region</th>
-              <th class="py-4 px-6 text-center font-display text-lg text-[var(--color-charcoal)]">Custom Homes</th>
-              <th class="py-4 px-6 text-center font-display text-lg text-[var(--color-charcoal)]">Cottages</th>
-              <th class="py-4 px-6 text-center font-display text-lg text-[var(--color-charcoal)]">ICF</th>
-              <th class="py-4 px-6 text-center font-display text-lg text-[var(--color-charcoal)]">Renovations</th>
+              <th class="py-3 px-1.5 md:py-4 md:px-6 text-left font-display text-sm md:text-lg text-[var(--color-charcoal)]">Region</th>
+              <th class="py-3 px-1.5 md:py-4 md:px-6 text-center font-display text-sm md:text-lg text-[var(--color-charcoal)]">Custom Homes</th>
+              <th class="py-3 px-1.5 md:py-4 md:px-6 text-center font-display text-sm md:text-lg text-[var(--color-charcoal)]">Cottages</th>
+              <th class="py-3 px-1.5 md:py-4 md:px-6 text-center font-display text-sm md:text-lg text-[var(--color-charcoal)]">ICF</th>
+              <th class="py-3 px-1.5 md:py-4 md:px-6 text-center font-display text-sm md:text-lg text-[var(--color-charcoal)]">Renovations</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-[var(--color-stone)]/30">
@@ -269,37 +269,37 @@ const serviceAreas = [
               { region: 'GTA', homes: true, cottages: false, icf: true, renovations: true },
             ].map((row) => (
               <tr class="hover:bg-white/50 transition-colors">
-                <td class="py-4 px-6 font-medium text-[var(--color-charcoal)]">{row.region}</td>
-                <td class="py-4 px-6 text-center">
+                <td class="py-3 px-1.5 md:py-4 md:px-6 text-sm md:text-base font-medium text-[var(--color-charcoal)]">{row.region}</td>
+                <td class="py-3 px-1.5 md:py-4 md:px-6 text-center">
                   {row.homes ? (
-                    <svg class="w-6 h-6 text-[var(--color-timber)] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 md:w-6 md:h-6 text-[var(--color-timber)] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
                   ) : (
                     <span class="text-[var(--color-stone)]">—</span>
                   )}
                 </td>
-                <td class="py-4 px-6 text-center">
+                <td class="py-3 px-1.5 md:py-4 md:px-6 text-center">
                   {row.cottages ? (
-                    <svg class="w-6 h-6 text-[var(--color-timber)] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 md:w-6 md:h-6 text-[var(--color-timber)] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
                   ) : (
                     <span class="text-[var(--color-stone)]">—</span>
                   )}
                 </td>
-                <td class="py-4 px-6 text-center">
+                <td class="py-3 px-1.5 md:py-4 md:px-6 text-center">
                   {row.icf ? (
-                    <svg class="w-6 h-6 text-[var(--color-timber)] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 md:w-6 md:h-6 text-[var(--color-timber)] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
                   ) : (
                     <span class="text-[var(--color-stone)]">—</span>
                   )}
                 </td>
-                <td class="py-4 px-6 text-center">
+                <td class="py-3 px-1.5 md:py-4 md:px-6 text-center">
                   {row.renovations ? (
-                    <svg class="w-6 h-6 text-[var(--color-timber)] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 md:w-6 md:h-6 text-[var(--color-timber)] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
                   ) : (
