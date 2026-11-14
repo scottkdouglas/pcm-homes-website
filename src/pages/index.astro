@@ -64,21 +64,17 @@ const projectImages = [
         </a>
       </div>
 
-      <!-- Trust Indicators -->
-      <div class="mt-20 flex flex-wrap justify-center gap-8 md:gap-16 text-white/60">
-        <div class="text-center">
-          <div class="text-3xl md:text-4xl font-display font-medium text-white mb-1">9</div>
-          <div class="text-xs uppercase tracking-widest">Years in Business</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl md:text-4xl font-display font-medium text-white mb-1">Fully</div>
-          <div class="text-xs uppercase tracking-widest">Insured</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl md:text-4xl font-display font-medium text-white mb-1">2-Year</div>
-          <div class="text-xs uppercase tracking-widest">Workmanship Warranty</div>
-        </div>
-      </div>
+      <!-- Trust Indicators: one type style for all three so they read as a set -->
+      <ul class="mt-12 md:mt-20 grid grid-cols-3 gap-4 md:gap-16 max-w-xl mx-auto text-white/80">
+        {["Since 2016", "Fully Insured", "2-Year Warranty"].map((item) => (
+          <li class="flex flex-col items-center gap-2 text-center">
+            <svg class="w-5 h-5 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-xs md:text-sm uppercase tracking-[0.05em] leading-snug">{item}</span>
+          </li>
+        ))}
+      </ul>
     </div>
 
   </section>
@@ -124,8 +120,8 @@ const projectImages = [
           <!-- Floating Stats Card -->
           <div class="absolute -bottom-8 left-0 lg:-left-8 bg-white p-8 shadow-xl">
             <div class="flex items-baseline gap-2 mb-2">
-              <span class="text-5xl font-display font-medium text-[var(--color-charcoal)]">9</span>
-              <span class="text-[var(--color-timber)] uppercase tracking-widest text-sm">Years</span>
+              <span class="text-[var(--color-timber)] uppercase tracking-widest text-sm">Since</span>
+              <span class="text-5xl font-display font-medium text-[var(--color-charcoal)]">2016</span>
             </div>
             <p class="text-[var(--color-stone)] text-sm">Building trust through<br />transparent communication</p>
           </div>
