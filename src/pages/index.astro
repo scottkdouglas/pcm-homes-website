@@ -65,13 +65,13 @@ const projectImages = [
       </div>
 
       <!-- Trust Indicators: one type style for all three so they read as a set -->
-      <ul class="mt-12 md:mt-20 grid grid-cols-3 gap-4 md:gap-16 max-w-xl mx-auto text-white/80">
+      <ul class="mt-12 md:mt-20 grid grid-cols-3 gap-4 md:gap-16 max-w-xl md:max-w-3xl mx-auto text-white/80 md:text-white/90">
         {["Since 2016", "Fully Insured", "2-Year Warranty"].map((item) => (
-          <li class="flex flex-col items-center gap-2 text-center">
-            <svg class="w-5 h-5 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <li class="flex flex-col items-center gap-2 md:gap-3 text-center">
+            <svg class="w-5 h-5 md:w-7 md:h-7 text-[var(--color-timber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
-            <span class="text-xs md:text-sm uppercase tracking-[0.05em] leading-snug">{item}</span>
+            <span class="text-xs md:text-base lg:text-lg uppercase tracking-[0.05em] leading-snug">{item}</span>
           </li>
         ))}
       </ul>
